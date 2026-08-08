@@ -8,4 +8,8 @@ echo "=================================================="
 echo "   👂 Starte CI-Hörtrainer..."
 echo "=================================================="
 
-python3 "$DIR/main.py"
+if [ -f "$DIR/.venv/bin/python" ]; then
+    "$DIR/.venv/bin/python" "$DIR/main.py"
+else
+    python3 "$DIR/main.py"
+fi

@@ -6,7 +6,7 @@ Willkommen beim **CI-Hörtrainer**, der spezialisierten Anwendung für das audit
 
 ## 🖥️ 1. Benutzeroberfläche & Dashboard
 
-![Anwendungs-Dashboard](file:///Users/gerald/.gemini/antigravity-ide/brain/7840ec5a-b243-4ef4-8473-670cb9332ccb/media__1786192645351.png)
+![Anwendungs-Dashboard](images/dashboard.png)
 
 Das Dashboard bietet eine übersichtliche, dunkle Benutzeroberfläche mit Schnellzugriff auf alle Funktionen:
 
@@ -21,7 +21,7 @@ Das Dashboard bietet eine übersichtliche, dunkle Benutzeroberfläche mit Schnel
 
 ## 🧩 2. Modul-Navigationsleiste
 
-![Modul-Navigationsleiste](file:///Users/gerald/.gemini/antigravity-ide/brain/7840ec5a-b243-4ef4-8473-670cb9332ccb/media__1786192645304.png)
+![Modul-Navigationsleiste](images/nav_bar.png)
 
 Über die obere Navigationsleiste greifst du auf die einzelnen Trainingsmodule zu:
 
@@ -40,7 +40,7 @@ Das Dashboard bietet eine übersichtliche, dunkle Benutzeroberfläche mit Schnel
 
 ## 🎧 3. Audio-Einstellungen & Rauschen
 
-![Audio-Einstellungen & Rauschen](file:///Users/gerald/.gemini/antigravity-ide/brain/7840ec5a-b243-4ef4-8473-670cb9332ccb/media__1786192645315.png)
+![Audio-Einstellungen & Rauschen](images/audio_settings.png)
 
 Das Bedienfeld **Audio-Einstellungen & Rauschen** erlaubt eine gezielte Anpassung an individuelle Hörbedürfnisse:
 
@@ -62,7 +62,7 @@ Das Bedienfeld **Audio-Einstellungen & Rauschen** erlaubt eine gezielte Anpassun
 
 ## 🎯 4. Übungsablauf (am Beispiel Minimalpaare)
 
-![Übungskarte Minimalpaare](file:///Users/gerald/.gemini/antigravity-ide/brain/7840ec5a-b243-4ef4-8473-670cb9332ccb/media__1786192645353.png)
+![Übungskarte Minimalpaare](images/exercise_card.png)
 
 ### Komponenten der Übungskarte:
 1. **Fokus-Buchstabe (Filter)**: Über das Dropdown-Menü wählst du gezielt die zu trainierende Lautdifferenzierung aus (z. B. *N vs. NG (Zungenspitzen- vs. Gaumen-Nasal)*).

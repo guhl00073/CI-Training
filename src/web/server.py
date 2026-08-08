@@ -92,7 +92,22 @@ class CITrainerHTTPHandler(http.server.SimpleHTTPRequestHandler):
         path = parsed.path
         body = self._read_body()
 
-        if path == "/api/tts":
+        if path == "/api/upload_image":
+            filename = body.get("filename", "image.png")
+            data_url = body.get("data", "")
+            if "," in data_url:
+                data_url = data_url.split(",", 1)[1]
+            import base64
+            img_bytes = base64.b64decode(data_url)
+            save_dir = pathlib.Path(__file__).parent.parent.parent / "docs" / "images"
+            save_dir.mkdir(parents=True, exist_ok=True)
+            out_file = save_dir / filename
+            with open(out_file, "wb") as f:
+                f.write(img_bytes)
+            self._send_json({"status": "saved", "file": str(out_file)})
+            return
+
+        elif path == "/api/tts":
             text = body.get("text", "") or ""
             rate = safe_float(body.get("rate"), 1.0)
             balance = safe_float(body.get("balance"), 0.0)
@@ -312,20 +327,29 @@ def free_port(port: int):
     time.sleep(0.2)
 
 
+class QuietTCPServer(socketserver.TCPServer):
+    allow_reuse_address = True
+
+    def handle_error(self, request, client_address):
+        exctype, val, tb = sys.exc_info()
+        if exctype in (ConnectionResetError, BrokenPipeError, ConnectionAbortedError):
+            return
+        super().handle_error(request, client_address)
+
+
 def start_web_server(open_browser: bool = True):
     STATIC_DIR.mkdir(parents=True, exist_ok=True)
-    socketserver.TCPServer.allow_reuse_address = True
 
     port = PORT
     free_port(port)
 
     httpd = None
     try:
-        httpd = socketserver.TCPServer(("", port), CITrainerHTTPHandler)
+        httpd = QuietTCPServer(("", port), CITrainerHTTPHandler)
     except OSError:
         free_port(port)
         try:
-            httpd = socketserver.TCPServer(("", port), CITrainerHTTPHandler)
+            httpd = QuietTCPServer(("", port), CITrainerHTTPHandler)
         except OSError as e:
             print(f"❌ Fehler: Port {port} konnte nicht freigegeben werden ({e}).")
             return
@@ -340,3 +364,4 @@ def start_web_server(open_browser: bool = True):
     except KeyboardInterrupt:
         print("\nServer wird beendet.")
         httpd.server_close()
+
