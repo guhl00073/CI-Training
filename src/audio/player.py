@@ -5,6 +5,7 @@ import pathlib
 import threading
 import sys
 import shutil
+import atexit
 
 class AudioPlayer:
     """
@@ -23,11 +24,16 @@ class AudioPlayer:
             "restaurant": os.path.join(data_dir, "ambient_restaurant.wav"),
             "cafe":       os.path.join(data_dir, "ambient_restaurant.wav"),
             "traffic":    os.path.join(data_dir, "ambient_traffic.wav"),
-            "station":    os.path.join(data_dir, "ambient_station.wav"),
-            "chatter":    os.path.join(data_dir, "ambient_chatter.wav"),
         }
         self.current_noise_config = None
         self._lock = threading.Lock()
+        atexit.register(self.stop)
+
+    def __del__(self):
+        try:
+            self.stop()
+        except Exception:
+            pass
 
     def _find_ffmpeg(self):
         """Locates ffmpeg executable cross-platform, auto-installing if missing when package manager exists."""
