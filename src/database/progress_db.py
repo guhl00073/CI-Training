@@ -12,7 +12,7 @@ class ProgressDatabase:
     statistics, and exercise catalog (Minimal pairs, Monosyllables, Numbers, Sentences).
     """
 
-    def __init__(self, db_path: str = "data/user_progress.db"):
+    def __init__(self, db_path: str = "data/ci-training.db"):
         self.db_path = str(db_path)
         if self.db_path != ":memory:":
             pathlib.Path(self.db_path).parent.mkdir(parents=True, exist_ok=True)

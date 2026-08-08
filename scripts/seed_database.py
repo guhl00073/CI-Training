@@ -2,7 +2,7 @@
 """
 seed_database.py
 ────────────────
-Initialisiert oder re-initialisiert die SQLite-Datenbank (data/user_progress.db)
+Initialisiert oder re-initialisiert die SQLite-Datenbank (data/ci-training.db)
 aus den JSON-Quelldateien in data/*.json.
 
 Verwendung:
@@ -20,7 +20,7 @@ import argparse
 
 # ─── Pfad-Setup ───────────────────────────────────────────────────────────────
 PROJECT_ROOT = pathlib.Path(__file__).parent.parent
-DB_PATH = PROJECT_ROOT / "data" / "user_progress.db"
+DB_PATH = PROJECT_ROOT / "data" / "ci-training.db"
 DATA_DIR = PROJECT_ROOT / "data"
 
 JSON_FILES = {
