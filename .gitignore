@@ -20,3 +20,7 @@ venv.bak/
 # IDE
 .idea/
 .vscode/
+
+# Exclude tests
+tests/
+
