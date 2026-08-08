@@ -1,0 +1,570 @@
+import sqlite3
+import pathlib
+import json
+import os
+import uuid
+from datetime import datetime
+
+
+class ProgressDatabase:
+    """
+    SQLite Database Manager for tracking CI hearing training progress,
+    statistics, and exercise catalog (Minimal pairs, Monosyllables, Numbers, Sentences).
+    """
+
+    def __init__(self, db_path: str = "data/user_progress.db"):
+        self.db_path = str(db_path)
+        if self.db_path != ":memory:":
+            pathlib.Path(self.db_path).parent.mkdir(parents=True, exist_ok=True)
+        self.conn = sqlite3.connect(self.db_path, check_same_thread=False)
+        self._init_db()
+        self._seed_if_empty()
+
+    def _get_connection(self):
+        return self.conn
+
+    # ─── SCHEMA INITIALISATION ─────────────────────────────────────────────────
+
+    def _init_db(self):
+        """Creates all tables if they do not yet exist."""
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+
+            # 1. Training Logs
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS training_logs (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    timestamp TEXT NOT NULL,
+                    module TEXT NOT NULL,
+                    category TEXT,
+                    target_word TEXT NOT NULL,
+                    user_answer TEXT,
+                    is_correct INTEGER NOT NULL,
+                    score REAL NOT NULL,
+                    snr_db REAL DEFAULT 0.0
+                )
+            """)
+
+            # 2. Exercises: Minimal Pairs
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS exercises_minimal_pairs (
+                    id TEXT PRIMARY KEY,
+                    category TEXT NOT NULL,
+                    source TEXT NOT NULL,
+                    options_json TEXT,
+                    word_a TEXT,
+                    word_b TEXT,
+                    difficulty TEXT DEFAULT 'Mittel',
+                    hint TEXT
+                )
+            """)
+
+            # 3. Exercises: Monosyllables
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS exercises_monosyllables (
+                    id TEXT PRIMARY KEY,
+                    word TEXT NOT NULL,
+                    category TEXT DEFAULT 'Einsilber',
+                    source TEXT DEFAULT 'Freiburger Einsilber-Test (DIN 45621)',
+                    difficulty TEXT DEFAULT 'Einfach'
+                )
+            """)
+
+            # 4. Exercises: Numbers / Times / Amounts
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS exercises_numbers (
+                    id TEXT PRIMARY KEY,
+                    type TEXT NOT NULL,
+                    source TEXT NOT NULL,
+                    value TEXT NOT NULL,
+                    spoken TEXT NOT NULL,
+                    difficulty TEXT DEFAULT 'Einfach'
+                )
+            """)
+
+            # 5. Exercises: Sentences (OLSA)
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS exercises_sentences (
+                    id TEXT PRIMARY KEY,
+                    category TEXT NOT NULL,
+                    source TEXT NOT NULL,
+                    sentence TEXT NOT NULL,
+                    target_word TEXT NOT NULL,
+                    options_json TEXT NOT NULL,
+                    hint TEXT
+                )
+            """)
+
+            conn.commit()
+
+    # ─── INITIAL SEEDING ───────────────────────────────────────────────────────
+
+    def _seed_if_empty(self):
+        """Seeds SQLite tables from JSON data files when the tables are empty."""
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+
+            # ── Minimal Pairs ────────────────────────────────────────────────
+            cursor.execute("SELECT COUNT(*) FROM exercises_minimal_pairs")
+            if cursor.fetchone()[0] == 0 and os.path.exists("data/minimal_pairs.json"):
+                try:
+                    with open("data/minimal_pairs.json", "r", encoding="utf-8") as f:
+                        items = json.load(f)
+                    for idx, item in enumerate(items):
+                        item_id = item.get("id") or f"mp_{idx+1}_{uuid.uuid4().hex[:4]}"
+                        opts_j = json.dumps(item["options"], ensure_ascii=False) if item.get("options") else None
+                        cursor.execute("""
+                            INSERT OR IGNORE INTO exercises_minimal_pairs
+                                (id, category, source, options_json, word_a, word_b, difficulty, hint)
+                            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                        """, (
+                            item_id,
+                            item.get("category", "Allgemein"),
+                            item.get("source", "Marburger Minimalpaar-Katalog"),
+                            opts_j,
+                            item.get("word_a"),
+                            item.get("word_b"),
+                            item.get("difficulty", "Mittel"),
+                            item.get("hint"),
+                        ))
+                    print(f"[DB] Seeded {len(items)} minimal pairs.")
+                except Exception as e:
+                    print(f"[DB] Error seeding minimal pairs: {e}")
+
+            # ── Monosyllables ────────────────────────────────────────────────
+            cursor.execute("SELECT COUNT(*) FROM exercises_monosyllables")
+            if cursor.fetchone()[0] == 0 and os.path.exists("data/monosyllables.json"):
+                try:
+                    with open("data/monosyllables.json", "r", encoding="utf-8") as f:
+                        items = json.load(f)
+                    for idx, item in enumerate(items):
+                        item_id = item.get("id") or f"mo_{idx+1}_{uuid.uuid4().hex[:4]}"
+                        cursor.execute("""
+                            INSERT OR IGNORE INTO exercises_monosyllables
+                                (id, word, category, source, difficulty)
+                            VALUES (?, ?, ?, ?, ?)
+                        """, (
+                            item_id,
+                            item.get("word", ""),
+                            item.get("category", "Einsilber"),
+                            item.get("source", "Freiburger Einsilber-Test (DIN 45621)"),
+                            item.get("difficulty", "Einfach"),
+                        ))
+                    print(f"[DB] Seeded {len(items)} monosyllables.")
+                except Exception as e:
+                    print(f"[DB] Error seeding monosyllables: {e}")
+
+            # ── Numbers ──────────────────────────────────────────────────────
+            cursor.execute("SELECT COUNT(*) FROM exercises_numbers")
+            if cursor.fetchone()[0] == 0 and os.path.exists("data/numbers.json"):
+                try:
+                    with open("data/numbers.json", "r", encoding="utf-8") as f:
+                        items = json.load(f)
+                    for idx, item in enumerate(items):
+                        item_id = item.get("id") or f"nu_{idx+1}_{uuid.uuid4().hex[:4]}"
+                        cursor.execute("""
+                            INSERT OR IGNORE INTO exercises_numbers
+                                (id, type, source, value, spoken, difficulty)
+                            VALUES (?, ?, ?, ?, ?, ?)
+                        """, (
+                            item_id,
+                            item.get("type") or item.get("category") or "Einfache Zahlen",
+                            item.get("source", "Audiologischer Zahlen- & Uhrzeitentest"),
+                            item.get("value", ""),
+                            item.get("spoken", ""),
+                            item.get("difficulty", "Einfach"),
+                        ))
+                    print(f"[DB] Seeded {len(items)} numbers.")
+                except Exception as e:
+                    print(f"[DB] Error seeding numbers: {e}")
+
+            # ── Sentences ────────────────────────────────────────────────────
+            cursor.execute("SELECT COUNT(*) FROM exercises_sentences")
+            if cursor.fetchone()[0] == 0 and os.path.exists("data/sentences.json"):
+                try:
+                    with open("data/sentences.json", "r", encoding="utf-8") as f:
+                        items = json.load(f)
+                    for idx, item in enumerate(items):
+                        item_id = item.get("id") or f"se_{idx+1}_{uuid.uuid4().hex[:4]}"
+                        opts_j = json.dumps(item.get("options", []), ensure_ascii=False)
+                        cursor.execute("""
+                            INSERT OR IGNORE INTO exercises_sentences
+                                (id, category, source, sentence, target_word, options_json, hint)
+                            VALUES (?, ?, ?, ?, ?, ?, ?)
+                        """, (
+                            item_id,
+                            item.get("category", "Alltagssätze"),
+                            item.get("source", "Oldenburger Satztest (OLSA)"),
+                            item.get("sentence", ""),
+                            item.get("target_word", ""),
+                            opts_j,
+                            item.get("hint"),
+                        ))
+                    print(f"[DB] Seeded {len(items)} sentences.")
+                except Exception as e:
+                    print(f"[DB] Error seeding sentences: {e}")
+
+            conn.commit()
+
+    # ─── READ ALL EXERCISES ────────────────────────────────────────────────────
+
+    def get_all_exercises(self) -> dict:
+        """
+        Returns all exercises from the database grouped by type.
+        The structure is fully backwards-compatible with the old JSON-based API.
+        """
+        res = {
+            "minimal_pairs": [],
+            "monosyllables": [],
+            "numbers": [],
+            "sentences": [],
+        }
+
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+
+            # 1. Minimal Pairs
+            cursor.execute(
+                "SELECT id, category, source, options_json, word_a, word_b, difficulty, hint"
+                " FROM exercises_minimal_pairs"
+            )
+            for row in cursor.fetchall():
+                item_id, cat, src, opts_j, wa, wb, diff, hint = row
+                item: dict = {
+                    "id": item_id,
+                    "category": cat,
+                    "source": src,
+                    "difficulty": diff,
+                    "hint": hint,
+                }
+                if opts_j:
+                    try:
+                        item["options"] = json.loads(opts_j)
+                    except Exception:
+                        item["options"] = []
+                if wa:
+                    item["word_a"] = wa
+                if wb:
+                    item["word_b"] = wb
+                res["minimal_pairs"].append(item)
+
+            # 2. Monosyllables
+            cursor.execute(
+                "SELECT id, word, category, source, difficulty FROM exercises_monosyllables"
+            )
+            for row in cursor.fetchall():
+                item_id, word, cat, src, diff = row
+                res["monosyllables"].append({
+                    "id": item_id,
+                    "word": word,
+                    "category": cat,
+                    "source": src,
+                    "difficulty": diff,
+                })
+
+            # 3. Numbers
+            cursor.execute(
+                "SELECT id, type, source, value, spoken, difficulty FROM exercises_numbers"
+            )
+            for row in cursor.fetchall():
+                item_id, num_type, src, val, spoken, diff = row
+                res["numbers"].append({
+                    "id": item_id,
+                    # Expose both 'type' and 'category' for frontend compatibility
+                    "type": num_type,
+                    "category": num_type,
+                    "source": src,
+                    "value": val,
+                    "spoken": spoken,
+                    "difficulty": diff,
+                })
+
+            # 4. Sentences
+            cursor.execute(
+                "SELECT id, category, source, sentence, target_word, options_json, hint"
+                " FROM exercises_sentences"
+            )
+            for row in cursor.fetchall():
+                item_id, cat, src, sentence, target, opts_j, hint = row
+                opts = []
+                if opts_j:
+                    try:
+                        opts = json.loads(opts_j)
+                    except Exception:
+                        opts = []
+                res["sentences"].append({
+                    "id": item_id,
+                    "category": cat,
+                    "source": src,
+                    "sentence": sentence,
+                    "target_word": target,
+                    "options": opts,
+                    "hint": hint,
+                })
+
+        return res
+
+    # ─── CREATE ───────────────────────────────────────────────────────────────
+
+    def add_exercise(self, mod_type: str, item: dict) -> dict:
+        """Inserts a new exercise into the corresponding table and returns it with its assigned ID."""
+        item_id = item.get("id") or f"{mod_type[:2]}_{uuid.uuid4().hex[:6]}"
+        item = dict(item)  # do not mutate caller's dict
+        item["id"] = item_id
+
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+
+            if mod_type == "minimal_pairs":
+                opts_j = json.dumps(item.get("options", []), ensure_ascii=False) if item.get("options") is not None else None
+                cursor.execute("""
+                    INSERT INTO exercises_minimal_pairs
+                        (id, category, source, options_json, word_a, word_b, difficulty, hint)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                """, (
+                    item_id,
+                    item.get("category", "Allgemein"),
+                    item.get("source", "Eigenes Übungsmaterial"),
+                    opts_j,
+                    item.get("word_a"),
+                    item.get("word_b"),
+                    item.get("difficulty", "Mittel"),
+                    item.get("hint"),
+                ))
+
+            elif mod_type == "monosyllables":
+                cursor.execute("""
+                    INSERT INTO exercises_monosyllables
+                        (id, word, category, source, difficulty)
+                    VALUES (?, ?, ?, ?, ?)
+                """, (
+                    item_id,
+                    item.get("word", ""),
+                    item.get("category", "Einsilber"),
+                    item.get("source", "Eigenes Übungsmaterial"),
+                    item.get("difficulty", "Einfach"),
+                ))
+
+            elif mod_type == "numbers":
+                cursor.execute("""
+                    INSERT INTO exercises_numbers
+                        (id, type, source, value, spoken, difficulty)
+                    VALUES (?, ?, ?, ?, ?, ?)
+                """, (
+                    item_id,
+                    item.get("type") or item.get("category") or "Einfache Zahlen",
+                    item.get("source", "Eigenes Übungsmaterial"),
+                    item.get("value", ""),
+                    item.get("spoken", ""),
+                    item.get("difficulty", "Einfach"),
+                ))
+
+            elif mod_type == "sentences":
+                opts_j = json.dumps(item.get("options", []), ensure_ascii=False)
+                cursor.execute("""
+                    INSERT INTO exercises_sentences
+                        (id, category, source, sentence, target_word, options_json, hint)
+                    VALUES (?, ?, ?, ?, ?, ?, ?)
+                """, (
+                    item_id,
+                    item.get("category", "Alltagssätze"),
+                    item.get("source", "Eigenes Übungsmaterial"),
+                    item.get("sentence", ""),
+                    item.get("target_word", ""),
+                    opts_j,
+                    item.get("hint"),
+                ))
+
+            else:
+                raise ValueError(f"Unknown module type: {mod_type!r}")
+
+            conn.commit()
+
+        return item
+
+    # ─── UPDATE ───────────────────────────────────────────────────────────────
+
+    def update_exercise(self, mod_type: str, item: dict) -> bool:
+        """Updates an existing exercise by ID.  Returns True when a row was changed."""
+        item_id = item.get("id")
+        if not item_id:
+            return False
+
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+
+            if mod_type == "minimal_pairs":
+                opts_j = json.dumps(item.get("options", []), ensure_ascii=False) if item.get("options") is not None else None
+                cursor.execute("""
+                    UPDATE exercises_minimal_pairs
+                    SET category=?, source=?, options_json=?, word_a=?, word_b=?, difficulty=?, hint=?
+                    WHERE id=?
+                """, (
+                    item.get("category", "Allgemein"),
+                    item.get("source", "Eigenes Übungsmaterial"),
+                    opts_j,
+                    item.get("word_a"),
+                    item.get("word_b"),
+                    item.get("difficulty", "Mittel"),
+                    item.get("hint"),
+                    item_id,
+                ))
+
+            elif mod_type == "monosyllables":
+                cursor.execute("""
+                    UPDATE exercises_monosyllables
+                    SET word=?, category=?, source=?, difficulty=?
+                    WHERE id=?
+                """, (
+                    item.get("word", ""),
+                    item.get("category", "Einsilber"),
+                    item.get("source", "Eigenes Übungsmaterial"),
+                    item.get("difficulty", "Einfach"),
+                    item_id,
+                ))
+
+            elif mod_type == "numbers":
+                cursor.execute("""
+                    UPDATE exercises_numbers
+                    SET type=?, source=?, value=?, spoken=?, difficulty=?
+                    WHERE id=?
+                """, (
+                    item.get("type") or item.get("category") or "Einfache Zahlen",
+                    item.get("source", "Eigenes Übungsmaterial"),
+                    item.get("value", ""),
+                    item.get("spoken", ""),
+                    item.get("difficulty", "Einfach"),
+                    item_id,
+                ))
+
+            elif mod_type == "sentences":
+                opts_j = json.dumps(item.get("options", []), ensure_ascii=False)
+                cursor.execute("""
+                    UPDATE exercises_sentences
+                    SET category=?, source=?, sentence=?, target_word=?, options_json=?, hint=?
+                    WHERE id=?
+                """, (
+                    item.get("category", "Alltagssätze"),
+                    item.get("source", "Eigenes Übungsmaterial"),
+                    item.get("sentence", ""),
+                    item.get("target_word", ""),
+                    opts_j,
+                    item.get("hint"),
+                    item_id,
+                ))
+
+            else:
+                return False
+
+            conn.commit()
+            return cursor.rowcount > 0
+
+    # ─── DELETE ───────────────────────────────────────────────────────────────
+
+    def delete_exercise(self, mod_type: str, item_id: str) -> bool:
+        """Deletes an exercise by ID.  Returns True when a row was removed."""
+        table_map = {
+            "minimal_pairs": "exercises_minimal_pairs",
+            "monosyllables": "exercises_monosyllables",
+            "numbers": "exercises_numbers",
+            "sentences": "exercises_sentences",
+        }
+        table_name = table_map.get(mod_type)
+        if not table_name:
+            return False
+
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute(f"DELETE FROM {table_name} WHERE id=?", (item_id,))
+            conn.commit()
+            return cursor.rowcount > 0
+
+    # ─── STATISTICAL LOGGING ──────────────────────────────────────────────────
+
+    def log_attempt(
+        self,
+        module: str,
+        category: str,
+        target_word: str,
+        user_answer: str,
+        is_correct: bool,
+        score: float,
+        snr_db: float = 0.0,
+    ):
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute("""
+                INSERT INTO training_logs
+                    (timestamp, module, category, target_word, user_answer, is_correct, score, snr_db)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            """, (
+                datetime.now().isoformat(),
+                module,
+                category,
+                target_word,
+                user_answer,
+                1 if is_correct else 0,
+                score,
+                snr_db,
+            ))
+            conn.commit()
+
+    def reset_stats(self):
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute("DELETE FROM training_logs")
+            conn.commit()
+
+    def get_summary_stats(self) -> dict:
+        return self.get_stats()
+
+    def get_stats(self) -> dict:
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+
+            cursor.execute("SELECT COUNT(*), SUM(is_correct), AVG(score) FROM training_logs")
+            row = cursor.fetchone()
+            total = row[0] or 0
+            correct = row[1] or 0
+            avg_score = row[2] or 0.0
+
+            cursor.execute("""
+                SELECT module, COUNT(*), SUM(is_correct), AVG(score)
+                FROM training_logs
+                GROUP BY module
+            """)
+            by_module: dict = {}
+            for row in cursor.fetchall():
+                mod, count, corr, avg_s = row
+                corr = corr or 0
+                by_module[mod] = {
+                    "count": count,
+                    "correct": corr,
+                    "accuracy": round((corr / count * 100) if count > 0 else 0, 1),
+                    "avg_score": round(avg_s or 0.0, 1),
+                }
+
+            cursor.execute("""
+                SELECT category, COUNT(*), SUM(is_correct)
+                FROM training_logs
+                WHERE category IS NOT NULL AND category != ''
+                GROUP BY category
+            """)
+            by_category: dict = {}
+            for row in cursor.fetchall():
+                cat, count, corr = row
+                corr = corr or 0
+                by_category[cat] = {
+                    "count": count,
+                    "correct": corr,
+                    "accuracy": round((corr / count * 100) if count > 0 else 0, 1),
+                }
+
+            return {
+                "total_attempts": total,
+                "correct_attempts": correct,
+                "accuracy": round((correct / total * 100) if total > 0 else 0, 1),
+                "avg_score": round(avg_score, 1),
+                "by_module": by_module,
+                "by_category": by_category,
+            }

@@ -1,0 +1,470 @@
+[
+  {
+    "id": "mp_r_01",
+    "category": "Reim-Gruppe (-ut)",
+    "source": "Marburger Minimalpaar-Katalog",
+    "options": [
+      "Mut",
+      "Glut",
+      "Flut",
+      "Gut",
+      "Hut",
+      "Wut"
+    ],
+    "difficulty": "Schwer",
+    "hint": "Anlautdifferenzierung bei -ut"
+  },
+  {
+    "category": "Reim-Gruppe (-ein)",
+    "source": "Marburger Minimalpaar-Katalog",
+    "id": "mp_r_02",
+    "options": [
+      "Bein",
+      "Pein",
+      "Stein",
+      "Wein",
+      "Fein"
+    ],
+    "hint": "Anlautdifferenzierung bei -ein",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "mp_r_03",
+    "category": "Reim-Gruppe (-anne)",
+    "source": "Marburger Minimalpaar-Katalog",
+    "options": [
+      "Kanne",
+      "Panne",
+      "Tanne",
+      "Wanne"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Anlautdifferenzierung bei -anne"
+  },
+  {
+    "id": "mp_r_04",
+    "category": "Reim-Gruppe (-and)",
+    "source": "Marburger Minimalpaar-Katalog",
+    "options": [
+      "Hand",
+      "Wand",
+      "Band",
+      "Land",
+      "Sand",
+      "Pfand"
+    ],
+    "difficulty": "Schwer",
+    "hint": "Anlautdifferenzierung bei -and"
+  },
+  {
+    "id": "mp_r_05",
+    "category": "Reim-Gruppe (-ock)",
+    "source": "Marburger Minimalpaar-Katalog",
+    "options": [
+      "Bock",
+      "Dock",
+      "Rock",
+      "Stock",
+      "Socke"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Anlautdifferenzierung bei -ock"
+  },
+  {
+    "id": "mp_r_06",
+    "category": "Reim-Gruppe (-aus)",
+    "source": "Marburger Minimalpaar-Katalog",
+    "options": [
+      "Haus",
+      "Maus",
+      "Laus",
+      "Raus",
+      "Klaus"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Anlautdifferenzierung bei -aus"
+  },
+  {
+    "id": "mp_r_07",
+    "category": "Reim-Gruppe (-ing)",
+    "source": "Marburger Minimalpaar-Katalog",
+    "options": [
+      "Ring",
+      "Ding",
+      "Sing",
+      "King",
+      "Gong"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Anlautdifferenzierung bei -ing"
+  },
+  {
+    "id": "mp_p_0001",
+    "category": "P vs. B",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Pass",
+    "word_b": "Bass",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Pass vs Bass"
+  },
+  {
+    "id": "mp_p_0002",
+    "category": "P vs. B",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Pein",
+    "word_b": "Bein",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Pein vs Bein"
+  },
+  {
+    "id": "mp_p_0003",
+    "category": "P vs. B",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Packen",
+    "word_b": "Backen",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Packen vs Backen"
+  },
+  {
+    "id": "mp_p_0004",
+    "category": "P vs. B",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Pech",
+    "word_b": "Bach",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Pech vs Bach"
+  },
+  {
+    "id": "mp_p_0005",
+    "category": "P vs. B",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Pille",
+    "word_b": "Bille",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Pille vs Bille"
+  },
+  {
+    "id": "mp_p_0006",
+    "category": "P vs. B",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Posten",
+    "word_b": "Borsten",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Posten vs Borsten"
+  },
+  {
+    "id": "mp_p_0007",
+    "category": "P vs. B",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Pfeil",
+    "word_b": "Beil",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Pfeil vs Beil"
+  },
+  {
+    "id": "mp_p_0008",
+    "category": "P vs. B",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Pute",
+    "word_b": "Bute",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Pute vs Bute"
+  },
+  {
+    "id": "mp_p_0009",
+    "category": "P vs. B",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Pakt",
+    "word_b": "Bakt",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Pakt vs Bakt"
+  },
+  {
+    "id": "mp_p_0010",
+    "category": "T vs. D",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Tasse",
+    "word_b": "Dasse",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Tasse vs Dasse"
+  },
+  {
+    "id": "mp_p_0011",
+    "category": "T vs. D",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Teich",
+    "word_b": "Deich",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Teich vs Deich"
+  },
+  {
+    "id": "mp_p_0012",
+    "category": "T vs. D",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Tank",
+    "word_b": "Dank",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Tank vs Dank"
+  },
+  {
+    "id": "mp_p_0013",
+    "category": "T vs. D",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Dorf",
+    "word_b": "Torf",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Dorf vs Torf"
+  },
+  {
+    "id": "mp_p_0014",
+    "category": "T vs. D",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Dach",
+    "word_b": "Tach",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Dach vs Tach"
+  },
+  {
+    "id": "mp_p_0016",
+    "category": "T vs. D",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Tonne",
+    "word_b": "Donne",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Tonne vs Donne"
+  },
+  {
+    "id": "mp_p_0018",
+    "category": "K vs. G",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Kanne",
+    "word_b": "Panne",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Kanne vs Panne"
+  },
+  {
+    "id": "mp_p_0019",
+    "category": "K vs. G",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Kasse",
+    "word_b": "Gasse",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Kasse vs Gasse"
+  },
+  {
+    "id": "mp_p_0020",
+    "category": "K vs. G",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Kunst",
+    "word_b": "Gunst",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Kunst vs Gunst"
+  },
+  {
+    "id": "mp_p_0021",
+    "category": "K vs. G",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Kuss",
+    "word_b": "Guss",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Kuss vs Guss"
+  },
+  {
+    "id": "mp_p_0022",
+    "category": "K vs. G",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Kamm",
+    "word_b": "Gamm",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Kamm vs Gamm"
+  },
+  {
+    "id": "mp_p_0023",
+    "category": "K vs. G",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Kiel",
+    "word_b": "Giel",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Kiel vs Giel"
+  },
+  {
+    "id": "mp_p_0024",
+    "category": "K vs. G",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Korn",
+    "word_b": "Gorn",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Korn vs Gorn"
+  },
+  {
+    "id": "mp_p_0025",
+    "category": "K vs. G",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Kuh",
+    "word_b": "Guh",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Kuh vs Guh"
+  },
+  {
+    "id": "mp_p_0026",
+    "category": "S vs. SCH",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Sonne",
+    "word_b": "Wonne",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Sonne vs Wonne"
+  },
+  {
+    "id": "mp_p_0027",
+    "category": "S vs. SCH",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Stein",
+    "word_b": "Bein",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Stein vs Bein"
+  },
+  {
+    "id": "mp_p_0028",
+    "category": "S vs. SCH",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Schiene",
+    "word_b": "Biene",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Schiene vs Biene"
+  },
+  {
+    "id": "mp_p_0029",
+    "category": "S vs. SCH",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Saale",
+    "word_b": "Schale",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Saale vs Schale"
+  },
+  {
+    "id": "mp_p_0030",
+    "category": "S vs. SCH",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Sonne",
+    "word_b": "Schonne",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Sonne vs Schonne"
+  },
+  {
+    "id": "mp_p_0031",
+    "category": "S vs. SCH",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Sieg",
+    "word_b": "Schieg",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Sieg vs Schieg"
+  },
+  {
+    "id": "mp_p_0032",
+    "category": "S vs. SCH",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Saft",
+    "word_b": "Schaft",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Saft vs Schaft"
+  },
+  {
+    "id": "mp_p_0033",
+    "category": "R vs. L",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Ratte",
+    "word_b": "Latte",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Ratte vs Latte"
+  },
+  {
+    "id": "mp_p_0034",
+    "category": "R vs. L",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Riese",
+    "word_b": "Liese",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Riese vs Liese"
+  },
+  {
+    "id": "mp_p_0035",
+    "category": "R vs. L",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Rolle",
+    "word_b": "Lolle",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Rolle vs Lolle"
+  },
+  {
+    "id": "mp_p_0036",
+    "category": "R vs. L",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Rast",
+    "word_b": "Last",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Rast vs Last"
+  },
+  {
+    "id": "mp_p_0037",
+    "category": "R vs. L",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Rumpf",
+    "word_b": "Lumpf",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Rumpf vs Lumpf"
+  },
+  {
+    "id": "mp_p_0038",
+    "category": "R vs. L",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Rasse",
+    "word_b": "Lasse",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Rasse vs Lasse"
+  },
+  {
+    "id": "mp_p_0039",
+    "category": "M vs. N",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Maus",
+    "word_b": "Haus",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Maus vs Haus"
+  },
+  {
+    "id": "mp_p_0040",
+    "category": "M vs. N",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Kamm",
+    "word_b": "Kann",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Kamm vs Kann"
+  },
+  {
+    "id": "mp_p_0041",
+    "category": "M vs. N",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Mein",
+    "word_b": "Nein",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Mein vs Nein"
+  },
+  {
+    "id": "mp_p_0042",
+    "category": "M vs. N",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Mund",
+    "word_b": "Hund",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Mund vs Hund"
+  },
+  {
+    "id": "mp_p_0043",
+    "category": "M vs. N",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Mutter",
+    "word_b": "Nutte",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Mutter vs Nutte"
+  }
+]

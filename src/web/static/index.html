@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CI-Hörtrainer | Auditives Hörtraining für Cochlea-Implantate</title>
+  <meta name="description" content="Modernes auditives Trainingsprogramm für CI-Träger mit Minimalpaaren, Einsilbern, Zahlen, Sätzen, Störschall-Training und Phonem-Heatmap.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer"></div>
+
+  <div class="app-container">
+    <!-- Header Navbar -->
+    <header class="app-header glass-card">
+      <div class="header-brand">
+        <div class="brand-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2v20M17 5v14M7 9v6M22 8v8M2 11v2"/>
+          </svg>
+        </div>
+        <div>
+          <h1>CI-Hörtrainer</h1>
+          <p class="subtitle">Auditives Hörtraining für Cochlea-Implantat Träger</p>
+        </div>
+      </div>
+      <div class="header-status">
+        <span id="userLevelBadge" class="cat-tag" style="background: rgba(16, 185, 129, 0.2); color: #34D399; border-color: rgba(16, 185, 129, 0.4);">
+          ⭐ Level 1 | 0 XP
+        </span>
+        <div class="status-indicator online"></div>
+        <span id="statusText">System bereit</span>
+      </div>
+    </header>
+
+    <!-- Audio Master Control Panel (Einklappbar) -->
+    <details class="control-panel-collapsible glass-card" id="controlPanelDetails">
+      <summary class="ctrl-summary">
+        <div style="display: flex; align-items: center; gap: 0.6rem; font-weight: 700; font-size: 0.95rem; color: var(--text-main);">
+          <span class="toggle-arrow" style="transition: transform 0.2s ease; display: inline-block; font-size: 0.75rem;">▶</span>
+          <span>⚙️ Audio-Einstellungen & Rauschen</span>
+        </div>
+      </summary>
+
+      <div class="control-panel-grid">
+        <!-- Linke Spalte: Regler (Sliders) -->
+        <div class="ctrl-column">
+          <h3 class="ctrl-col-title">🎚 Regler</h3>
+          
+          <div class="ctrl-group">
+            <label for="volSlider">
+              <span class="label-left"><span class="icon">🔊</span> Wort-Lautstärke</span>
+              <span id="volVal" class="val-badge">90%</span>
+            </label>
+            <input type="range" id="volSlider" min="0" max="1" step="0.05" value="0.9" class="custom-range">
+          </div>
+
+          <div class="ctrl-group">
+            <label for="maskVolSlider">
+              <span class="label-left"><span class="icon">🌊</span> Rausch-Lautstärke</span>
+              <span id="maskVolVal" class="val-badge">40%</span>
+            </label>
+            <input type="range" id="maskVolSlider" min="0" max="1" step="0.05" value="0.4" class="custom-range">
+          </div>
+
+          <div class="ctrl-group">
+            <label for="rateSlider">
+              <span class="label-left"><span class="icon">⏱</span> Sprechtempo</span>
+              <span id="rateVal" class="val-badge">1.0x</span>
+            </label>
+            <input type="range" id="rateSlider" min="0.6" max="1.4" step="0.1" value="1.0" class="custom-range">
+          </div>
+        </div>
+
+        <!-- Rechte Spalte: Schalter & Optionen -->
+        <div class="ctrl-column">
+          <h3 class="ctrl-col-title">🔘 Schalter & Optionen</h3>
+
+          <div class="ctrl-group">
+            <label>
+              <span class="label-left"><span class="icon">🎧</span> Ohr-Kanal Balance</span>
+              <span id="balVal" class="val-badge">Beide Ohren</span>
+            </label>
+            <div class="segmented-control">
+              <button class="seg-btn" data-bal="-1.0">Links (CI)</button>
+              <button class="seg-btn active" data-bal="0.0">Beide</button>
+              <button class="seg-btn" data-bal="1.0">Rechts (CI)</button>
+            </div>
+          </div>
+
+          <div class="ctrl-group">
+            <label for="maskToggle" style="cursor:pointer; width:100%; box-sizing:border-box;">
+              <span class="label-left"><span class="icon">🌊</span> Vertäubung (Gegenohr)</span>
+              <div style="display:flex; align-items:center; gap:0.5rem; flex-shrink:0;">
+                <span id="maskVal" class="val-badge">Nein</span>
+                <span class="switch-toggle" style="flex-shrink:0;">
+                  <input type="checkbox" id="maskToggle">
+                  <span class="slider round"></span>
+                </span>
+              </div>
+            </label>
+          </div>
+
+          <div class="ctrl-group">
+            <label for="autoMicToggle" style="cursor:pointer; width:100%; box-sizing:border-box;">
+              <span class="label-left"><span class="icon">🎙</span> Freisprechen (Auto-Mikrofon)</span>
+              <div style="display:flex; align-items:center; gap:0.5rem; flex-shrink:0;">
+                <span id="autoMicVal" class="val-badge">Ja</span>
+                <span class="switch-toggle" style="flex-shrink:0;">
+                  <input type="checkbox" id="autoMicToggle" checked>
+                  <span class="slider round"></span>
+                </span>
+              </div>
+            </label>
+          </div>
+
+          <div class="ctrl-group">
+            <label for="voiceSelect">
+              <span class="label-left"><span class="icon">🗣</span> Sprecher-Stimme</span>
+            </label>
+            <select id="voiceSelect" class="custom-select" style="width: 100%; margin-top: 0.2rem; text-align: left; text-align-last: left;">
+              <option value="Anna">👩 Anna (Weiblich - Deutsch)</option>
+              <option value="Eddy">👨 Eddy (Männlich - Deutsch)</option>
+              <option value="Flo">👨 Flo (Männlich - Deutsch)</option>
+              <option value="Rocko">👨 Rocko (Männlich - Deutsch)</option>
+              <option value="Sandy">👩 Sandy (Weiblich - Deutsch)</option>
+              <option value="Shelley">👩 Shelley (Weiblich - Deutsch)</option>
+              <option value="Grandpa">👴 Grandpa (Senior Männlich)</option>
+              <option value="Grandma">👵 Grandma (Senior Weiblich)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Audio Visualizer Canvas -->
+    <section class="visualizer-section glass-card">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.2rem;">
+        <span style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">🌊 Live Audio-Wellenform</span>
+      </div>
+      <canvas id="waveformCanvas" width="900" height="40"></canvas>
+    </section>
+
+    <!-- Main Navigation Tabs -->
+    <nav class="nav-tabs">
+      <button class="tab-btn active" data-tab="mp">
+        <span class="tab-icon">🎭</span> Minimalpaare
+      </button>
+      <button class="tab-btn" data-tab="es">
+        <span class="tab-icon">🔤</span> Einsilber
+      </button>
+      <button class="tab-btn" data-tab="num">
+        <span class="tab-icon">🔢</span> Zahlen
+      </button>
+      <button class="tab-btn" data-tab="sent">
+        <span class="tab-icon">💬</span> Satzverständnis
+      </button>
+      <button class="tab-btn" data-tab="noise">
+        <span class="tab-icon">🌊</span> Störschall
+      </button>
+      <button class="tab-btn" data-tab="memory">
+        <span class="tab-icon">🧠</span> Auditiv. Gedächtnis
+      </button>
+      <button class="tab-btn" data-tab="stats">
+        <span class="tab-icon">📊</span> Statistik & Heatmap
+      </button>
+      <button class="tab-btn" data-tab="editor">
+        <span class="tab-icon">✏️</span> Editor
+      </button>
+    </nav>
+
+    <!-- Tab 1: Minimalpaare -->
+    <main id="tab-mp" class="tab-content active">
+      <div class="glass-card exercise-box">
+        <div class="box-header" style="flex-wrap: wrap; gap: 0.8rem; align-items: center; justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 0.6rem;">
+            <label for="mpCategorySelect" style="font-weight: 600; font-size: 0.9rem; color: var(--primary);">🎯 Fokus-Buchstabe:</label>
+            <select id="mpCategorySelect" class="custom-select">
+              <option value="ALL">🌟 Alle Kategorien (Zufall)</option>
+              <option value="RHYMES">🔥 Reim-Gruppen (Mehrfachauswahl: Mut, Glut, Flut, Gut...)</option>
+              <option value="P vs. B">🎯 P vs. B (Plosiv stimmlos/stimmhaft)</option>
+              <option value="T vs. D">🎯 T vs. D (Alveolar Plosiv)</option>
+              <option value="K vs. G">🎯 K vs. G (Velar Plosiv)</option>
+              <option value="S vs. SCH">🎯 S vs. SCH (Zischlaute)</option>
+              <option value="M vs. N">🎯 M vs. N (Nasale)</option>
+              <option value="F vs. W">🎯 F vs. W (Frikative)</option>
+              <option value="R vs. L">🎯 R vs. L (Liquidae / Schwinglaute)</option>
+              <option value="CH1 vs. CH2">🎯 CH (Ich-Laut vs. Ach-Laut)</option>
+              <option value="H vs. K/G">🎯 H vs. K/G (Hauchlaryngale)</option>
+              <option value="PF vs. F/P">🎯 PF vs. F/P (Affrikaten)</option>
+              <option value="Z vs. S">🎯 Z vs. S (Affrikate vs. Zischlaut)</option>
+              <option value="Vokale (A / E / I / O / U)">🎯 Vokale (A, E, I, O, U)</option>
+              <option value="Diphthonge (EI / AU / EU)">🎯 Diphthonge (EI, AU, EU)</option>
+              <option value="Auslaut: T vs. K">🎯 Auslaut-Verhärtung (Endkonsonanten)</option>
+            </select>
+          </div>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+            <span id="mpCategory" class="cat-tag">Kategorie: Konsonanten</span>
+            <span id="mpSource" class="cat-tag" style="background: rgba(147, 51, 234, 0.15); color: #C084FC; border-color: rgba(147, 51, 234, 0.3);">🏛 Marburger Minimalpaar-Katalog</span>
+          </div>
+        </div>
+        <p id="mpHint" class="hint-text" style="margin-top:0.6rem;">Höre das Wort aufmerksam an und klicke auf die richtige Karte.</p>
+
+        <div class="action-bar">
+          <button id="mpPlayBtn" class="btn btn-primary btn-glow">
+            <span class="icon">▶</span> Audio abspielen
+          </button>
+          <button id="mpNextBtn" class="btn btn-secondary">Nächste Übung ➔</button>
+          <label for="mpAutoStartCheck" class="autostart-pill" title="Automatisch abspielen bei nächster Übung">
+            <input type="checkbox" id="mpAutoStartCheck" class="auto-start-check">
+            <span>⚡ Autostart</span>
+          </label>
+        </div>
+
+        <div class="cards-grid"></div>
+
+        <div id="mpFeedback" class="feedback-banner hidden"></div>
+      </div>
+    </main>
+
+    <!-- Tab 2: Einsilber -->
+    <main id="tab-es" class="tab-content">
+      <div class="glass-card exercise-box">
+        <div class="box-header" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+            <span id="esCategory" class="cat-tag">Kategorie: Einsilber</span>
+            <span id="esSource" class="cat-tag" style="background: rgba(147, 51, 234, 0.15); color: #C084FC; border-color: rgba(147, 51, 234, 0.3);">🏛 Freiburger Einsilber-Test (DIN 45621)</span>
+          </div>
+          <p class="hint-text">Höre das gesprochene Wort und tippe es ein oder sprich es nach.</p>
+        </div>
+
+        <div class="action-bar">
+          <button id="esPlayBtn" class="btn btn-primary btn-glow">
+            <span class="icon">▶</span> Einsilber abspielen
+          </button>
+          <button id="esNextBtn" class="btn btn-secondary">Nächster Einsilber ➔</button>
+          <label for="esAutoStartCheck" class="autostart-pill" title="Automatisch abspielen bei nächster Übung">
+            <input type="checkbox" id="esAutoStartCheck" class="auto-start-check">
+            <span>⚡ Autostart</span>
+          </label>
+        </div>
+
+        <div class="input-section">
+          <div class="input-wrapper">
+            <input type="text" id="esInput" placeholder="Gehörtes Wort eingeben..." autocomplete="off">
+            <button id="esMicBtn" class="btn btn-icon btn-mic" title="Mit Mikrofon nachsprechen">
+              🎙 Nachsprechen
+            </button>
+          </div>
+          <button id="esCheckBtn" class="btn btn-success">Prüfen</button>
+        </div>
+
+        <div id="esFeedback" class="feedback-banner hidden"></div>
+      </div>
+    </main>
+
+    <!-- Tab 3: Zahlen -->
+    <main id="tab-num" class="tab-content">
+      <div class="glass-card exercise-box">
+        <div class="box-header" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+            <span id="numCategory" class="cat-tag">Kategorie: Zahlen & Uhrzeiten</span>
+            <span id="numSource" class="cat-tag" style="background: rgba(147, 51, 234, 0.15); color: #C084FC; border-color: rgba(147, 51, 234, 0.3);">🏛 Audiologischer Zahlen- & Uhrzeitentest</span>
+          </div>
+          <p class="hint-text">Höre die gesprochene Zahl, Uhrzeit oder den Betrag und trage sie ein.</p>
+        </div>
+
+        <div class="action-bar">
+          <button id="numPlayBtn" class="btn btn-primary btn-glow">
+            <span class="icon">▶</span> Zahl abspielen
+          </button>
+          <button id="numNextBtn" class="btn btn-secondary">Nächste Zahl ➔</button>
+          <label for="numAutoStartCheck" class="autostart-pill" title="Automatisch abspielen bei nächster Übung">
+            <input type="checkbox" id="numAutoStartCheck" class="auto-start-check">
+            <span>⚡ Autostart</span>
+          </label>
+        </div>
+
+        <div class="input-section">
+          <div class="input-wrapper">
+            <input type="text" id="numInput" placeholder="z.B. 14:30 oder 12,50 €..." autocomplete="off">
+            <button id="numMicBtn" class="btn btn-icon btn-mic" title="Zahl nachsprechen">
+              🎙 Nachsprechen
+            </button>
+          </div>
+          <button id="numCheckBtn" class="btn btn-success">Prüfen</button>
+        </div>
+
+        <div id="numFeedback" class="feedback-banner hidden"></div>
+      </div>
+    </main>
+
+    <!-- Tab 4: Satzverständnis & Kontext-Hören -->
+    <main id="tab-sent" class="tab-content">
+      <div class="glass-card exercise-box">
+        <div class="box-header">
+          <span id="sentCategory" class="cat-tag">Kategorie: Alltagssätze</span>
+          <p class="hint-text">Höre den ganzen Satz und wähle das herausgehörte Schlüsselwort.</p>
+        </div>
+
+        <div class="action-bar">
+          <button id="sentPlayBtn" class="btn btn-primary btn-glow">
+            <span class="icon">▶</span> Satz abspielen
+          </button>
+          <button id="sentNextBtn" class="btn btn-secondary">Nächster Satz ➔</button>
+          <label for="sentAutoStartCheck" class="autostart-pill" title="Automatisch abspielen bei nächster Übung">
+            <input type="checkbox" id="sentAutoStartCheck" class="auto-start-check">
+            <span>⚡ Autostart</span>
+          </label>
+        </div>
+
+        <div style="background: rgba(15, 23, 42, 0.6); padding: 1.2rem; border-radius: 14px; text-align: left; border: 1px solid var(--panel-border);">
+          <span style="font-size: 1.2rem; color: var(--text-muted);">Satzkontext:</span>
+          <h3 id="sentDisplay" style="font-size: 1.6rem; color: white; margin-top: 0.4rem;">"..."</h3>
+        </div>
+
+        <div id="sentCardsGrid" class="cards-grid" style="margin-top: 1rem;"></div>
+
+        <div id="sentFeedback" class="feedback-banner hidden"></div>
+      </div>
+    </main>
+
+    <!-- Tab 5: Störschall-Training (Hören im Lärm) -->
+    <main id="tab-noise" class="tab-content">
+      <div class="glass-card exercise-box">
+        <div class="box-header" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; align-items:center;">
+          <div style="display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap;">
+            <div style="display:flex; align-items:center; gap:0.4rem;">
+              <label for="noiseTypeSelect" style="font-weight:600; font-size:0.85rem; color:var(--primary);">🏙️ Kulisse:</label>
+              <select id="noiseTypeSelect" class="custom-select">
+                <option value="restaurant" selected>☕ Café & Restaurant (Gläserklirren & Gemurmel)</option>
+                <option value="traffic">🚗 Straßenverkehr (Motoren & Lärm)</option>
+                <option value="station">🚉 Bahnhof & ÖPNV (Durchsagen & Gleislärm)</option>
+                <option value="chatter">🗣️ Stimmengewirr (Party / Babble)</option>
+              </select>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.4rem;">
+              <label for="noiseLevelSelect" style="font-weight:600; font-size:0.85rem; color:var(--primary);">🎯 SNR-Pegel:</label>
+              <select id="noiseLevelSelect" class="custom-select">
+                <option value="easy">🟢 Leicht (+10 dB)</option>
+                <option value="medium" selected>🟡 Mittel (+5 dB)</option>
+                <option value="hard">🔴 Schwer (0 dB)</option>
+              </select>
+            </div>
+          </div>
+          <span id="noiseCategory" class="cat-tag">Kategorie: Hören im Lärm</span>
+        </div>
+        <p id="noiseHint" class="hint-text" style="margin-top:0.6rem;">
+          Höre das Wort trotz Hintergrundgeräusch heraus und tippe es ein.
+        </p>
+
+        <div class="action-bar">
+          <button id="noisePlayBtn" class="btn btn-primary btn-glow">
+            <span class="icon">▶</span> Wort mit Störschall abspielen
+          </button>
+          <button id="noiseStopBtn" class="btn btn-danger" style="padding: 0.5rem 0.9rem; font-size: 0.88rem;">
+            🛑 Störschall stoppen
+          </button>
+          <button id="noiseNextBtn" class="btn btn-secondary">Nächstes Wort ➔</button>
+          <label for="noiseAutoStartCheck" class="autostart-pill" title="Automatisch abspielen">
+            <input type="checkbox" id="noiseAutoStartCheck" class="auto-start-check">
+            <span>⚡ Autostart</span>
+          </label>
+        </div>
+
+        <div class="input-section">
+          <div class="input-wrapper">
+            <input type="text" id="noiseInput" placeholder="Gehörtes Wort im Lärm eingeben..." autocomplete="off">
+            <button id="noiseMicBtn" class="btn btn-icon btn-mic" title="Nachsprechen">
+              🎙 Nachsprechen
+            </button>
+          </div>
+          <button id="noiseCheckBtn" class="btn btn-success">Prüfen</button>
+        </div>
+
+        <div id="noiseFeedback" class="feedback-banner hidden"></div>
+      </div>
+    </main>
+
+    <!-- Tab 6: Auditives Gedächtnis (Sequenz-Gedächtnis) -->
+    <main id="tab-memory" class="tab-content">
+      <div class="glass-card exercise-box">
+        <div class="box-header" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; align-items:center;">
+          <div style="display:flex; align-items:center; gap:0.6rem;">
+            <label for="memorySpanSelect" style="font-weight:600; font-size:0.9rem; color:var(--primary);">🧠 Merkspanne (Anzahl Wörter):</label>
+            <select id="memorySpanSelect" class="custom-select">
+              <option value="3">3 Wörter (Einsteiger)</option>
+              <option value="4" selected>4 Wörter (Fortgeschritten)</option>
+              <option value="5">5 Wörter (Profi)</option>
+            </select>
+          </div>
+          <span id="memoryCategory" class="cat-tag">Kategorie: Sequenz-Gedächtnis</span>
+        </div>
+        <p class="hint-text" style="margin-top:0.6rem;">
+          Höre die vorgesprochene Wortsequenz und klicke die Wörter unten in der exakt richtigen Reihenfolge an!
+        </p>
+
+        <div class="action-bar">
+          <button id="memoryPlayBtn" class="btn btn-primary btn-glow">
+            <span class="icon">▶</span> Sequenz vorlesen
+          </button>
+          <button id="memoryNextBtn" class="btn btn-secondary">Nächste Sequenz ➔</button>
+        </div>
+
+        <!-- Ausgewählte Sequenz-Slot-Anzeige -->
+        <div style="margin: 1.2rem 0; padding: 1.1rem; background: rgba(15, 23, 42, 0.6); border: 1px solid var(--panel-border); border-radius: 14px;">
+          <div style="font-size: 0.82rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.6rem;">
+            Deine gewählte Reihenfolge:
+          </div>
+          <div id="memorySelectedSlots" style="display: flex; gap: 0.8rem; flex-wrap: wrap; min-height: 50px; align-items: center;"></div>
+        </div>
+
+        <!-- Wort-Pool (Karten zum Anklicken) -->
+        <div style="font-size: 0.82rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.5rem;">
+          Wort-Pool (Klicke zum Auswählen):
+        </div>
+        <div id="memoryPoolGrid" class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.8rem;"></div>
+
+        <div style="display:flex; gap:0.8rem; margin-top:1.2rem;">
+          <button id="memoryCheckBtn" class="btn btn-success" style="flex:1;">Prüfen</button>
+          <button id="memoryResetBtn" class="btn btn-secondary">Auswahl zurücksetzen ↺</button>
+        </div>
+
+        <div id="memoryFeedback" class="feedback-banner hidden"></div>
+      </div>
+    </main>
+
+    <!-- Tab 5: Statistik & Phonem-Heatmap -->
+    <main id="tab-stats" class="tab-content">
+      <div class="glass-card exercise-box">
+        <h2>Fortschritt & Phonem-Heatmap</h2>
+        
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-val" id="statTotal">0</span>
+            <span class="metric-lbl">Gesamtübungen</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-val" id="statCorrect">0</span>
+            <span class="metric-lbl">Richtig</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-val" id="statAccuracy">0%</span>
+            <span class="metric-lbl">Trefferquote</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+          <h3>🔥 Phonem-Analyse & Lautkontraste (Heatmap)</h3>
+          <p class="hint-text" style="font-size:0.85rem; margin-bottom:0.8rem;">Zeigt deine Erkennungsleistung für spezifische Sprachlaute (Grün = 80%+, Gelb = 60-80%, Rot = unter 60%).</p>
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.8rem;" id="phonemHeatmapGrid"></div>
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+          <h3>Leistung nach Übungsmodulen</h3>
+          <div id="moduleStatsList"></div>
+        </div>
+
+        <div class="footer-bar" style="margin-top: 1.5rem; display: flex; gap: 0.8rem; flex-wrap: wrap;">
+          <button id="refreshStatsBtn" class="btn btn-secondary">Statistik aktualisieren 🔄</button>
+          <button id="resetStatsBtn" class="btn btn-danger">Statistik zurücksetzen 🗑️</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Tab 6: Übungs-Editor -->
+    <main id="tab-editor" class="tab-content">
+      <div class="glass-card exercise-box">
+
+        <!-- ── Editor Header ── -->
+        <div class="editor-header">
+          <div>
+            <h2>✏️ Übungs-Editor</h2>
+            <p class="hint-text">Übungen verwalten, suchen, neu anlegen, bearbeiten und löschen.</p>
+          </div>
+          <div class="segmented-control">
+            <button id="editorViewListBtn" class="seg-btn active">📋 Liste</button>
+            <button id="editorViewFormBtn" class="seg-btn">➕ Neue Übung</button>
+          </div>
+        </div>
+
+        <!-- ══ 1. LISTENANSICHT ══ -->
+        <div id="editorListView">
+
+          <!-- Filter-Tabs + Suche -->
+          <div class="editor-toolbar">
+            <div class="editor-filter-tabs">
+              <button class="filter-tab-btn active" data-view="minimal_pairs" id="ftab_minimal_pairs">
+                🎭 Minimalpaare <span class="page-info" id="fcount_minimal_pairs"></span>
+              </button>
+              <button class="filter-tab-btn" data-view="monosyllables" id="ftab_monosyllables">
+                🔤 Einsilber <span class="page-info" id="fcount_monosyllables"></span>
+              </button>
+              <button class="filter-tab-btn" data-view="numbers" id="ftab_numbers">
+                🔢 Zahlen <span class="page-info" id="fcount_numbers"></span>
+              </button>
+              <button class="filter-tab-btn" data-view="sentences" id="ftab_sentences">
+                💬 Sätze <span class="page-info" id="fcount_sentences"></span>
+              </button>
+            </div>
+            <div class="editor-search-bar">
+              <input type="text" id="editorSearchInput" placeholder="🔍 Übung suchen..." class="custom-input">
+              <button class="sort-btn active" id="sortAZ" title="A–Z">⇅ A–Z</button>
+              <button class="sort-btn" id="sortZA" title="Z–A">⇅ Z–A</button>
+              <button class="sort-btn" id="sortCat" title="Kategorie">🏷 Kat.</button>
+              <button id="newExerciseBtn" class="btn btn-success">➕ Neu</button>
+            </div>
+          </div>
+
+          <!-- Übungsliste -->
+          <div id="editorExerciseList" class="editor-list-scroll"></div>
+
+          <!-- Pagination -->
+          <div id="editorPagination" class="editor-pagination"></div>
+
+        </div><!-- /#editorListView -->
+
+        <!-- ══ 2. FORMULARANSICHT ══ -->
+        <div id="editorFormView" class="hidden">
+
+          <!-- Form Header -->
+          <div class="editor-form-header">
+            <h3 id="formTitle">➕ Neue Übung hinzufügen</h3>
+            <button id="cancelFormBtn" class="btn btn-secondary btn-sm">✕ Abbrechen</button>
+          </div>
+
+          <div class="editor-form-body">
+
+            <!-- Zeile 1: Typ + Kategorie + Quelle -->
+            <div class="form-row-3">
+              <div class="form-field">
+                <label for="addTypeSelect">Übungstyp</label>
+                <select id="addTypeSelect" class="custom-input">
+                  <option value="minimal_pairs">🎭 Minimalpaare</option>
+                  <option value="monosyllables">🔤 Einsilber</option>
+                  <option value="numbers">🔢 Zahlen &amp; Uhrzeiten</option>
+                  <option value="sentences">💬 Satzverständnis</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="addCategory">Kategorie</label>
+                <input type="text" id="addCategory" placeholder="z.B. P vs. B" class="custom-input">
+              </div>
+              <div class="form-field">
+                <label for="addSource">Quelle</label>
+                <input type="text" id="addSource" placeholder="z.B. Eigenes Material" class="custom-input">
+              </div>
+            </div>
+
+            <!-- ── Minimalpaare ── -->
+            <div id="formMP" class="type-fields">
+              <div class="form-section-title">🎭 Minimalpaar-Felder</div>
+              <div class="form-row-2">
+                <div class="form-field">
+                  <label for="addWordA">Wort A</label>
+                  <input type="text" id="addWordA" placeholder="z.B. Pass" class="custom-input">
+                </div>
+                <div class="form-field">
+                  <label for="addWordB">Wort B</label>
+                  <input type="text" id="addWordB" placeholder="z.B. Bass" class="custom-input">
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="addMPOptions">ODER Mehrfach-Optionen (Komma-getrennt)</label>
+                <input type="text" id="addMPOptions" placeholder="z.B. Mut, Glut, Flut, Gut, Hut, Wut" class="custom-input">
+              </div>
+              <div class="form-field">
+                <label for="addHint">Hinweis / Übungstipp</label>
+                <input type="text" id="addHint" placeholder="z.B. Plosiv P (stimmlos) vs. B (stimmhaft)" class="custom-input">
+              </div>
+            </div>
+
+            <!-- ── Einsilber ── -->
+            <div id="formES" class="type-fields hidden">
+              <div class="form-section-title">🔤 Einsilber-Felder</div>
+              <div class="form-field">
+                <label for="addESWord">Einsilbiges Wort</label>
+                <input type="text" id="addESWord" placeholder="z.B. Baum" class="custom-input">
+              </div>
+            </div>
+
+            <!-- ── Zahlen ── -->
+            <div id="formNum" class="type-fields hidden">
+              <div class="form-section-title">🔢 Zahlen-Felder</div>
+              <div class="form-row-2">
+                <div class="form-field">
+                  <label for="addNumVal">Wert (Kurzform)</label>
+                  <input type="text" id="addNumVal" placeholder="z.B. 14:30" class="custom-input">
+                </div>
+                <div class="form-field">
+                  <label for="addNumSpoken">Gesprochener Text (TTS)</label>
+                  <input type="text" id="addNumSpoken" placeholder="z.B. Vierzehn Uhr dreißig" class="custom-input">
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Sätze ── -->
+            <div id="formSent" class="type-fields hidden">
+              <div class="form-section-title">💬 Satz-Felder</div>
+              <div class="form-field">
+                <label for="addSentText">Vollständiger Satz</label>
+                <input type="text" id="addSentText" placeholder="z.B. Der Hund bellt im Garten." class="custom-input">
+              </div>
+              <div class="form-row-2">
+                <div class="form-field">
+                  <label for="addSentTarget">Zielwort im Satz</label>
+                  <input type="text" id="addSentTarget" placeholder="z.B. Hund" class="custom-input">
+                </div>
+                <div class="form-field">
+                  <label for="addSentOptions">Auswahloptionen (Komma-getrennt)</label>
+                  <input type="text" id="addSentOptions" placeholder="z.B. Hund, Mund, Fund" class="custom-input">
+                </div>
+              </div>
+            </div><!-- /#formSent -->
+
+            <!-- Aktionsleiste -->
+            <div class="form-actions">
+              <button id="addItemBtn" class="btn btn-success">💾 Übung speichern</button>
+              <button id="cancelItemBtn" class="btn btn-secondary">✕ Abbrechen</button>
+            </div>
+
+          </div><!-- /.editor-form-body -->
+        </div><!-- /#editorFormView -->
+
+      </div><!-- /.glass-card -->
+    </main>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
