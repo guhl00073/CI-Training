@@ -344,7 +344,7 @@ function nextMPItem(userTriggered = false) {
     pool = exercises.minimal_pairs.filter(item => item.options || (item.category && item.category.includes("Reim")));
     if (pool.length === 0) pool = exercises.minimal_pairs;
   } else if (selectedMPCategory !== "ALL") {
-    pool = exercises.minimal_pairs.filter(item => item.category === selectedMPCategory);
+    pool = exercises.minimal_pairs.filter(item => item.category === selectedMPCategory || (item.category && item.category.includes(selectedMPCategory)));
     if (pool.length === 0) pool = exercises.minimal_pairs;
   }
 
