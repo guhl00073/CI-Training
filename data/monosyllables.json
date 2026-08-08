@@ -1,0 +1,1647 @@
+[
+  {
+    "id": "es_0001",
+    "word": "Baum",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0002",
+    "word": "Haus",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0003",
+    "word": "Hund",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0004",
+    "word": "Katze",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0005",
+    "word": "Mond",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0006",
+    "word": "Brot",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0007",
+    "word": "Fisch",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0008",
+    "word": "Zug",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0009",
+    "word": "Buch",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0010",
+    "word": "Schiff",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0011",
+    "word": "Tisch",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0012",
+    "word": "Stuhl",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0013",
+    "word": "Bett",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0014",
+    "word": "Glas",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0015",
+    "word": "Tasse",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0016",
+    "word": "Stern",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0017",
+    "word": "Ring",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0018",
+    "word": "Schuh",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0019",
+    "word": "Strumpf",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Schwer"
+  },
+  {
+    "id": "es_0020",
+    "word": "Zwerg",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0021",
+    "word": "Kopf",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0022",
+    "word": "Arm",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0023",
+    "word": "Bein",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0024",
+    "word": "Hand",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0025",
+    "word": "Mund",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0026",
+    "word": "Zahn",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0027",
+    "word": "Herz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0028",
+    "word": "Knie",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0029",
+    "word": "Hut",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0030",
+    "word": "Hemd",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0031",
+    "word": "Dach",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0032",
+    "word": "Pass",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0033",
+    "word": "Tor",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0034",
+    "word": "Kamm",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0035",
+    "word": "Kuh",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0036",
+    "word": "Reis",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0037",
+    "word": "Wind",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0038",
+    "word": "Wald",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0039",
+    "word": "Feld",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0040",
+    "word": "Meer",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0041",
+    "word": "See",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0042",
+    "word": "Berg",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0043",
+    "word": "Tal",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0044",
+    "word": "Stein",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0045",
+    "word": "Sand",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0046",
+    "word": "Schnee",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0047",
+    "word": "Eis",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0048",
+    "word": "Regen",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0049",
+    "word": "Blitz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0050",
+    "word": "Donner",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0051",
+    "word": "Licht",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0052",
+    "word": "Schatten",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Schwer"
+  },
+  {
+    "id": "es_0053",
+    "word": "Feuer",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0054",
+    "word": "Rauch",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0055",
+    "word": "Asche",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0056",
+    "word": "Luft",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0057",
+    "word": "Wolke",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0058",
+    "word": "Vogel",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0059",
+    "word": "Pferd",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0060",
+    "word": "Schaf",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0061",
+    "word": "Ziege",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0062",
+    "word": "Schwein",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Schwer"
+  },
+  {
+    "id": "es_0063",
+    "word": "Gans",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0064",
+    "word": "Ente",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0065",
+    "word": "Hahn",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0066",
+    "word": "Huhn",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0067",
+    "word": "Wolf",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0068",
+    "word": "Bär",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0069",
+    "word": "Fuchs",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0070",
+    "word": "Hase",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0071",
+    "word": "Reh",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0072",
+    "word": "Hirsch",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0073",
+    "word": "Maus",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0074",
+    "word": "Ratte",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0075",
+    "word": "Frosch",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0076",
+    "word": "Schlange",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Schwer"
+  },
+  {
+    "id": "es_0077",
+    "word": "Fliege",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0078",
+    "word": "Mücke",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0079",
+    "word": "Wurm",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0080",
+    "word": "Käfer",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0081",
+    "word": "Spinne",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0082",
+    "word": "Krebs",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0083",
+    "word": "Haifisch",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Schwer"
+  },
+  {
+    "id": "es_0084",
+    "word": "Walfisch",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Schwer"
+  },
+  {
+    "id": "es_0085",
+    "word": "Robbe",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0086",
+    "word": "Eule",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0087",
+    "word": "Adler",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0088",
+    "word": "Falke",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0089",
+    "word": "Rabe",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0090",
+    "word": "Taube",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0091",
+    "word": "Spatz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0092",
+    "word": "Amsel",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0093",
+    "word": "Drossel",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Schwer"
+  },
+  {
+    "id": "es_0094",
+    "word": "Fink",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0095",
+    "word": "Star",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0096",
+    "word": "Storch",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0097",
+    "word": "Kranich",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Schwer"
+  },
+  {
+    "id": "es_0098",
+    "word": "Schwan",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0099",
+    "word": "Kuckuck",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Schwer"
+  },
+  {
+    "id": "es_0100",
+    "word": "Specht",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0101",
+    "word": "Bock",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0102",
+    "word": "Dock",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0103",
+    "word": "Rock",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0104",
+    "word": "Stock",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0105",
+    "word": "Socke",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0106",
+    "word": "Kanne",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0107",
+    "word": "Panne",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0108",
+    "word": "Tanne",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0109",
+    "word": "Wanne",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0110",
+    "word": "Wand",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0111",
+    "word": "Band",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0112",
+    "word": "Land",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0113",
+    "word": "Pfand",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0114",
+    "word": "Pein",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0115",
+    "word": "Wein",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0116",
+    "word": "Fein",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0117",
+    "word": "Deich",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0118",
+    "word": "Teich",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0119",
+    "word": "Reich",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0120",
+    "word": "Tauch",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0121",
+    "word": "Kass",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0122",
+    "word": "Gass",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0123",
+    "word": "Kuss",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0124",
+    "word": "Guss",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0125",
+    "word": "Kann",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0126",
+    "word": "Bass",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0127",
+    "word": "Dasse",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0128",
+    "word": "Kunst",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0129",
+    "word": "Gunst",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0130",
+    "word": "Sonne",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0131",
+    "word": "Wonne",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0132",
+    "word": "Schiene",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Schwer"
+  },
+  {
+    "id": "es_0133",
+    "word": "Biene",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0134",
+    "word": "Pfiff",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0135",
+    "word": "Saale",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0136",
+    "word": "Schale",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0137",
+    "word": "Mein",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0138",
+    "word": "Nein",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0139",
+    "word": "Fast",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0140",
+    "word": "Wast",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0141",
+    "word": "Welt",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0142",
+    "word": "Latte",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0143",
+    "word": "Riese",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0144",
+    "word": "Liese",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0145",
+    "word": "Rolle",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0146",
+    "word": "Lolle",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0147",
+    "word": "Rast",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0148",
+    "word": "Last",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0149",
+    "word": "Zaun",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0150",
+    "word": "Zelt",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0151",
+    "word": "Sinn",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0152",
+    "word": "Zinn",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0153",
+    "word": "Heis",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0154",
+    "word": "Beim",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0155",
+    "word": "Bieten",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0156",
+    "word": "Beten",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0157",
+    "word": "Rot",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0158",
+    "word": "Fluss",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0159",
+    "word": "Floss",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0160",
+    "word": "Huck",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0161",
+    "word": "Blick",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0162",
+    "word": "Strand",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0163",
+    "word": "Klang",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0164",
+    "word": "Gesang",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0165",
+    "word": "Drang",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0166",
+    "word": "Zwang",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0167",
+    "word": "Sprung",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0168",
+    "word": "Schwung",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Schwer"
+  },
+  {
+    "id": "es_0169",
+    "word": "Prunk",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0170",
+    "word": "Trunk",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0171",
+    "word": "Blatt",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0172",
+    "word": "Gatt",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0173",
+    "word": "Glatt",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0174",
+    "word": "Platt",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0175",
+    "word": "Matt",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0176",
+    "word": "Satt",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0177",
+    "word": "Radt",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0178",
+    "word": "Stadt",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0179",
+    "word": "Kraft",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0180",
+    "word": "Saft",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0181",
+    "word": "Haft",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0182",
+    "word": "Raft",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0183",
+    "word": "Schaft",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0184",
+    "word": "Kluft",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0185",
+    "word": "Duft",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0186",
+    "word": "Ruft",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0187",
+    "word": "Krust",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0188",
+    "word": "Brust",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0189",
+    "word": "Lust",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0190",
+    "word": "Frust",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0191",
+    "word": "Dunst",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0192",
+    "word": "Wurst",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0193",
+    "word": "Durst",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0194",
+    "word": "Gurt",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0195",
+    "word": "Spurt",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0196",
+    "word": "Kurz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0197",
+    "word": "Wurz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0198",
+    "word": "Stolz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0199",
+    "word": "Holz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0200",
+    "word": "Bolz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0201",
+    "word": "Salz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0202",
+    "word": "Pilz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0203",
+    "word": "Filz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0204",
+    "word": "Milz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0205",
+    "word": "Pils",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0206",
+    "word": "Pelz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0207",
+    "word": "Fels",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0208",
+    "word": "Glanz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0209",
+    "word": "Kranz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0210",
+    "word": "Tanz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0211",
+    "word": "Franz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0212",
+    "word": "Ganz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0213",
+    "word": "Wanz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0214",
+    "word": "Bilanz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0215",
+    "word": "Schatz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0216",
+    "word": "Platz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0217",
+    "word": "Klotz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0218",
+    "word": "Trotz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0219",
+    "word": "Sitz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0220",
+    "word": "Witz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0221",
+    "word": "Spitz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0222",
+    "word": "Ritz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Einfach"
+  },
+  {
+    "id": "es_0223",
+    "word": "Hitze",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0224",
+    "word": "Mütze",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0225",
+    "word": "Pfütze",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0226",
+    "word": "Schütz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0227",
+    "word": "Stütz",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0228",
+    "word": "Nutzen",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0229",
+    "word": "Putzen",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0230",
+    "word": "Kratzen",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Schwer"
+  },
+  {
+    "id": "es_0231",
+    "word": "Katzen",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0232",
+    "word": "Spatzen",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Schwer"
+  },
+  {
+    "id": "es_0233",
+    "word": "Matzen",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0234",
+    "word": "Hatzen",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "es_0235",
+    "word": "Pratzen",
+    "category": "Einsilber",
+    "source": "Freiburger Einsilber-Test (DIN 45621)",
+    "difficulty": "Schwer"
+  }
+]
