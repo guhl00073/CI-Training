@@ -1168,4 +1168,18 @@ kbd {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+.card-ipa {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #C084FC;
+  background: rgba(192, 132, 252, 0.12);
+  border: 1px solid rgba(192, 132, 252, 0.25);
+  padding: 0.15rem 0.55rem;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+}
+
+
 

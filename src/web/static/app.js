@@ -271,6 +271,43 @@ function initTabs() {
   document.getElementById("esNextBtn").addEventListener("click", () => nextESItem(true));
   document.getElementById("esInput").addEventListener("keypress", (e) => { if (e.key === "Enter") checkESAnswer(); });
 
+  const esModeSel = document.getElementById("esModeSelect");
+  const esListSel = document.getElementById("esTestListSelect");
+  const esListContainer = document.getElementById("esListSelectorContainer");
+
+  if (esModeSel) {
+    esModeSel.addEventListener("change", (e) => {
+      esMode = e.target.value;
+      if (esMode === "test_list") {
+        if (esListContainer) esListContainer.style.display = "flex";
+        startFreiburgerTestList(parseInt(esListSel ? esListSel.value : 1));
+      } else {
+        if (esListContainer) esListContainer.style.display = "none";
+        const banner = document.getElementById("esTestProgressBanner");
+        if (banner) banner.style.display = "none";
+        const resCard = document.getElementById("esTestResultCard");
+        if (resCard) resCard.classList.add("hidden");
+        nextESItem(true);
+      }
+    });
+  }
+
+  if (esListSel) {
+    esListSel.addEventListener("change", (e) => {
+      startFreiburgerTestList(parseInt(e.target.value));
+    });
+  }
+
+  document.getElementById("esTestRestartBtn")?.addEventListener("click", () => {
+    startFreiburgerTestList(currentTestListNum);
+  });
+
+  document.getElementById("esTestNextListBtn")?.addEventListener("click", () => {
+    const nextNum = currentTestListNum + 1;
+    if (esListSel) esListSel.value = nextNum.toString();
+    startFreiburgerTestList(nextNum);
+  });
+
   document.getElementById("numPlayBtn").addEventListener("click", playNumAudio);
   document.getElementById("numCheckBtn").addEventListener("click", checkNumAnswer);
   document.getElementById("numNextBtn").addEventListener("click", () => nextNumItem(true));
@@ -389,6 +426,23 @@ function nextMPItem(userTriggered = false) {
   const cardsContainer = document.querySelector("#tab-mp .cards-grid");
   cardsContainer.innerHTML = "";
 
+function getIPASimple(word) {
+  if (!word) return "";
+  const norm = String(word).toLowerCase().trim();
+  const dict = {
+    "pass": "[pas]", "bass": "[bas]", "tasse": "['tasə]", "dasse": "['dasə]",
+    "haus": "[haʊ̯s]", "maus": "[maʊ̯s]", "kamm": "[kam]", "komm": "[kɔm]",
+    "bus": "[bʊs]", "dach": "[dax]", "fisch": "[fɪʃ]", "brot": "[bʁoːt]",
+    "strand": "[ʃtʁant]", "herbst": "[hɛʁpst]", "katze": "['katsə]", "mond": "[moːnt]",
+    "zug": "[tsuːk]", "buch": "[buːx]", "schiff": "[ʃɪf]", "sonne": "['zɔnə]",
+    "tisch": "[tɪʃ]", "bett": "[bɛt]", "hund": "[hʊnt]"
+  };
+  if (dict[norm]) return dict[norm];
+  if (norm.startsWith("sch")) return `[${norm.replace('sch', 'ʃ')}]`;
+  if (norm.startsWith("ch")) return `[${norm.replace('ch', 'ç')}]`;
+  return `[${norm.replace('z', 'ts')}]`;
+}
+
   currentMPWords.forEach((word, idx) => {
     const card = document.createElement("div");
     card.className = "option-card";
@@ -399,6 +453,7 @@ function nextMPItem(userTriggered = false) {
         <button class="card-audio-btn" title="Dieses Wort vorlesen">🔊</button>
       </div>
       <span class="card-word">${word}</span>
+      <span class="card-ipa">${getIPASimple(word)}</span>
     `;
     const audioBtn = card.querySelector(".card-audio-btn");
     if (audioBtn) {
@@ -444,16 +499,7 @@ async function checkMPAnswer(chosenIndex) {
   }
   mpAttempted = true;
 
-  if (isCorrect) {
-    feedback.textContent = `✓ Richtig! Es war '${currentMPTargetWord}'. (+20 XP)`;
-    feedback.className = "feedback-banner success";
-    addXP(20);
-  } else {
-    feedback.textContent = `✗ Falsch. Gesprochen wurde '${currentMPTargetWord}' (du hast '${chosenWord}' gewählt).`;
-    feedback.className = "feedback-banner danger";
-  }
-
-  await fetch("/api/evaluate", {
+  const res = await fetch("/api/evaluate", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -463,14 +509,121 @@ async function checkMPAnswer(chosenIndex) {
       category: currentMP.category
     })
   });
+  const evalData = await res.json();
+
+  let ipaHtml = "";
+  if (evalData.ipa_target) {
+    ipaHtml = `
+      <div style="margin-top:0.6rem; padding:0.5rem 0.8rem; background:rgba(15,23,42,0.6); border-radius:8px; font-size:0.85rem; text-align:left;">
+        <span style="color:#C084FC; font-weight:700;">🔤 IPA-Lautschrift:</span> ${evalData.ipa_target} 
+        <span style="margin-left:0.8rem; color:#60A5FA; font-weight:700;">📍 Artikulationsort:</span> ${evalData.articulation_place} 
+        <span style="display:block; font-size:0.8rem; color:var(--text-muted); margin-top:0.2rem;">💡 ${evalData.articulation_hint || ""}</span>
+      </div>
+    `;
+  }
+
+  if (isCorrect) {
+    feedback.innerHTML = `<div>✓ Richtig! Es war '<strong>${currentMPTargetWord}</strong>'. (+20 XP)</div>${ipaHtml}`;
+    feedback.className = "feedback-banner success";
+    addXP(20);
+  } else {
+    feedback.innerHTML = `<div>✗ Falsch. Gesprochen wurde '<strong>${currentMPTargetWord}</strong>' (du hast '${chosenWord}' gewählt).</div>${ipaHtml}`;
+    feedback.className = "feedback-banner danger";
+  }
 
   if (autoStart) {
     setTimeout(() => nextMPItem(true), 1800);
   }
 }
 
-// Einsilber Tab Logic
+// Einsilber Tab Logic (mit Freiburger Testlisten DIN 45621)
+let esMode = "random"; // "random" or "test_list"
+let freiburgerTestLists = null;
+let currentTestListNum = 1;
+let currentTestIndex = 0;
+let currentTestWords = [];
+let currentTestResults = [];
+
+async function loadFreiburgerTestLists() {
+  if (freiburgerTestLists) return freiburgerTestLists;
+  try {
+    const res = await fetch("/api/test_lists");
+    freiburgerTestLists = await res.json();
+    return freiburgerTestLists;
+  } catch (e) {
+    console.error("Fehler beim Laden der Freiburger Testlisten:", e);
+    return {};
+  }
+}
+
+async function startFreiburgerTestList(listNum = 1) {
+  const lists = await loadFreiburgerTestLists();
+  const listKey = `Liste ${listNum}`;
+  const testData = lists[listKey];
+  if (!testData || !testData.words || testData.words.length === 0) {
+    showToast("Testliste konnte nicht geladen werden.", "danger");
+    return;
+  }
+
+  currentTestListNum = listNum;
+  currentTestIndex = 0;
+  currentTestWords = testData.words;
+  currentTestResults = [];
+
+  const resCard = document.getElementById("esTestResultCard");
+  if (resCard) resCard.classList.add("hidden");
+  const banner = document.getElementById("esTestProgressBanner");
+  if (banner) banner.style.display = "flex";
+
+  updateESTestProgressUI();
+  loadESTestItem(0);
+}
+
+function updateESTestProgressUI() {
+  const progressText = document.getElementById("esTestProgressText");
+  const scoreText = document.getElementById("esTestScoreText");
+  if (progressText) {
+    progressText.textContent = `Wort ${currentTestIndex + 1} von ${currentTestWords.length} (Freiburger Testliste ${currentTestListNum})`;
+  }
+  if (scoreText) {
+    const correctCount = currentTestResults.filter(r => r.is_correct).length;
+    scoreText.textContent = `Ergebnis: ${correctCount} / ${currentTestResults.length}`;
+  }
+}
+
+function loadESTestItem(idx) {
+  if (idx < 0 || idx >= currentTestWords.length) return;
+  currentES = currentTestWords[idx];
+  currentESTargetWord = currentES.word || "";
+  esAttempted = false;
+
+  document.getElementById("esCategory").textContent = `Freiburger Liste ${currentTestListNum} (${idx + 1}/20)`;
+  document.getElementById("esInput").value = "";
+  const feedback = document.getElementById("esFeedback");
+  if (feedback) feedback.className = "feedback-banner hidden";
+  setStatus(`Wort ${idx + 1} von 20 (Freiburger Testliste ${currentTestListNum}).`);
+
+  if (autoStart) {
+    playESAudio();
+  }
+}
+
 function nextESItem(userTriggered = false) {
+  if (esMode === "test_list") {
+    if (currentTestResults.length <= currentTestIndex) {
+      currentTestResults.push({ target: currentESTargetWord, answer: "-", is_correct: false });
+    }
+    currentTestIndex++;
+    if (currentTestIndex >= currentTestWords.length) {
+      finishFreiburgerTestList();
+      return;
+    }
+    updateESTestProgressUI();
+    loadESTestItem(currentTestIndex);
+    if (userTriggered && autoStart) playESAudio();
+    return;
+  }
+
   if (!exercises.monosyllables || exercises.monosyllables.length === 0) return;
   const validItems = exercises.monosyllables.filter(item => item.word && !item.word.startsWith("Wort_"));
   const pool = validItems.length > 0 ? validItems : exercises.monosyllables;
@@ -482,7 +635,7 @@ function nextESItem(userTriggered = false) {
   document.getElementById("esCategory").textContent = `Kategorie: ${currentES.category || "General"}`;
   document.getElementById("esInput").value = "";
   const feedback = document.getElementById("esFeedback");
-  feedback.className = "feedback-banner hidden";
+  if (feedback) feedback.className = "feedback-banner hidden";
   setStatus("Bereit für Einsilber-Übung.");
 
   if (userTriggered && autoStart) {
@@ -509,17 +662,96 @@ async function checkESAnswer() {
       target: currentESTargetWord,
       user_input: userInput,
       module: "Einsilber",
-      category: currentES.category
+      category: esMode === "test_list" ? `Freiburger Liste ${currentTestListNum}` : currentES.category
     })
   });
   const data = await res.json();
   const feedback = document.getElementById("esFeedback");
-  feedback.textContent = data.message;
+
+  let ipaHtml = "";
+  if (data.ipa_target) {
+    ipaHtml = `
+      <div style="margin-top:0.6rem; padding:0.5rem 0.8rem; background:rgba(15,23,42,0.6); border-radius:8px; font-size:0.85rem; text-align:left;">
+        <span style="color:#C084FC; font-weight:700;">🔤 IPA-Lautschrift:</span> ${data.ipa_target} 
+        <span style="margin-left:0.8rem; color:#60A5FA; font-weight:700;">📍 Artikulationsort:</span> ${data.articulation_place} 
+        <span style="display:block; font-size:0.8rem; color:var(--text-muted); margin-top:0.2rem;">💡 ${data.articulation_hint || ""}</span>
+      </div>
+    `;
+  }
+
+  feedback.innerHTML = `<div>${data.message}</div>${ipaHtml}`;
   feedback.className = `feedback-banner ${data.is_correct ? "success" : "danger"}`;
   if (data.is_correct) addXP(30);
 
+  if (esMode === "test_list") {
+    currentTestResults.push({
+      target: currentESTargetWord,
+      answer: userInput,
+      is_correct: data.is_correct,
+      score: data.score
+    });
+    updateESTestProgressUI();
+
+    if (currentTestResults.length >= 20 || currentTestIndex >= currentTestWords.length - 1) {
+      setTimeout(() => finishFreiburgerTestList(), 1500);
+      return;
+    }
+  }
+
   if (autoStart) {
     setTimeout(() => nextESItem(true), 1800);
+  }
+}
+
+async function finishFreiburgerTestList() {
+  const total = currentTestWords.length || 20;
+  const correct = currentTestResults.filter(r => r.is_correct).length;
+  const percent = Math.round((correct / total) * 100);
+
+  const card = document.getElementById("esTestResultCard");
+  const scoreLarge = document.getElementById("esTestScoreLarge");
+  const scoreDetails = document.getElementById("esTestScoreDetails");
+  const breakdown = document.getElementById("esTestWordBreakdown");
+
+  if (card && scoreLarge && scoreDetails && breakdown) {
+    scoreLarge.textContent = `${percent}%`;
+    scoreLarge.style.color = percent >= 80 ? "#10B981" : (percent >= 50 ? "#F59E0B" : "#EF4444");
+    scoreDetails.textContent = `Ergebnis Freiburger Testliste ${currentTestListNum}: ${correct} von ${total} Wörtern richtig erkannt.`;
+
+    let html = "<table style='width:100%; border-collapse:collapse; font-size:0.9rem;'>";
+    html += "<tr style='border-bottom:1px solid rgba(255,255,255,0.1); text-align:left;'><th>#</th><th>Vorgabe</th><th>Eingabe</th><th>Ergebnis</th></tr>";
+    currentTestResults.forEach((item, idx) => {
+      const statusSymbol = item.is_correct ? "✅" : "❌";
+      html += `<tr style='border-bottom:1px solid rgba(255,255,255,0.05);'>
+        <td style='padding:0.3rem 0;'>${idx + 1}</td>
+        <td><strong>${item.target}</strong></td>
+        <td>${item.answer || "-"}</td>
+        <td>${statusSymbol}</td>
+      </tr>`;
+    });
+    html += "</table>";
+    breakdown.innerHTML = html;
+
+    card.classList.remove("hidden");
+    const banner = document.getElementById("esTestProgressBanner");
+    if (banner) banner.style.display = "none";
+  }
+
+  try {
+    await fetch("/api/test_run/log", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        test_name: "Freiburger Einsilbertest (DIN 45621)",
+        list_num: currentTestListNum,
+        total_words: total,
+        correct_words: correct,
+        score_percent: percent
+      })
+    });
+    showToast(`🏆 Testergebnis (${percent}%) in DB gespeichert.`, "success");
+  } catch (e) {
+    console.error("Fehler beim Speichern des Testergebnisses:", e);
   }
 }
 
@@ -606,6 +838,7 @@ function nextSentItem(userTriggered = false) {
         <button class="card-audio-btn" title="Dieses Wort vorlesen">🔊</button>
       </div>
       <span class="card-word">${word}</span>
+      <span class="card-ipa">${getIPASimple(word)}</span>
     `;
     const audioBtn = card.querySelector(".card-audio-btn");
     if (audioBtn) {

@@ -259,17 +259,103 @@ class PhoneticMatcher:
 
         msg = " ".join(feedback_parts) if feedback_parts else f"Ähnlichkeit: {score}%."
 
+        target_info = self.get_ipa_and_articulation(target)
+        user_info = self.get_ipa_and_articulation(user_input)
+
         return {
             "score": score,
             "status": "partial" if score > 50 else "incorrect",
-            "message": f"Ziel: '{target}' | Gehört: '{user_input}'. {msg}",
+            "message": f"Ziel: '{target}' {target_info['ipa']} | Gehört: '{user_input}' {user_info['ipa']}. {msg}",
             "is_correct": is_correct,
             "cologne_target": cologne_target,
             "cologne_user": cologne_user,
             "cologne_similarity": round(cologne_sim * 100, 1),
             "phonetic_category": error_info["category"],
-            "audiological_tip": error_info["tip"]
+            "audiological_tip": error_info["tip"],
+            "ipa_target": target_info["ipa"],
+            "ipa_user": user_info["ipa"],
+            "articulation_place": target_info["place"],
+            "articulation_hint": target_info["hint"]
         }
+
+    @staticmethod
+    def get_ipa_and_articulation(word: str) -> dict:
+        """
+        Provides International Phonetic Alphabet (IPA) transcription and Place of Articulation
+        (Artikulationsort) details for German target words for CI speech therapy.
+        """
+        if not word:
+            return {"ipa": "[-]", "place": "Unbekannt", "hint": ""}
+
+        norm = word.lower().strip()
+
+        # Dictionary of standard German target words in CI training
+        IPA_DICT = {
+            "pass": ("pass", "[pas]", "Bilabial", "Lippenverschluss (stimmlos P)"),
+            "bass": ("bass", "[bas]", "Bilabial", "Lippenverschluss (stimmhaft B)"),
+            "tasse": ("tasse", "['tasə]", "Alveolar", "Zungenspitze am Zahndamm (stimmlos T)"),
+            "dasse": ("dasse", "['dasə]", "Alveolar", "Zungenspitze am Zahndamm (stimmhaft D)"),
+            "haus": ("haus", "[haʊ̯s]", "Glottal", "Stimmritze (H-Anlaut) / Alveolar (S-Auslaut)"),
+            "maus": ("maus", "[maʊ̯s]", "Bilabial", "Lippen-Nasal (M-Anlaut)"),
+            "kamm": ("kamm", "[kam]", "Velar", "Gaumensegel-Verschluss (K-Anlaut)"),
+            "komm": ("komm", "[kɔm]", "Velar", "Gaumensegel-Verschluss (K-Anlaut)"),
+            "bus": ("bus", "[bʊs]", "Bilabial", "Lippenverschluss (B) / Alveolar (S-Auslaut)"),
+            "dach": ("dach", "[dax]", "Alveolar", "Zungenspitze (D) / Ach-Laut (x) am Gaumen"),
+            "fisch": ("fisch", "[fɪʃ]", "Labiodental", "Oberzähne auf Unterlippe (F) / Sch-Laut [ʃ]"),
+            "brot": ("brot", "[bʁoːt]", "Bilabial", "Lippenverschluss (B) / Langvokal [oː]"),
+            "strand": ("strand", "[ʃtʁant]", "Postalveolar", "Sch-Laut [ʃ] / Alveolar T-Auslaut"),
+            "herbst": ("herbst", "[hɛʁpst]", "Glottal", "Glottaler Anlaut [h] / Auslautgruppe [pst]"),
+            "katze": ("katze", "['katsə]", "Velar", "Gaumen [k] / Affrikate [ts]"),
+            "mond": ("mond", "[moːnt]", "Bilabial", "Lippen-Nasal [m] / Auslaut-Verhärtung [t]"),
+            "zug": ("zug", "[tsuːk]", "Alveolar", "Affrikate [ts] / Auslaut-Verhärtung [k]"),
+            "buch": ("buch", "[buːx]", "Bilabial", "Lippenverschluss [b] / Ach-Laut [x]"),
+            "schiff": ("schiff", "[ʃɪf]", "Postalveolar", "Sch-Laut [ʃ] / Labiodental [f]"),
+            "sonne": ("sonne", "['zɔnə]", "Alveolar", "Zungenspitze (stimmhaftes Zisch-S [z])"),
+            "tisch": ("tisch", "[tɪʃ]", "Alveolar", "Zungenspitze [t] / Postalveolar [ʃ]"),
+            "bett": ("bett", "[bɛt]", "Bilabial", "Lippenverschluss [b] / Kurzvokal [ɛ]"),
+            "hund": ("hund", "[hʊnt]", "Glottal", "H-Anlaut [h] / Auslaut-Verhärtung [t]")
+        }
+
+        if norm in IPA_DICT:
+            _, ipa, place, hint = IPA_DICT[norm]
+            return {"ipa": ipa, "place": place, "hint": hint}
+
+        # Dynamic Rule-Based IPA & Articulation Generation:
+        first_letter = norm[0] if norm else ""
+        if norm.startswith("sch") or norm.startswith("ch"):
+            place = "Postalveolar / Palatal"
+            hint = "Gaumen-Reibelaut [ʃ] / [ç]"
+            ipa = f"[{norm.replace('sch', 'ʃ').replace('ch', 'ç')}]"
+        elif first_letter in "bpm":
+            place = "Bilabial"
+            hint = "Beide Lippen schließen (Lippenverschluss / Lippen-Nasal)"
+            ipa = f"[{norm}]"
+        elif first_letter in "fvw":
+            place = "Labiodental"
+            hint = "Oberzähne berühren die Unterlippe"
+            ipa = f"[{norm.replace('v', 'f').replace('w', 'v')}]"
+        elif first_letter in "tdnszl":
+            place = "Alveolar"
+            hint = "Zungenspitze berührt den Zahndamm hinter den oberen Schneidezähnen"
+            ipa = f"[{norm.replace('z', 'ts')}]"
+        elif first_letter in "kgq":
+            place = "Velar"
+            hint = "Hinterer Zungenrücken schließt am weichen Gaumensegel"
+            ipa = f"[{norm}]"
+        elif first_letter == "h":
+            place = "Glottal"
+            hint = "Stimmritze im Kehlkopf geöffnet"
+            ipa = f"[{norm}]"
+        elif first_letter in "aeiouäöü":
+            place = "Vokal-Kontrast"
+            hint = "Offener Ansatzraum ohne Konsonanten-Hindernis"
+            ipa = f"[{norm}]"
+        else:
+            place = "Artikulationsort"
+            hint = "Standard-Artikulation"
+            ipa = f"[{norm}]"
+
+        return {"ipa": ipa, "place": place, "hint": hint}
 
     @staticmethod
     def german_words_to_digits(text: str) -> str:

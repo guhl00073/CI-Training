@@ -65,6 +65,12 @@ class CITrainerHTTPHandler(http.server.SimpleHTTPRequestHandler):
         elif path == "/api/stats":
             self._send_json(self.db.get_summary_stats())
 
+        elif path == "/api/test_lists":
+            self._send_json(self.db.get_freiburger_test_lists())
+
+        elif path == "/api/test_runs":
+            self._send_json(self.db.get_test_runs())
+
         elif path.startswith("/api/audio/"):
             # Serve temporary TTS audio files from the system temp dir
             file_name = os.path.basename(path)
@@ -171,6 +177,15 @@ class CITrainerHTTPHandler(http.server.SimpleHTTPRequestHandler):
         elif path == "/api/stats/reset":
             self.db.reset_stats()
             self._send_json({"status": "reset", "stats": self.db.get_summary_stats()})
+
+        elif path == "/api/test_run/log":
+            test_name = body.get("test_name", "Freiburger Einsilbertest (DIN 45621)")
+            list_num = int(body.get("list_num", 1))
+            total_words = int(body.get("total_words", 20))
+            correct_words = int(body.get("correct_words", 0))
+            score_percent = float(body.get("score_percent", 0.0))
+            self.db.log_test_run(test_name, list_num, total_words, correct_words, score_percent)
+            self._send_json({"status": "logged", "test_runs": self.db.get_test_runs()})
 
         elif path == "/api/exercises":
             # ── CREATE a new exercise ────────────────────────────────────────

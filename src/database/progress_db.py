@@ -95,6 +95,19 @@ class ProgressDatabase:
                 )
             """)
 
+            # 6. Structured Clinical Test Runs (Freiburger Testlisten DIN 45621)
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS test_runs (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    timestamp TEXT NOT NULL,
+                    test_name TEXT NOT NULL,
+                    list_num INTEGER NOT NULL,
+                    total_words INTEGER NOT NULL,
+                    correct_words INTEGER NOT NULL,
+                    score_percent REAL NOT NULL
+                )
+            """)
+
             conn.commit()
 
     # ─── INITIAL SEEDING ───────────────────────────────────────────────────────
@@ -568,3 +581,58 @@ class ProgressDatabase:
                 "by_module": by_module,
                 "by_category": by_category,
             }
+
+    def get_freiburger_test_lists(self) -> dict:
+        """Returns monosyllable words grouped into official 20-word Freiburger Testlists."""
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute("SELECT id, word, category, source, difficulty FROM exercises_monosyllables ORDER BY id ASC")
+            all_words = [{"id": r[0], "word": r[1], "category": r[2], "source": r[3], "difficulty": r[4]} for r in cursor.fetchall()]
+
+        lists = {}
+        words_per_list = 20
+        list_count = (len(all_words) + words_per_list - 1) // words_per_list
+
+        for idx in range(list_count):
+            list_num = idx + 1
+            start_i = idx * words_per_list
+            end_i = start_i + words_per_list
+            list_words = all_words[start_i:end_i]
+            lists[f"Liste {list_num}"] = {
+                "list_num": list_num,
+                "title": f"Freiburger Testliste {list_num} (DIN 45621)",
+                "word_count": len(list_words),
+                "words": list_words
+            }
+        return lists
+
+    def log_test_run(self, test_name: str, list_num: int, total_words: int, correct_words: int, score_percent: float):
+        """Logs a completed Freiburger test run into database."""
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            cursor.execute("""
+                INSERT INTO test_runs (timestamp, test_name, list_num, total_words, correct_words, score_percent)
+                VALUES (?, ?, ?, ?, ?, ?)
+            """, (now, test_name, list_num, total_words, correct_words, score_percent))
+            conn.commit()
+
+    def get_test_runs(self) -> list:
+        """Returns history of all completed test runs."""
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute("""
+                SELECT id, timestamp, test_name, list_num, total_words, correct_words, score_percent
+                FROM test_runs
+                ORDER BY id DESC
+            """)
+            return [{
+                "id": r[0],
+                "timestamp": r[1],
+                "test_name": r[2],
+                "list_num": r[3],
+                "total_words": r[4],
+                "correct_words": r[5],
+                "score_percent": r[6]
+            } for r in cursor.fetchall()]
+
