@@ -118,6 +118,7 @@ class CITrainerHTTPHandler(http.server.SimpleHTTPRequestHandler):
             ambient_noise = safe_bool(body.get("ambient_noise"), False)
             ambient_type = str(body.get("ambient_type") or "noise")
             ambient_volume = safe_float(body.get("ambient_volume"), 0.3)
+            freq_filter = str(body.get("freq_filter") or "none")
             wait = safe_bool(body.get("wait"), False)
 
             audio_file = self.tts.generate_audio(text, rate=rate, voice=voice)
@@ -125,7 +126,7 @@ class CITrainerHTTPHandler(http.server.SimpleHTTPRequestHandler):
                 audio_file, balance=balance, volume=volume, rate=rate,
                 mask_noise=mask_noise, noise_volume=noise_volume,
                 ambient_noise=ambient_noise, ambient_type=ambient_type,
-                ambient_volume=ambient_volume, wait_until_done=wait,
+                ambient_volume=ambient_volume, freq_filter=freq_filter, wait_until_done=wait,
             )
             file_name = os.path.basename(audio_file)
             self._send_json({"status": "playing", "file": file_name, "text": text, "voice": voice})
@@ -159,7 +160,7 @@ class CITrainerHTTPHandler(http.server.SimpleHTTPRequestHandler):
 
             self.db.log_attempt(
                 module=module,
-                category=category,
+                category=eval_res.get("phonetic_category") or category,
                 target_word=target,
                 user_answer=user_input,
                 is_correct=eval_res["is_correct"],
@@ -312,7 +313,7 @@ def free_port(port: int):
     else:
         try:
             out = subprocess.check_output(
-                ["lsof", "-t", f"-i:{port}"]
+                ["lsof", "-t", f"-i:{port}"], stderr=subprocess.DEVNULL
             ).decode(errors="ignore")
             for pid_str in out.strip().splitlines():
                 if pid_str.isdigit():

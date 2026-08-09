@@ -196,10 +196,10 @@ class AudioPlayer:
     def play(self, file_path: str, balance: float = 0.0, volume: float = 1.0, rate: float = 1.0, 
              mask_noise: bool = True, noise_volume: float = 0.4, 
              ambient_noise: bool = False, ambient_type: str = "noise", ambient_volume: float = 0.3,
-             wait_until_done: bool = False):
+             freq_filter: str = "none", wait_until_done: bool = False):
         """
         Plays an audio file cross-platform while continuous noise runs.
-        Supports asynchronous or synchronous (wait_until_done=True) playback.
+        Supports frequency filtering (highpass, high_boost, lowpass) and stereo panning.
         """
         self.stop_speech()
         
@@ -217,20 +217,29 @@ class AudioPlayer:
                 ffmpeg_path = self._find_ffmpeg()
                 play_path = file_path
 
-                # Apply strict panning to speech audio if balance is set
-                if balance != 0.0:
+                # Apply audio filters (frequency equalizer & stereo panning)
+                filter_parts = []
+                if freq_filter == "highpass":
+                    filter_parts.append("highpass=f=1500")
+                elif freq_filter == "high_boost":
+                    filter_parts.append("equalizer=f=3500:width_type=q:width=1.0:g=12,treble=g=8:f=3000")
+                elif freq_filter == "lowpass":
+                    filter_parts.append("lowpass=f=1000")
+
+                if balance < 0:
+                    filter_parts.append(f"volume={volume},pan=stereo|c0=c0+c1|c1=0*c0")
+                elif balance > 0:
+                    filter_parts.append(f"volume={volume},pan=stereo|c0=0*c0|c1=c0+c1")
+
+                if filter_parts:
+                    filter_str = ",".join(filter_parts)
                     temp_speech = tempfile.mktemp(suffix="_speech.wav", dir=".cache/audio")
                     os.makedirs(".cache/audio", exist_ok=True)
-                    if balance < 0:
-                        filter_str = f"volume={volume},pan=stereo|c0=c0+c1|c1=0*c0"
-                    else:
-                        filter_str = f"volume={volume},pan=stereo|c0=0*c0|c1=c0+c1"
-
-                    cmd_pan = [
+                    cmd_filter = [
                         ffmpeg_path, "-y", "-i", file_path,
                         "-af", filter_str, temp_speech
                     ]
-                    res = subprocess.run(cmd_pan, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                    res = subprocess.run(cmd_filter, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                     if res.returncode == 0 and os.path.exists(temp_speech):
                         play_path = temp_speech
 
@@ -251,6 +260,12 @@ class AudioPlayer:
 
                 self.speech_process = subprocess.Popen(cmd_play, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                 self.speech_process.wait()
+
+                if play_path != file_path and os.path.exists(play_path):
+                    try:
+                        os.remove(play_path)
+                    except Exception:
+                        pass
 
             except Exception as e:
                 print(f"[AudioPlayer] Playback error: {e}")

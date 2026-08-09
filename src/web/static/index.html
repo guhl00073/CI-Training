@@ -33,6 +33,9 @@
         </div>
       </div>
       <div class="header-status">
+        <button id="openHelpBtn" class="btn btn-secondary btn-sm" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.35rem 0.75rem; font-size:0.85rem;" title="Online-Hilfe & Tastenkürzel (Taste: H oder ?)">
+          <span>❓</span> Hilfe & Hotkeys
+        </button>
         <span id="userLevelBadge" class="cat-tag" style="background: rgba(16, 185, 129, 0.2); color: #34D399; border-color: rgba(16, 185, 129, 0.4);">
           ⭐ Level 1 | 0 XP
         </span>
@@ -51,9 +54,9 @@
       </summary>
 
       <div class="control-panel-grid">
-        <!-- Linke Spalte: Regler (Sliders) -->
+        <!-- Linke Spalte: Regler & Filter -->
         <div class="ctrl-column">
-          <h3 class="ctrl-col-title">🎚 Regler</h3>
+          <h3 class="ctrl-col-title">🎚 Regler & Filter</h3>
           
           <div class="ctrl-group">
             <label for="volSlider">
@@ -77,6 +80,19 @@
               <span id="rateVal" class="val-badge">1.0x</span>
             </label>
             <input type="range" id="rateSlider" min="0.6" max="1.4" step="0.1" value="1.0" class="custom-range">
+          </div>
+
+          <div class="ctrl-group">
+            <label for="freqFilterSelect">
+              <span class="label-left"><span class="icon">🎛</span> Audio Frequenz-Filter</span>
+              <span id="freqFilterBadge" class="val-badge">Normal</span>
+            </label>
+            <select id="freqFilterSelect" class="custom-select" style="width:100%; background:rgba(15,23,42,0.8); color:var(--text-main); border:1px solid var(--panel-border); padding:0.5rem 0.8rem; border-radius:10px; font-weight:600;">
+              <option value="none" selected>Normal (Ungefiltert)</option>
+              <option value="high_boost">⚡ Hochton-Anhebung (+6dB 3-4 kHz - Zischlaute S/F/T)</option>
+              <option value="highpass">🔊 Hochpass-Filter (ab 1000 Hz - Blendet Tiefen aus)</option>
+              <option value="lowpass">🔉 Tiefpass-Filter (bis 3000 Hz)</option>
+            </select>
           </div>
         </div>
 
@@ -632,6 +648,51 @@
 
       </div><!-- /.glass-card -->
     </main>
+  <!-- Online Help & Keyboard Hotkeys Modal -->
+  <div id="helpModal" class="modal-backdrop hidden" role="dialog" aria-labelledby="helpModalTitle" aria-modal="true">
+    <div class="modal-content glass-card" style="max-width: 680px; width: 90%; max-height: 85vh; overflow-y: auto;">
+      <div class="modal-header" style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--panel-border); padding-bottom:0.75rem; margin-bottom:1rem;">
+        <h2 id="helpModalTitle" style="display:flex; align-items:center; gap:0.5rem; color:#60A5FA; font-size:1.3rem;">
+          <span>❓</span> Online-Hilfe & Tastatur-Hotkeys
+        </h2>
+        <button id="closeHelpModalBtn" class="btn-close" aria-label="Schließen" style="background:none; border:none; color:var(--text-muted); font-size:1.6rem; cursor:pointer;">&times;</button>
+      </div>
+      <div class="modal-body" style="line-height:1.6; font-size:0.95rem;">
+        
+        <h3 style="color:#34D399; margin-bottom:0.6rem;">⌨️ Tastatur-Steuerung (Hotkeys)</h3>
+        <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:0.8rem;">Nutze diese Tastenkürzel für ein schnelles, barrierefreies Hörtraining ohne Maus:</p>
+        
+        <table class="hotkey-table" style="width:100%; border-collapse:collapse; margin-bottom:1.5rem; font-size:0.9rem;">
+          <thead>
+            <tr style="border-bottom: 2px solid var(--panel-border); text-align:left; color:var(--text-muted);">
+              <th style="padding:0.5rem;">Taste</th>
+              <th style="padding:0.5rem;">Aktion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:0.5rem;"><kbd>Leertaste</kbd> / <kbd>P</kbd></td><td>Wort / Audio erneut abspielen</td></tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:0.5rem;"><kbd>1</kbd></td><td>Option A wählen (Minimalpaare / Sätze)</td></tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:0.5rem;"><kbd>2</kbd></td><td>Option B wählen (Minimalpaare / Sätze)</td></tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:0.5rem;"><kbd>Enter</kbd></td><td>Eingabe prüfen (Einsilber & Zahlen)</td></tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:0.5rem;"><kbd>N</kbd> / <kbd>→</kbd></td><td>Nächste Übung aufrufen</td></tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:0.5rem;"><kbd>M</kbd></td><td>Mikrofon-Aufnahme starten (Nachsprechen)</td></tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:0.5rem;"><kbd>H</kbd> / <kbd>?</kbd></td><td>Diese Online-Hilfe öffnen / schließen</td></tr>
+            <tr><td style="padding:0.5rem;"><kbd>Esc</kbd></td><td>Hilfe-Fenster / Dialog schließen</td></tr>
+          </tbody>
+        </table>
+
+        <h3 style="color:#60A5FA; margin-bottom:0.6rem;">👂 Audiologische Hinweise für CI-Träger</h3>
+        <ul style="padding-left:1.2rem; color:var(--text-main); margin-bottom:1rem;">
+          <li><strong>Ohr-Kanal Balance:</strong> Nutze die Balance-Regelung, um das linke oder rechte CI gezielt zu isolieren.</li>
+          <li><strong>Störschall & Rauschen:</strong> Aktiviere kontinuierlichen Störschall (Restaurant / Verkehr), um das Verstehen im Lärm zu trainieren.</li>
+          <li><strong>Kölner Phonetik:</strong> Der integrierte Evaluator nutzt den Kölner Phonetik Algorithmus, um akustische Ähnlichkeiten (wie <em>Pass</em> vs <em>Bass</em>) zu bewerten.</li>
+        </ul>
+
+      </div>
+      <div class="modal-footer" style="margin-top:1rem; text-align:right; border-top:1px solid var(--panel-border); padding-top:0.75rem;">
+        <button id="closeHelpModalFooterBtn" class="btn btn-primary">Verstanden & Schließen</button>
+      </div>
+    </div>
   </div>
 
   <script src="/app.js"></script>

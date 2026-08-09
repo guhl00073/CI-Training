@@ -36,6 +36,7 @@ let selectedAmbientType = "noise";
 
 let selectedVoice = "Anna";
 let selectedMPCategory = "ALL";
+let selectedFreqFilter = "none";
 let currentEditorView = "minimal_pairs";
 let autoStart = false;
 let autoMic = true;
@@ -58,6 +59,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   initEditor();
   await loadExercises();
   initSpeechRecognition();
+  initHelpModal();
+  initKeyboardShortcuts();
   updateStats();
   syncNoiseConfig();
 });
@@ -172,6 +175,23 @@ function initAudioControls() {
       syncNoiseConfig();
     });
   });
+
+  const freqFilterSelect = document.getElementById("freqFilterSelect");
+  const freqFilterBadge = document.getElementById("freqFilterBadge");
+  if (freqFilterSelect) {
+    selectedFreqFilter = freqFilterSelect.value;
+    freqFilterSelect.addEventListener("change", (e) => {
+      selectedFreqFilter = e.target.value;
+      const labels = {
+        "none": "Normal",
+        "high_boost": "Hochton +6dB",
+        "highpass": "Hochpass 1000Hz",
+        "lowpass": "Tiefpass 3000Hz"
+      };
+      if (freqFilterBadge) freqFilterBadge.textContent = labels[selectedFreqFilter] || "Normal";
+      setStatus(`Audio-Filter: ${labels[selectedFreqFilter] || selectedFreqFilter}`);
+    });
+  }
 
   autoStart = localStorage.getItem("ci_autostart") === "true";
   autoMic = localStorage.getItem("ci_automic") !== "false";
@@ -310,6 +330,7 @@ async function playTTS(text, labelName = "Audio", options = {}) {
     ambient_noise: options.ambient_noise !== undefined ? options.ambient_noise : false,
     ambient_type: options.ambient_type !== undefined ? options.ambient_type : "noise",
     ambient_volume: options.ambient_volume !== undefined ? options.ambient_volume : 0.3,
+    freq_filter: options.freq_filter !== undefined ? options.freq_filter : selectedFreqFilter,
     wait: options.wait !== undefined ? options.wait : false
   };
 
@@ -1654,3 +1675,145 @@ function setStatus(msg) {
   const el = document.getElementById("statusText");
   if (el) el.textContent = msg;
 }
+
+// ── ONLINE HILFE & KEYBOARD HOTKEYS ──────────────────────────────────────────
+
+function initHelpModal() {
+  const openBtn = document.getElementById("openHelpBtn");
+  const closeBtn = document.getElementById("closeHelpModalBtn");
+  const closeFooterBtn = document.getElementById("closeHelpModalFooterBtn");
+  const helpModal = document.getElementById("helpModal");
+
+  if (openBtn) openBtn.addEventListener("click", toggleHelpModal);
+  if (closeBtn) closeBtn.addEventListener("click", closeHelpModal);
+  if (closeFooterBtn) closeFooterBtn.addEventListener("click", closeHelpModal);
+  if (helpModal) {
+    helpModal.addEventListener("click", (e) => {
+      if (e.target === helpModal) closeHelpModal();
+    });
+  }
+}
+
+function toggleHelpModal() {
+  const helpModal = document.getElementById("helpModal");
+  if (helpModal) {
+    helpModal.classList.toggle("hidden");
+  }
+}
+
+function closeHelpModal() {
+  const helpModal = document.getElementById("helpModal");
+  if (helpModal) {
+    helpModal.classList.add("hidden");
+  }
+}
+
+function getActiveTab() {
+  const activeBtn = document.querySelector(".tab-btn.active");
+  return activeBtn ? activeBtn.dataset.tab : "mp";
+}
+
+function replayCurrentAudio() {
+  const tab = getActiveTab();
+  if (tab === "mp") playMPAudio();
+  else if (tab === "es") playESAudio();
+  else if (tab === "num") playNumAudio();
+  else if (tab === "sentences") playSentAudio();
+  showToast("▶ Audio wird abgespielt", "info");
+}
+
+function selectOptionByHotkey(index) {
+  const tab = getActiveTab();
+  if (tab === "mp") {
+    if (currentMPWords && currentMPWords[index]) {
+      checkMPAnswer(index);
+    }
+  } else if (tab === "sentences") {
+    const opts = document.querySelectorAll("#sentCardsContainer .option-card");
+    if (opts && opts[index]) {
+      opts[index].click();
+    }
+  }
+}
+
+function nextExerciseItem() {
+  const tab = getActiveTab();
+  if (tab === "mp") nextMPItem(true);
+  else if (tab === "es") nextESItem(true);
+  else if (tab === "num") nextNumItem(true);
+  else if (tab === "sentences") nextSentItem(true);
+  showToast("➔ Nächste Übung geladen", "info");
+}
+
+function triggerMicRecording() {
+  const tab = getActiveTab();
+  if (tab === "es") {
+    const micBtn = document.getElementById("esMicBtn");
+    if (micBtn) micBtn.click();
+  } else if (tab === "num") {
+    const micBtn = document.getElementById("numMicBtn");
+    if (micBtn) micBtn.click();
+  }
+}
+
+function initKeyboardShortcuts() {
+  document.addEventListener("keydown", (e) => {
+    const activeEl = document.activeElement;
+    const isInput = activeEl && (activeEl.tagName === "INPUT" || activeEl.tagName === "TEXTAREA" || activeEl.isContentEditable);
+
+    if (e.key === "Escape") {
+      if (isInput) activeEl.blur();
+      closeHelpModal();
+      return;
+    }
+
+    if (isInput) {
+      return; // Do not trigger letter/number hotkeys when typing in input fields
+    }
+
+    const key = e.key.toLowerCase();
+
+    // H or ? -> Toggle Online Help
+    if (key === "h" || e.key === "?") {
+      e.preventDefault();
+      toggleHelpModal();
+      return;
+    }
+
+    // Space or P -> Replay Audio
+    if (e.code === "Space" || key === "p") {
+      e.preventDefault();
+      replayCurrentAudio();
+      return;
+    }
+
+    // 1 -> Option A
+    if (e.key === "1") {
+      e.preventDefault();
+      selectOptionByHotkey(0);
+      return;
+    }
+
+    // 2 -> Option B
+    if (e.key === "2") {
+      e.preventDefault();
+      selectOptionByHotkey(1);
+      return;
+    }
+
+    // N or ArrowRight -> Next item
+    if (key === "n" || e.key === "ArrowRight") {
+      e.preventDefault();
+      nextExerciseItem();
+      return;
+    }
+
+    // M -> Mic Recording
+    if (key === "m") {
+      e.preventDefault();
+      triggerMicRecording();
+      return;
+    }
+  });
+}
+
