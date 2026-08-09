@@ -5,13 +5,27 @@ echo 🚀 Starte CI-Hörtrainer (Windows)
 echo =======================================================
 cd /d "%~dp0"
 
-:: 1. Prüfen, ob Python installiert ist
+:: 1. Prüfen, ob Python installiert ist (sonst via winget installieren)
 where python >nul 2>nul
 if %errorlevel% neq 0 (
-    echo ❌ Fehler: Python ist auf diesem System nicht installiert!
-    echo Bitte installieren Sie Python 3 von https://www.python.org/
-    pause
-    exit /b 1
+    echo ⚠️ Python ist auf diesem System noch nicht installiert.
+    where winget >nul 2>nul
+    if !errorlevel! equ 0 (
+        echo 📦 winget (Windows Package Manager) wurde gefunden. Installiere Python via winget...
+        winget install --id Python.Python.3.12 --exact --accept-package-agreements --accept-source-agreements
+        where python >nul 2>nul
+        if !errorlevel! neq 0 (
+            echo ❌ Fehler: Python konnte nicht automatisch via winget installiert werden.
+            echo Bitte starten Sie die Eingabeaufforderung neu oder installieren Sie Python von https://www.python.org/
+            pause
+            exit /b 1
+        )
+    ) else (
+        echo ❌ Fehler: Python ist auf diesem System nicht installiert!
+        echo Bitte installieren Sie Python 3 von https://www.python.org/
+        pause
+        exit /b 1
+    )
 )
 
 echo ✓ Python gefunden.
