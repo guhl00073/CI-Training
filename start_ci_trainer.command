@@ -1,41 +1,41 @@
 #!/bin/bash
-# CI-Hörtrainer macOS Double-Clickable Executable Launcher
+# CI-Hoertrainer macOS Double-Clickable Executable Launcher
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 cd "$DIR"
 
 echo "=================================================="
-echo "   👂 Starte CI-Hörtrainer..."
+echo "   Starte CI-Hoertrainer..."
 echo "=================================================="
 
-# Pfad für Homebrew auf macOS ergänzen (Apple Silicon / Intel), falls nicht im PATH
+# Pfad fuer Homebrew auf macOS ergaenzen (Apple Silicon / Intel), falls nicht im PATH
 if [ -x "/opt/homebrew/bin/brew" ]; then
     export PATH="/opt/homebrew/bin:$PATH"
 elif [ -x "/usr/local/bin/brew" ]; then
     export PATH="/usr/local/bin:$PATH"
 fi
 
-# 1. Prüfen, ob Python 3 / Python installiert ist (sonst via Homebrew installieren)
+# 1. Pruefen, ob Python 3 / Python installiert ist (sonst via Homebrew installieren)
 if command -v python3 &>/dev/null; then
     PYTHON_BIN="python3"
 elif command -v python &>/dev/null; then
     PYTHON_BIN="python"
 else
-    echo "⚠️ Python ist auf diesem System noch nicht installiert."
+    echo "[WARNUNG] Python ist auf diesem System noch nicht installiert."
     if command -v brew &>/dev/null; then
-        echo "🍺 Homebrew wurde gefunden. Installiere Python via Homebrew..."
+        echo "[INFO] Homebrew wurde gefunden. Installiere Python via Homebrew..."
         brew install python
         if command -v python3 &>/dev/null; then
             PYTHON_BIN="python3"
         elif command -v python &>/dev/null; then
             PYTHON_BIN="python"
         else
-            echo "❌ Fehler: Python konnte via Homebrew nicht installiert werden."
-            read -p "Drücke Enter zum Beenden..."
+            echo "[FEHLER] Fehler: Python konnte via Homebrew nicht installiert werden."
+            read -p "Druecke Enter zum Beenden..."
             exit 1
         fi
     else
-        echo "🍺 Homebrew ist ebenfalls nicht installiert. Versuche Homebrew & Python zu installieren..."
+        echo "[INFO] Homebrew ist ebenfalls nicht installiert. Versuche Homebrew & Python zu installieren..."
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         if [ -x "/opt/homebrew/bin/brew" ]; then
             export PATH="/opt/homebrew/bin:$PATH"
@@ -46,51 +46,51 @@ else
             brew install python
             PYTHON_BIN="python3"
         else
-            echo "❌ Fehler: Python 3 und Homebrew konnten nicht automatisch installiert werden."
+            echo "[FEHLER] Fehler: Python 3 und Homebrew konnten nicht automatisch installiert werden."
             echo "Bitte installieren Sie Python 3 (https://www.python.org/) oder Homebrew (https://brew.sh/)."
-            read -p "Drücke Enter zum Beenden..."
+            read -p "Druecke Enter zum Beenden..."
             exit 1
         fi
     fi
 fi
 
-echo "✓ Python gefunden: $($PYTHON_BIN --version)"
+echo "[OK] Python gefunden: $($PYTHON_BIN --version)"
 
-# 2. Prüfen, ob eine virtuelle Umgebung (.venv) existiert (und ggf. erstellen)
+# 2. Pruefen, ob eine virtuelle Umgebung (.venv) existiert (und ggf. erstellen)
 VENV_DIR="$DIR/.venv"
 if [ ! -d "$VENV_DIR" ]; then
-    echo "⚠️ Virtuelle Umgebung (.venv) existiert nicht. Erstelle .venv..."
+    echo "[WARNUNG] Virtuelle Umgebung (.venv) existiert nicht. Erstelle .venv..."
     "$PYTHON_BIN" -m venv "$VENV_DIR"
     if [ $? -ne 0 ]; then
-        echo "❌ Fehler beim Erstellen der virtuellen Umgebung (.venv)."
-        read -p "Drücke Enter zum Beenden..."
+        echo "[FEHLER] Fehler beim Erstellen der virtuellen Umgebung (.venv)."
+        read -p "Druecke Enter zum Beenden..."
         exit 1
     fi
-    echo "✓ Virtuelle Umgebung (.venv) erfolgreich erstellt."
+    echo "[OK] Virtuelle Umgebung (.venv) erfolgreich erstellt."
 else
-    echo "✓ Virtuelle Umgebung (.venv) vorhanden."
+    echo "[OK] Virtuelle Umgebung (.venv) vorhanden."
 fi
 
 VENV_PYTHON="$VENV_DIR/bin/python"
 VENV_PIP="$VENV_DIR/bin/pip"
 
 if [ ! -f "$VENV_PYTHON" ]; then
-    echo "❌ Fehler: Python Executable in $VENV_DIR nicht gefunden."
-    read -p "Drücke Enter zum Beenden..."
+    echo "[FEHLER] Fehler: Python Executable in $VENV_DIR nicht gefunden."
+    read -p "Druecke Enter zum Beenden..."
     exit 1
 fi
 
-# 3. Prüfen und Installieren der erforderlichen Pakete via requirements.txt
+# 3. Pruefen und Installieren der erforderlichen Pakete via requirements.txt
 REQUIREMENTS_FILE="$DIR/requirements.txt"
 if [ -f "$REQUIREMENTS_FILE" ]; then
-    echo "📦 Überprüfe und installiere Abhängigkeiten aus requirements.txt..."
-    "$VENV_PIP" install -r "$REQUIREMENTS_FILE" --quiet || echo "⚠️ Hinweis: Einige Pakete konnten nicht installiert werden (z. B. offline)."
-    echo "✓ Abhängigkeitsprüfung abgeschlossen."
+    echo "[INFO] Ueberpruefe und installiere Abhaengigkeiten aus requirements.txt..."
+    "$VENV_PIP" install -r "$REQUIREMENTS_FILE" --quiet || echo "[HINWEIS] Hinweis: Einige Pakete konnten nicht installiert werden (z. B. offline)."
+    echo "[OK] Abhaengigkeitspruefung abgeschlossen."
 else
-    echo "⚠️ Warnung: requirements.txt wurde nicht gefunden!"
+    echo "[WARNUNG] Warnung: requirements.txt wurde nicht gefunden!"
 fi
 
 echo "=================================================="
-echo "▶️ Starte Hauptanwendung..."
+echo "Starte Hauptanwendung..."
 echo "=================================================="
 "$VENV_PYTHON" "$DIR/main.py"
