@@ -30,8 +30,9 @@ Das Dashboard bietet eine übersichtliche, dunkle Benutzeroberfläche mit Schnel
 | 🎭 | **Minimalpaare** | Unterscheidung phonetisch ähnlicher Wortpaare (z. B. *P vs. B*, *N vs. NG*, *Vokallänge*). |
 | 🔤 | **Einsilber** | Freiburger Einsilber-Test (DIN 45621) mit phonetischer Auswertung (Anlaut/Vokal/Auslaut). |
 | 🔢 | **Zahlen** | Audiometrischer Test für Zahlen, zweistellige Uhrzeiten (*14:30 Uhr*) & Geldbeträge (*12,50 €*). |
-| 💬 | **Satzverständnis** | Satzverständnis im Kontext nach dem Oldenburger Satztest (OLSA). |
-| 🌊 | **Störschall** | Hören unter erschwerten Alltagsbedingungen mit zuschaltbaren Kulissen (Restaurant, Verkehr etc.). |
+| 💬 | **Satzverständnis** | OLSA-Satzverständnis mit **Wort-Fokus (Multiple Choice)** und **Ganzsatz-Diktat (Freie Eingabe/Spracheingabe)**. |
+| 🎯 | **Schwachstellen** | Adaptives Training für Ihre fehlerintensivsten Phonem-Kategorien (< 60% Genauigkeit). |
+| 🌊 | **Störschall** | Hören unter erschwerten Alltagsbedingungen (Café, Verkehr) mit **separatem Störschall-Regler**. |
 | 🧠 | **Auditiv. Gedächtnis** | Schulung der Merkspanne durch Wiederholen von Sequenzen aus 2 bis 6 Wörtern. |
 | 📊 | **Statistik & Heatmap** | Detaillierte Auswertung von Trefferquoten, Reaktionszeiten und phonetischen Fehlermustern. |
 | ✏️ | **Editor** | Eigener Katalog-Editor zum Hinzufügen oder Anpassen von Übungssätzen und Wortpaaren. |
@@ -45,16 +46,18 @@ Das Dashboard bietet eine übersichtliche, dunkle Benutzeroberfläche mit Schnel
 Das Bedienfeld **Audio-Einstellungen & Rauschen** erlaubt eine gezielte Anpassung an individuelle Hörbedürfnisse:
 
 ### 🎚️ Regler (Lautstärke & Tempo)
-* **Wort-Lautstärke (0% – 100%)**: Stellt die Lautstärke der Sprachausgabe ein.
-* **Rausch-Lautstärke (0% – 100%)**: Regelt die Intensität des beigemischten Störgeräuschs (z. B. Restaurant- oder Straßenlärm).
-* **Sprechtempo (0.5x – 2.0x)**: Passt die Wiedergabegeschwindigkeit stufenlos an, ohne die Tonhöhe zu verändern.
+* **Wort-Lautstärke (0% – 250%)**: Stellt die Lautstärke der Sprachausgabe stufenlos ein.
+* **Rausch-Lautstärke (0% – 100%)**: Regelt die Intensität des beigemischten Störgeräuschs stotterfrei ohne Audio-Unterbrechungen.
+* **🔊 Separate Störschall-Lautstärke**: Direkt im Störschall-Tab konfigurierbarer Lautstärkeregler für Hintergrundgeräusche.
+* **Sprechtempo (0.6x – 1.4x)**: Passt die Wiedergabegeschwindigkeit stufenlos an, ohne die Tonhöhe zu verändern.
 
 ### 🔘 Schalter & Optionen
+* **🎯 Adaptive SNR (Autom. Rauschen)**: Automatisches Störschall-Stufenverfahren (+5% Lärm nach 3 richtigen Antworten / -5% bei Fehler).
 * **Ohr-Kanal Balance (Stereo-Isolierung)**:
   * `Links (CI)`: Gibt das Audiosignal ausschließlich auf dem linken Kanal aus.
   * `Beide`: Ausgewogene Stereo-Wiedergabe auf beiden Ohren.
   * `Rechts (CI)`: Gibt das Audiosignal ausschließlich auf dem rechten Kanal aus.
-* **Vertäubung (Gegenohr)**: Sendet kontinuierliches Rauschen auf das Nicht-Testohr, um ein ungewolltes Mittestesten (Überhören) zu verhindern.
+* **Vertäubung (Gegenohr)**: Sendet kontinuierliches Rauschen auf das Nicht-Testohr, um ein ungewolltes Mittestesten zu verhindern.
 * **Freisprechen (Auto-Mikrofon)**: Aktiviert die automatische Spracheingabe per Mikrofon für direkt gesprochene Antworten.
 * **Sprecher-Stimme**: Auswahl der Text-to-Speech-Stimme (z. B. *Anna (Weiblich - Deutsch)*).
 

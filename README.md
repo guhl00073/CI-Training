@@ -35,17 +35,23 @@ Doppelklick auf `start_ci_trainer.bat`.
    - Hörtraining für Einzelzahlen, zweistellige/dreistellige Zahlen, Uhrzeiten (z. B. *14:30 Uhr*) und Geldbeträge (z. B. *12,50 €*).
 
 4. **Alltagssätze (Oldenburger Satztest / OLSA)**:
-   - Hörtraining in vollständigen Alltagssätzen.
+   - **Wort-Fokus (Multiple Choice)**: Höre den Satz und wähle das gesuchte Schlüsselwort.
+   - **Ganzsatz-Diktat (Freie Eingabe & Spracheingabe)**: Höre den ganzen Satz (Text ausgeblendet) und tippe ihn ein oder sprich ihn nach. Wortweise Auswertung mit farblichen Wort-Badges (Grün/Rot) und Trefferquote (%).
 
-5. **CI-spezifische Audio-Steuerung**:
-   - **Stereo-Balance / Kanalisolierung**: Getrennte Ansteuerung des linken oder rechten Ohrs (für bilateral oder bimodal versorgte CI-Träger).
-   - **Vertäubung & Störschall**: Zuschaltbares kontinuierliches Rauschen (Restaurant / Verkehr) zur Festigung des Hörens im Lärm.
-   - **Sprechtempo-Regelung**: Verlangsamtes oder beschleunigtes Sprechen ohne Tonhöhenverzerrung (0.6x bis 1.4x).
+5. **🎯 Adaptives Schwachstellen-Training**:
+   - Automatisches Auslesen fehlerintensiver Phonem-Kategorien (< 60% Trefferquote) aus der Historie.
+   - Generiert gezielte Übungs-Sets mit audiologischen Hinweisen, Satz-Maskierung (`"_______"`) und Autostart.
 
-6. **Hochwertige Sprachsynthese**:
-   - Verwendet bevorzugt **Online-TTS** für sehr natürliche Sprachausgabe sowie native Betriebssystem-Stimmen (`Anna`, `Eddy`, `Flo`, `Sandy`, etc.) für Offline-Nutzung.
+6. **CI-spezifische Audio-Steuerung & Adaptive SNR**:
+   - **Stereo-Balance / Kanalisolierung**: Getrennte Ansteuerung des linken oder rechten Ohrs.
+   - **Vertäubung & Störschall**: Zuschaltbares kontinuierliches Rauschen (Café/Restaurant, Straßenverkehr) mit **unterbrechungsfreier Lautstärkenanpassung** (Prozess-Crossfade) und separater Lautstärkeregelung.
+   - **Adaptive SNR (Automatisches Störschall-Stufenverfahren)**: Dynamische Anpassung des Störschallpegels (+5% Lärm nach 3 richtigen Antworten / -5% bei Fehlern).
+   - **Sprechtempo-Regelung**: Verlangsamtes oder beschleunigtes Sprechen (0.6x bis 1.4x).
 
-7. **Phonetische Auswertung (Kölner Phonetik)**:
+7. **Hochwertige Sprachsynthese**:
+   - Verwendet bevorzugt **Online-TTS** für sehr natürliche Sprachausgabe sowie native Betriebssystem-Stimmen (`Anna`, `Eddy`, `Flo`, `Sandy`, etc.) mit automatischem Cache Clean-Up (>7 Tage / >100 MB).
+
+8. **Phonetische Auswertung (Kölner Phonetik)**:
    - Integrierter **Kölner Phonetik Algorithmus** zur Bewertung von Artikulationskategorien (Plosive, Frikative, Nasale, Vokaldifferenzierung) mit audiologischen Praxistipps.
 
 ---
