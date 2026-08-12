@@ -110,7 +110,7 @@ class AudioPlayer:
                 target_file = self.noise_file
 
             new_config = (target_mode, target_side, target_vol, target_file)
-            if new_config == self.current_noise_config:
+            if new_config == self.current_noise_config and hasattr(self, "noise_process") and self.noise_process and self.noise_process.poll() is None:
                 return
 
             self.stop_noise()
@@ -230,6 +230,8 @@ class AudioPlayer:
                     filter_parts.append(f"volume={volume},pan=stereo|c0=c0+c1|c1=0*c0")
                 elif balance > 0:
                     filter_parts.append(f"volume={volume},pan=stereo|c0=0*c0|c1=c0+c1")
+                elif volume != 1.0:
+                    filter_parts.append(f"volume={volume}")
 
                 if filter_parts:
                     filter_str = ",".join(filter_parts)
@@ -244,7 +246,7 @@ class AudioPlayer:
                         play_path = temp_speech
 
                 # Playback command per OS
-                vol_val = str(max(0.1, min(1.0, volume)))
+                vol_val = str(max(0.1, min(3.0, volume)))
                 
                 if sys.platform == "darwin":
                     cmd_play = ["afplay", "-v", vol_val, "-r", str(rate), play_path]

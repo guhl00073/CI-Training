@@ -72,10 +72,10 @@ class CITrainerHTTPHandler(http.server.SimpleHTTPRequestHandler):
             self._send_json(self.db.get_test_runs())
 
         elif path.startswith("/api/audio/"):
-            # Serve temporary TTS audio files from the system temp dir
+            # Serve temporary TTS audio files from the cache dir
             file_name = os.path.basename(path)
-            temp_dir = pathlib.Path(self.tts.temp_dir)
-            target_path = temp_dir / file_name
+            cache_dir = pathlib.Path(self.tts.cache_dir)
+            target_path = cache_dir / file_name
             if target_path.exists() and target_path.is_file():
                 self._send_file(str(target_path), "audio/wav")
             else:
@@ -269,6 +269,12 @@ class CITrainerHTTPHandler(http.server.SimpleHTTPRequestHandler):
         self.send_header("Access-Control-Allow-Origin", "*")
         self.send_header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
         self.send_header("Access-Control-Allow-Headers", "Content-Type")
+
+    def end_headers(self):
+        self.send_header("Cache-Control", "no-cache, no-store, must-revalidate")
+        self.send_header("Pragma", "no-cache")
+        self.send_header("Expires", "0")
+        super().end_headers()
 
     def _send_json(self, data, status: int = 200):
         content = json.dumps(data, ensure_ascii=False).encode("utf-8")

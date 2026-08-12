@@ -133,7 +133,7 @@ class CIAudioTrainerApp:
 
         # Volume
         ttk.Label(ctrl_frame, text="🔊 Lautstärke:", style="Panel.TLabel").grid(row=0, column=0, sticky="w", padx=5)
-        scale_vol = ttk.Scale(ctrl_frame, from_=0.0, to=1.0, variable=self.volume_var, orient="horizontal", length=120)
+        scale_vol = ttk.Scale(ctrl_frame, from_=0.0, to=2.5, variable=self.volume_var, orient="horizontal", length=120)
         scale_vol.grid(row=0, column=1, padx=5)
 
         # Balance (Left / Both / Right)

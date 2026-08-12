@@ -26,7 +26,7 @@ let sentAttempted = false;
 
 let isPlaying = false;
 let audioBalance = 0.0;
-let audioVolume = 0.9;
+let audioVolume = 1.0;
 let noiseVolume = 0.4;
 let audioRate = 1.0;
 let maskNoise = false;
@@ -160,12 +160,13 @@ function initAudioControls() {
     });
   }
 
-  const segBtns = document.querySelectorAll(".seg-btn");
+  const segBtns = document.querySelectorAll(".segmented-control .seg-btn[data-bal]");
   segBtns.forEach(btn => {
     btn.addEventListener("click", () => {
       segBtns.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
       audioBalance = parseFloat(btn.dataset.bal);
+      if (isNaN(audioBalance)) audioBalance = 0.0;
 
       const balVal = document.getElementById("balVal");
       if (audioBalance === -1.0) balVal.textContent = "Nur Links (CI)";
@@ -259,6 +260,20 @@ function initTabs() {
 
       if (btn.dataset.tab === "stats") updateStats();
       if (btn.dataset.tab === "editor") renderEditorList();
+      if (btn.dataset.tab === "sent") {
+        if (!currentSent) {
+          nextSentItem();
+        } else {
+          renderSentCards();
+        }
+      }
+      if (btn.dataset.tab === "memory") {
+        if (!targetMemoryWords || targetMemoryWords.length === 0) {
+          nextMemoryItem();
+        } else {
+          renderMemoryUI();
+        }
+      }
     });
   });
 
@@ -811,30 +826,59 @@ async function checkNumAnswer() {
 }
 
 // Sentence Training Tab Logic
-function nextSentItem(userTriggered = false) {
-  if (!exercises.sentences || exercises.sentences.length === 0) return;
-  currentSent = exercises.sentences[Math.floor(Math.random() * exercises.sentences.length)];
+function renderSentCards() {
+  if (!currentSent) return;
 
-  currentSentWords = [...currentSent.options];
-  currentSentTargetWord = currentSent.target_word;
+  let rawOpts = currentSent.options;
+  if (typeof rawOpts === "string") {
+    try { rawOpts = JSON.parse(rawOpts); } catch (e) { rawOpts = []; }
+  }
+  if (!Array.isArray(rawOpts)) {
+    rawOpts = [];
+  }
+
+  // Extract all distinct words from sentence as candidates if explicit options are missing/fewer than 2
+  const sentenceWords = (currentSent.sentence || "")
+    .replace(/[.,!?;:()""'']/g, "")
+    .split(/\s+/)
+    .map(w => w.trim())
+    .filter(w => w.length > 0);
+
+  if (rawOpts.length < 2 && sentenceWords.length > 0) {
+    rawOpts = Array.from(new Set(sentenceWords));
+  }
+
+  if (currentSent.target_word) {
+    const cleanTarget = currentSent.target_word.toLowerCase().replace(/[.,!?;:]/g, "").trim();
+    const hasTarget = rawOpts.some(w => w.toLowerCase().replace(/[.,!?;:]/g, "").trim() === cleanTarget);
+    if (!hasTarget) rawOpts.unshift(currentSent.target_word);
+  }
+
+  currentSentWords = rawOpts;
+  currentSentTargetWord = currentSent.target_word || (currentSentWords[0] || "");
   currentSentTargetIndex = currentSentWords.indexOf(currentSentTargetWord);
-  sentAttempted = false;
 
-  document.getElementById("sentCategory").textContent = `Kategorie: ${currentSent.category}`;
+  const catEl = document.getElementById("sentCategory");
+  if (catEl) catEl.textContent = `Kategorie: ${currentSent.category || "Alltagssätze"}`;
 
   // Replace target word in sentence display with blank line
-  const maskedSentence = currentSent.sentence.replace(currentSentTargetWord, "_______");
-  document.getElementById("sentDisplay").textContent = `"${maskedSentence}"`;
+  const maskedSentence = (currentSentTargetWord && currentSent.sentence)
+    ? currentSent.sentence.replace(currentSentTargetWord, "_______")
+    : (currentSent.sentence || "...");
+  const dispEl = document.getElementById("sentDisplay");
+  if (dispEl) dispEl.textContent = `"${maskedSentence}"`;
 
   const cardsContainer = document.getElementById("sentCardsGrid");
+  if (!cardsContainer) return;
   cardsContainer.innerHTML = "";
 
   currentSentWords.forEach((word, idx) => {
     const card = document.createElement("div");
     card.className = "option-card";
+    card.id = `sent_card_${idx}`;
     card.innerHTML = `
       <div class="card-top-bar">
-        <span class="card-label">WORT ${idx + 1}</span>
+        <span class="card-label">OPTION ${String.fromCharCode(65 + idx)}</span>
         <button class="card-audio-btn" title="Dieses Wort vorlesen">🔊</button>
       </div>
       <span class="card-word">${word}</span>
@@ -844,15 +888,23 @@ function nextSentItem(userTriggered = false) {
     if (audioBtn) {
       audioBtn.addEventListener("click", (e) => {
         e.stopPropagation();
-        playTTS(word, `Wort ${idx + 1}`);
+        playTTS(word, `Option ${String.fromCharCode(65 + idx)}`);
       });
     }
     card.addEventListener("click", () => checkSentAnswer(idx));
     cardsContainer.appendChild(card);
   });
+}
+
+function nextSentItem(userTriggered = false) {
+  if (!exercises.sentences || exercises.sentences.length === 0) return;
+  currentSent = exercises.sentences[Math.floor(Math.random() * exercises.sentences.length)];
+  sentAttempted = false;
+
+  renderSentCards();
 
   const feedback = document.getElementById("sentFeedback");
-  feedback.className = "feedback-banner hidden";
+  if (feedback) feedback.className = "feedback-banner hidden";
   setStatus("Bereit für Satz-Übung.");
 
   if (userTriggered && autoStart) {
@@ -861,12 +913,15 @@ function nextSentItem(userTriggered = false) {
 }
 
 function playSentAudio() {
+  if (!currentSent || !currentSent.sentence) return;
   playTTS(currentSent.sentence, "Ganzen Satz");
 }
 
 async function checkSentAnswer(chosenIndex) {
   const chosenWord = currentSentWords[chosenIndex];
-  const isCorrect = (chosenWord === currentSentTargetWord);
+  const cleanChosen = String(chosenWord || "").toLowerCase().replace(/[.,!?;:]/g, "").trim();
+  const cleanTarget = String(currentSentTargetWord || "").toLowerCase().replace(/[.,!?;:]/g, "").trim();
+  const isCorrect = (cleanChosen === cleanTarget);
 
   const cards = document.querySelectorAll("#sentCardsGrid .option-card");
   const feedback = document.getElementById("sentFeedback");
@@ -882,18 +937,21 @@ async function checkSentAnswer(chosenIndex) {
   document.getElementById("sentDisplay").textContent = `"${currentSent.sentence}"`;
 
   if (sentAttempted) {
-    // Only update visual highlight, do not evaluate/log stats again for subsequent clicks
     return;
   }
   sentAttempted = true;
 
   if (isCorrect) {
-    feedback.textContent = `✓ Richtig! Es war '${currentSentTargetWord}'. (+35 XP)`;
-    feedback.className = "feedback-banner success";
+    if (feedback) {
+      feedback.textContent = `✓ Richtig! Es war '${currentSentTargetWord}'. (+35 XP)`;
+      feedback.className = "feedback-banner success";
+    }
     addXP(35);
   } else {
-    feedback.textContent = `✗ Falsch. Gesprochen wurde '${currentSentTargetWord}' (du hast '${chosenWord}' gewählt).`;
-    feedback.className = "feedback-banner danger";
+    if (feedback) {
+      feedback.textContent = `✗ Falsch. Gesprochen wurde '${currentSentTargetWord}' (du hast '${chosenWord}' gewählt).`;
+      feedback.className = "feedback-banner danger";
+    }
   }
 
   await fetch("/api/evaluate", {
@@ -912,6 +970,8 @@ async function checkSentAnswer(chosenIndex) {
   }
 }
 
+
+
 // ─── Störschall-Training (Hören im Lärm) ──────────────────────────
 let currentNoiseItem = null;
 let currentNoiseTargetWord = "";
@@ -923,7 +983,7 @@ function nextNoiseItem(userTriggered = false) {
   const list = pool.length > 0 ? pool : exercises.monosyllables;
 
   currentNoiseItem = list[Math.floor(Math.random() * list.length)];
-  currentNoiseTargetWord = currentNoiseItem.word || currentNoiseItem.target || "";
+  currentNoiseTargetWord = currentNoiseItem.word || currentNoiseItem.target || currentNoiseItem.target_word || "";
   noiseAttempted = false;
 
   const level = document.getElementById("noiseLevelSelect")?.value || "medium";
@@ -945,10 +1005,21 @@ function nextNoiseItem(userTriggered = false) {
 }
 
 async function playNoiseAudio() {
+  if (!currentNoiseTargetWord) {
+    nextNoiseItem();
+  }
+  if (!currentNoiseTargetWord && exercises.monosyllables && exercises.monosyllables.length > 0) {
+    currentNoiseItem = exercises.monosyllables[Math.floor(Math.random() * exercises.monosyllables.length)];
+    currentNoiseTargetWord = currentNoiseItem.word || currentNoiseItem.target || "Baum";
+  }
+  if (!currentNoiseTargetWord) {
+    currentNoiseTargetWord = "Baum";
+  }
+
   const level = document.getElementById("noiseLevelSelect")?.value || "medium";
   const ambientType = document.getElementById("noiseTypeSelect")?.value || "restaurant";
-  const vols = { easy: 0.2, medium: 0.45, hard: 0.7 };
-  const nVol = vols[level] || 0.45;
+  const vols = { easy: 0.3, medium: 0.55, hard: 0.85 };
+  const nVol = vols[level] || 0.55;
 
   await playTTS(currentNoiseTargetWord, "Störschall-Wort", {
     ambient_noise: true,
@@ -1006,21 +1077,28 @@ let currentMemorySequenceId = 0;
 
 function nextMemoryItem(userTriggered = false) {
   currentMemorySequenceId++;
-  if (!exercises.monosyllables || exercises.monosyllables.length < 5) return;
   const count = parseInt(document.getElementById("memorySpanSelect")?.value || "4", 10);
   
-  const validItems = exercises.monosyllables.filter(item => item.word && !item.word.startsWith("Wort_"));
-  const pool = validItems.length >= count ? validItems : exercises.monosyllables;
+  let pool = [];
+  if (exercises.monosyllables && exercises.monosyllables.length > 0) {
+    const validItems = exercises.monosyllables.filter(item => item.word && !item.word.startsWith("Wort_"));
+    pool = validItems.length >= count ? validItems : exercises.monosyllables;
+  }
   
+  if (pool.length === 0) {
+    const fallbackWords = ["Baum", "Haus", "Zug", "Brot", "Fisch", "Tisch", "Bett", "Hund", "Mund", "Buch"];
+    pool = fallbackWords.map(w => ({ word: w }));
+  }
+
   const shuffled = [...pool].sort(() => 0.5 - Math.random());
-  targetMemoryWords = shuffled.slice(0, count).map(i => i.word || i.target);
+  targetMemoryWords = shuffled.slice(0, Math.min(count, shuffled.length)).map(i => i.word || i.target || i);
   selectedMemoryWords = [];
   memoryAttempted = false;
 
   renderMemoryUI();
   const feedback = document.getElementById("memoryFeedback");
   if (feedback) feedback.className = "feedback-banner hidden";
-  setStatus(`Bereit für Merkspannen-Übung (${count} Wörter).`);
+  setStatus(`Bereit für Merkspannen-Übung (${targetMemoryWords.length} Wörter).`);
 
   if (userTriggered && autoStart) {
     playMemoryAudio();
@@ -1071,6 +1149,9 @@ function resetMemorySelection() {
 }
 
 async function playMemoryAudio() {
+  if (!targetMemoryWords || targetMemoryWords.length === 0) {
+    nextMemoryItem();
+  }
   const seqId = ++currentMemorySequenceId;
   setStatus(`Spreche Sequenz von ${targetMemoryWords.length} Wörtern...`);
   for (let i = 0; i < targetMemoryWords.length; i++) {
@@ -1951,7 +2032,7 @@ function replayCurrentAudio() {
   if (tab === "mp") playMPAudio();
   else if (tab === "es") playESAudio();
   else if (tab === "num") playNumAudio();
-  else if (tab === "sentences") playSentAudio();
+  else if (tab === "sent" || tab === "sentences") playSentAudio();
   showToast("▶ Audio wird abgespielt", "info");
 }
 
@@ -1961,8 +2042,8 @@ function selectOptionByHotkey(index) {
     if (currentMPWords && currentMPWords[index]) {
       checkMPAnswer(index);
     }
-  } else if (tab === "sentences") {
-    const opts = document.querySelectorAll("#sentCardsContainer .option-card");
+  } else if (tab === "sent" || tab === "sentences") {
+    const opts = document.querySelectorAll("#sentCardsGrid .option-card");
     if (opts && opts[index]) {
       opts[index].click();
     }
@@ -1974,7 +2055,7 @@ function nextExerciseItem() {
   if (tab === "mp") nextMPItem(true);
   else if (tab === "es") nextESItem(true);
   else if (tab === "num") nextNumItem(true);
-  else if (tab === "sentences") nextSentItem(true);
+  else if (tab === "sent" || tab === "sentences") nextSentItem(true);
   showToast("➔ Nächste Übung geladen", "info");
 }
 
