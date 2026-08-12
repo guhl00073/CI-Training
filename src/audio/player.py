@@ -113,11 +113,12 @@ class AudioPlayer:
             if new_config == self.current_noise_config and hasattr(self, "noise_process") and self.noise_process and self.noise_process.poll() is None:
                 return
 
-            self.stop_noise()
-            self.current_noise_config = new_config
-
             if target_mode == "off" or not os.path.exists(target_file):
+                self.stop_noise()
                 return
+
+            # Keep reference to old processes for seamless overlap
+            old_processes = list(getattr(self, "noise_processes", []))
 
             ffplay_bin = self._find_ffplay()
             
@@ -129,14 +130,14 @@ class AudioPlayer:
             else:
                 filter_str = f"volume={target_vol * 1.5},pan=stereo|c0=c0|c1=c1"
 
-            self.noise_processes = []
+            new_processes = []
             if ffplay_bin:
                 cmd_noise = [
                     ffplay_bin, "-nodisp", "-loglevel", "quiet", "-loop", "0",
                     "-af", filter_str, target_file
                 ]
                 p = subprocess.Popen(cmd_noise, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-                self.noise_processes.append(p)
+                new_processes.append(p)
                 self.noise_process = p
             else:
                 ffmpeg_bin = self._find_ffmpeg()
@@ -153,8 +154,29 @@ class AudioPlayer:
                 p2 = subprocess.Popen(cmd_play, stdin=p1.stdout, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                 if p1.stdout:
                     p1.stdout.close()
-                self.noise_processes.extend([p1, p2])
+                new_processes.extend([p1, p2])
                 self.noise_process = p2
+
+            self.noise_processes = new_processes
+            self.current_noise_config = new_config
+
+            # Terminate old processes after a short overlap to prevent audio dropouts
+            if old_processes:
+                threading.Thread(target=self._terminate_processes, args=(old_processes,), daemon=True).start()
+
+    def _terminate_processes(self, procs):
+        import time
+        time.sleep(0.12)
+        for p in procs:
+            if p and p.poll() is None:
+                try:
+                    p.terminate()
+                    p.wait(timeout=0.2)
+                except Exception:
+                    try:
+                        p.kill()
+                    except Exception:
+                        pass
 
     def stop_noise(self):
         """Stops background continuous noise process cleanly."""

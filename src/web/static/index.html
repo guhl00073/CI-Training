@@ -445,6 +445,10 @@
             <span class="icon">▶</span> Audio abspielen
           </button>
           <button id="weaknessNextBtn" class="btn btn-secondary">Nächste Schwachstellen-Übung ➔</button>
+          <label for="weaknessAutoStartCheck" class="autostart-pill" title="Automatisch abspielen bei nächster Übung">
+            <input type="checkbox" id="weaknessAutoStartCheck" class="auto-start-check">
+            <span>⚡ Autostart</span>
+          </label>
         </div>
 
         <div id="weaknessExerciseArea" style="margin-top:1.2rem;"></div>
@@ -471,6 +475,11 @@
                 <option value="medium" selected>🟡 Mittel (+5 dB)</option>
                 <option value="hard">🔴 Schwer (0 dB)</option>
               </select>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.4rem;">
+              <label for="noiseVolSlider" style="font-weight:600; font-size:0.85rem; color:var(--primary);">🔊 Störschall-Lautstärke:</label>
+              <input type="range" id="noiseVolSlider" min="0.05" max="1.0" step="0.05" value="0.4" class="custom-range" style="width:110px;">
+              <span id="noiseVolVal" class="val-badge" style="font-size:0.8rem;">40%</span>
             </div>
           </div>
           <span id="noiseCategory" class="cat-tag">Kategorie: Hören im Lärm</span>

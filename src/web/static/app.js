@@ -69,26 +69,23 @@ function announceA11y(text) {
 }
 
 function handleAdaptiveSNR(isCorrect) {
-  if (!adaptiveSNR || !maskNoise) return;
+  if (!adaptiveSNR || !maskNoise) {
+    correctStreak = 0;
+    return;
+  }
   if (isCorrect) {
     correctStreak++;
     if (correctStreak >= 3) {
       noiseVolume = Math.min(0.85, Math.round((noiseVolume + 0.05) * 100) / 100);
       correctStreak = 0;
-      const slider = document.getElementById("maskVolSlider");
-      const badge = document.getElementById("maskVolVal");
-      if (slider) slider.value = noiseVolume;
-      if (badge) badge.textContent = `${Math.round(noiseVolume * 100)}%`;
+      updateNoiseVolumeUI(noiseVolume);
       syncNoiseConfig();
       showToast(`🎯 Adaptive SNR: Störschall auf ${Math.round(noiseVolume * 100)}% erhöht!`, "info");
     }
   } else {
     correctStreak = 0;
     noiseVolume = Math.max(0.10, Math.round((noiseVolume - 0.05) * 100) / 100);
-    const slider = document.getElementById("maskVolSlider");
-    const badge = document.getElementById("maskVolVal");
-    if (slider) slider.value = noiseVolume;
-    if (badge) badge.textContent = `${Math.round(noiseVolume * 100)}%`;
+    updateNoiseVolumeUI(noiseVolume);
     syncNoiseConfig();
     showToast(`🎯 Adaptive SNR: Störschall auf ${Math.round(noiseVolume * 100)}% gesenkt.`, "info");
   }
@@ -203,13 +200,39 @@ function initAudioControls() {
     });
   }
 
+  let syncNoiseTimer = null;
+  function debouncedSyncNoiseConfig(delay = 120) {
+    clearTimeout(syncNoiseTimer);
+    syncNoiseTimer = setTimeout(() => {
+      syncNoiseConfig();
+    }, delay);
+  }
+
   const maskVolSlider = document.getElementById("maskVolSlider");
   const maskVolVal = document.getElementById("maskVolVal");
+  const noiseVolSlider = document.getElementById("noiseVolSlider");
+  const noiseVolVal = document.getElementById("noiseVolVal");
+
+  function updateNoiseVolumeUI(vol) {
+    noiseVolume = vol;
+    const volPct = `${Math.round(noiseVolume * 100)}%`;
+    if (maskVolVal) maskVolVal.textContent = volPct;
+    if (noiseVolVal) noiseVolVal.textContent = volPct;
+    if (maskVolSlider) maskVolSlider.value = noiseVolume;
+    if (noiseVolSlider) noiseVolSlider.value = noiseVolume;
+  }
+
   if (maskVolSlider) {
     maskVolSlider.addEventListener("input", (e) => {
-      noiseVolume = parseFloat(e.target.value);
-      if (maskVolVal) maskVolVal.textContent = `${Math.round(noiseVolume * 100)}%`;
-      syncNoiseConfig();
+      updateNoiseVolumeUI(parseFloat(e.target.value));
+      debouncedSyncNoiseConfig(120);
+    });
+  }
+
+  if (noiseVolSlider) {
+    noiseVolSlider.addEventListener("input", (e) => {
+      updateNoiseVolumeUI(parseFloat(e.target.value));
+      debouncedSyncNoiseConfig(120);
     });
   }
 
@@ -249,6 +272,7 @@ function initAudioControls() {
 
   autoStart = localStorage.getItem("ci_autostart") === "true";
   autoMic = localStorage.getItem("ci_automic") !== "false";
+  adaptiveSNR = localStorage.getItem("ci_adaptive_snr") === "true";
 
   const autoStartToggle = document.getElementById("autoStartToggle");
   if (autoStartToggle) {
@@ -264,6 +288,8 @@ function initAudioControls() {
   if (adaptiveSNRToggle) {
     adaptiveSNRToggle.addEventListener("change", (e) => {
       adaptiveSNR = e.target.checked;
+      correctStreak = 0;
+      localStorage.setItem("ci_adaptive_snr", adaptiveSNR ? "true" : "false");
       if (adaptiveSNRVal) adaptiveSNRVal.textContent = adaptiveSNR ? "Ein" : "Aus";
       if (adaptiveSNR && !maskNoise) {
         const maskToggle = document.getElementById("maskToggle");
@@ -295,6 +321,11 @@ function updateAutoStartUI() {
   const autoMicVal = document.getElementById("autoMicVal");
   if (autoMicToggle) autoMicToggle.checked = autoMic;
   if (autoMicVal) autoMicVal.textContent = autoMic ? "Ja" : "Nein";
+
+  const adaptiveSNRToggle = document.getElementById("adaptiveSNRToggle");
+  const adaptiveSNRVal = document.getElementById("adaptiveSNRVal");
+  if (adaptiveSNRToggle) adaptiveSNRToggle.checked = adaptiveSNR;
+  if (adaptiveSNRVal) adaptiveSNRVal.textContent = adaptiveSNR ? "Ein" : "Aus";
 
   document.querySelectorAll(".auto-start-check").forEach(chk => {
     chk.checked = autoStart;
@@ -1011,6 +1042,16 @@ function setSentMode(mode) {
     if (hintText) hintText.textContent = "Höre den ganzen Satz und wähle das herausgehörte Schlüsselwort.";
     if (contextBox) contextBox.style.display = "block";
   }
+
+  // Clear feedback banner & inner HTML explicitly
+  const feedback = document.getElementById("sentFeedback");
+  if (feedback) {
+    feedback.innerHTML = "";
+    feedback.className = "feedback-banner hidden";
+  }
+
+  // Re-initialize lower exercise area, clear input and reset feedback
+  nextSentItem(false);
 }
 
 function nextSentItem(userTriggered = false) {
@@ -1024,7 +1065,10 @@ function nextSentItem(userTriggered = false) {
   if (inp) inp.value = "";
 
   const feedback = document.getElementById("sentFeedback");
-  if (feedback) feedback.className = "feedback-banner hidden";
+  if (feedback) {
+    feedback.innerHTML = "";
+    feedback.className = "feedback-banner hidden";
+  }
   setStatus("Bereit für Satz-Übung.");
 
   if (userTriggered && autoStart) {
@@ -1060,6 +1104,7 @@ async function checkSentAnswer(chosenIndex) {
   document.getElementById("sentDisplay").textContent = `"${currentSent.sentence}"`;
 
   if (sentAttempted) {
+    nextSentItem(true);
     return;
   }
   sentAttempted = true;
@@ -1098,11 +1143,20 @@ async function checkSentAnswer(chosenIndex) {
 }
 
 async function checkSentFullAnswer() {
-  if (sentAttempted) return;
+  if (sentAttempted) {
+    nextSentItem(true);
+    return;
+  }
+
+  if (!currentSent || !currentSent.sentence) {
+    nextSentItem(true);
+    return;
+  }
+
   sentAttempted = true;
 
   const userInput = document.getElementById("sentFullInput")?.value.trim() || "";
-  const target = currentSent ? currentSent.sentence : "";
+  const target = currentSent.sentence;
 
   const res = await fetch("/api/evaluate", {
     method: "POST",
@@ -1111,7 +1165,7 @@ async function checkSentFullAnswer() {
       target: target,
       user_input: userInput,
       module: "Sentences_Full",
-      category: currentSent ? currentSent.category : "OLSA Ganzsatz"
+      category: currentSent.category || "OLSA Ganzsatz"
     })
   });
   const data = await res.json();
@@ -1973,15 +2027,23 @@ function startAutoMic(tabName = "es") {
           } else if (activeMicTab === "noise") {
             const inputEl = document.getElementById("noiseInput");
             if (inputEl) inputEl.value = bestText;
+          } else if (activeMicTab === "sentFull") {
+            const inputEl = document.getElementById("sentFullInput");
+            if (inputEl) inputEl.value = bestText;
+          } else if (activeMicTab === "weakness") {
+            const inputEl = document.getElementById("weaknessInput");
+            if (inputEl) inputEl.value = bestText;
           }
 
-          // Wait 900ms after user stops speaking to allow full word completion (e.g. "lolle")
+          // Wait 900ms after user stops speaking to allow full word completion
           clearTimeout(silenceTimer);
           silenceTimer = setTimeout(() => {
             try { rec.stop(); } catch (err) {}
             if (activeMicTab === "es") checkESAnswer();
             else if (activeMicTab === "num") checkNumAnswer();
             else if (activeMicTab === "noise") checkNoiseAnswer();
+            else if (activeMicTab === "sentFull") checkSentFullAnswer();
+            else if (activeMicTab === "weakness" && currentWeaknessItem && currentWeaknessItem.mod_type !== "minimal_pairs" && currentWeaknessItem.mod_type !== "sentences") checkWeaknessAnswer(bestText);
           }, 900);
         }
       };
@@ -2021,6 +2083,13 @@ function initSpeechRecognition() {
   if (noiseMicBtn) {
     noiseMicBtn.addEventListener("click", () => {
       startAutoMic("noise");
+    });
+  }
+
+  const sentFullMicBtn = document.getElementById("sentFullMicBtn");
+  if (sentFullMicBtn) {
+    sentFullMicBtn.addEventListener("click", () => {
+      startAutoMic("sentFull");
     });
   }
 }
@@ -2244,6 +2313,12 @@ function triggerMicRecording() {
   } else if (tab === "num") {
     const micBtn = document.getElementById("numMicBtn");
     if (micBtn) micBtn.click();
+  } else if (tab === "sent" || tab === "sentences") {
+    const micBtn = document.getElementById("sentFullMicBtn");
+    if (micBtn) micBtn.click();
+  } else if (tab === "noise") {
+    const micBtn = document.getElementById("noiseMicBtn");
+    if (micBtn) micBtn.click();
   }
 }
 
@@ -2361,28 +2436,33 @@ function nextWeaknessItem(userTriggered = false) {
   const modType = currentWeaknessItem.mod_type || "minimal_pairs";
 
   let inputHtml = "";
-  let targetWord = currentWeaknessItem.word || currentWeaknessItem.target_word || currentWeaknessItem.value || "";
+  let targetWord = currentWeaknessItem.word_a || currentWeaknessItem.target_word || currentWeaknessItem.word || currentWeaknessItem.value || "";
 
   if (modType === "minimal_pairs") {
     const opts = currentWeaknessItem.options || [currentWeaknessItem.word_a, currentWeaknessItem.word_b];
     targetWord = currentWeaknessItem.word_a || opts[0];
     inputHtml = `<div class="cards-grid" style="margin-top:1rem;">` +
       opts.map((opt, idx) => `
-        <div class="option-card" onclick="checkWeaknessAnswer('${escapeHtml(opt)}')">
+        <div class="option-card" id="weakness_card_${idx}" onclick="checkWeaknessAnswer('${escapeHtml(opt)}')">
           <span class="card-word">${escapeHtml(opt)}</span>
         </div>
       `).join("") + `</div>`;
   } else if (modType === "sentences") {
-    targetWord = currentWeaknessItem.target_word || currentWeaknessItem.sentence;
+    targetWord = currentWeaknessItem.target_word || "";
     const opts = currentWeaknessItem.options || [targetWord, "Wort 2", "Wort 3"];
+    const rawSentence = currentWeaknessItem.sentence || "";
+    const maskedSentence = (targetWord && rawSentence.includes(targetWord))
+      ? rawSentence.replace(targetWord, "_______")
+      : rawSentence;
+
     inputHtml = `
       <div style="background:rgba(15,23,42,0.6); padding:1rem; border-radius:12px; margin-bottom:1rem; text-align:left; border:1px solid var(--panel-border);">
         <span style="color:var(--text-muted);">Satzkontext:</span>
-        <h4 style="font-size:1.3rem; color:white; margin-top:0.3rem;">"${escapeHtml(currentWeaknessItem.sentence)}"</h4>
+        <h4 id="weaknessSentenceDisplay" style="font-size:1.3rem; color:white; margin-top:0.3rem;">"${escapeHtml(maskedSentence)}"</h4>
       </div>
       <div class="cards-grid">` +
-      opts.map(opt => `
-        <div class="option-card" onclick="checkWeaknessAnswer('${escapeHtml(opt)}')">
+      opts.map((opt, idx) => `
+        <div class="option-card" id="weakness_card_${idx}" onclick="checkWeaknessAnswer('${escapeHtml(opt)}')">
           <span class="card-word">${escapeHtml(opt)}</span>
         </div>
       `).join("") + `</div>`;
@@ -2425,6 +2505,9 @@ function playWeaknessAudio() {
   if (!currentWeaknessItem) return;
   const speechText = currentWeaknessItem.sentence || currentWeaknessItem.word_a || currentWeaknessItem.word || currentWeaknessItem.target_word || currentWeaknessItem.spoken || currentWeaknessItem.value || "";
   playTTS(speechText, "Schwachstellen-Audio");
+  if (autoMic || autoStart) {
+    startAutoMic("weakness");
+  }
 }
 
 async function checkWeaknessAnswer(userVal) {
@@ -2433,6 +2516,28 @@ async function checkWeaknessAnswer(userVal) {
 
   const targetWord = currentWeaknessItem.word_a || currentWeaknessItem.target_word || currentWeaknessItem.word || currentWeaknessItem.value || "";
   const category = currentWeaknessItem.category || "Schwachstelle";
+
+  // Reveal target word in sentence context if sentence exercise
+  if (currentWeaknessItem.mod_type === "sentences" && currentWeaknessItem.sentence) {
+    const dispEl = document.getElementById("weaknessSentenceDisplay");
+    if (dispEl) dispEl.textContent = `"${currentWeaknessItem.sentence}"`;
+  }
+
+  // Highlight option cards if multiple choice
+  const cleanUser = String(userVal || "").toLowerCase().trim();
+  const cleanTarget = String(targetWord || "").toLowerCase().trim();
+  const isCorrect = (cleanUser === cleanTarget);
+
+  const cards = document.querySelectorAll("#weaknessExerciseArea .option-card");
+  cards.forEach(card => {
+    const text = card.querySelector(".card-word")?.textContent.trim() || "";
+    const cleanCardText = text.toLowerCase().trim();
+    if (cleanCardText === cleanTarget) {
+      card.classList.add("correct");
+    } else if (cleanCardText === cleanUser && !isCorrect) {
+      card.classList.add("incorrect");
+    }
+  });
 
   const res = await fetch("/api/evaluate", {
     method: "POST",
