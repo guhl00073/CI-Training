@@ -59,6 +59,9 @@ class CITrainerHTTPHandler(http.server.SimpleHTTPRequestHandler):
             # Serve all exercises from the SQLite database (backwards-compatible format)
             self._send_json(self.db.get_all_exercises())
 
+        elif path == "/api/exercises/weaknesses":
+            self._send_json(self.db.get_weak_exercises())
+
         elif path == "/api/voices":
             self._send_json(self.tts.get_voices())
 
@@ -161,6 +164,8 @@ class CITrainerHTTPHandler(http.server.SimpleHTTPRequestHandler):
 
             if module == "Zahlen":
                 eval_res = self.matcher.evaluate_number(target, spoken, user_input)
+            elif module == "Sentences_Full":
+                eval_res = self.matcher.evaluate_full_sentence(target, user_input)
             else:
                 eval_res = self.matcher.evaluate(target, user_input)
 
@@ -349,8 +354,9 @@ def free_port(port: int):
     time.sleep(0.2)
 
 
-class QuietTCPServer(socketserver.TCPServer):
+class QuietTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
     allow_reuse_address = True
+    daemon_threads = True
 
     def handle_error(self, request, client_address):
         exctype, val, tb = sys.exc_info()

@@ -496,3 +496,55 @@ class PhoneticMatcher:
             "message": f"✓ Richtig! ({spoken_text})" if is_correct else f"✗ Falsch. Gesprochen wurde '{spoken_text}' ({target_value}). Gehört: '{user_input}'.",
             "is_correct": is_correct
         }
+
+    def evaluate_full_sentence(self, target_sentence: str, user_input: str) -> dict:
+        """
+        Evaluates full sentence dictation (e.g. OLSA Open-Set sentence understanding).
+        Returns word-by-word accuracy, list of word matches with status ('correct', 'incorrect'),
+        and overall percentage score.
+        """
+        target_norm = self.normalize(target_sentence or "")
+        user_norm = self.normalize(user_input or "")
+
+        target_words = target_norm.split()
+        user_words = user_norm.split()
+
+        if not target_words:
+            return {"score": 0.0, "is_correct": False, "word_results": [], "message": "Leerer Satz."}
+
+        matcher = difflib.SequenceMatcher(None, target_words, user_words)
+        matching_blocks = matcher.get_matching_blocks()
+
+        matched_target_indices = set()
+        for block in matching_blocks:
+            for i in range(block.size):
+                matched_target_indices.add(block.a + i)
+
+        correct_count = len(matched_target_indices)
+        total_target_words = len(target_words)
+        score = round((correct_count / total_target_words) * 100.0, 1)
+        is_correct = score >= 85.0
+
+        # Raw original words for visual highlight
+        raw_target_words = (target_sentence or "").strip().split()
+        word_results = []
+        for idx, t_word in enumerate(raw_target_words):
+            is_matched = (idx in matched_target_indices)
+            word_results.append({
+                "word": t_word,
+                "status": "correct" if is_matched else "incorrect"
+            })
+
+        msg = f"✓ Richtig! Ganzsatz-Trefferquote: {score}%" if is_correct else f"Satzverständnis: {correct_count}/{total_target_words} Wörtern richtig ({score}%)."
+
+        return {
+            "score": score,
+            "is_correct": is_correct,
+            "correct_words": correct_count,
+            "total_words": total_target_words,
+            "word_results": word_results,
+            "target_sentence": target_sentence,
+            "user_input": user_input,
+            "message": msg
+        }
+

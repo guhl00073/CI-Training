@@ -3,6 +3,7 @@ import pathlib
 import json
 import os
 import uuid
+import threading
 from datetime import datetime
 
 
@@ -14,9 +15,16 @@ class ProgressDatabase:
 
     def __init__(self, db_path: str = "data/ci-training.db"):
         self.db_path = str(db_path)
+        self._lock = threading.Lock()
         if self.db_path != ":memory:":
             pathlib.Path(self.db_path).parent.mkdir(parents=True, exist_ok=True)
         self.conn = sqlite3.connect(self.db_path, check_same_thread=False)
+        if self.db_path != ":memory:":
+            try:
+                self.conn.execute("PRAGMA journal_mode=WAL;")
+                self.conn.execute("PRAGMA synchronous=NORMAL;")
+            except Exception:
+                pass
         self._init_db()
         self._seed_if_empty()
 
@@ -610,7 +618,7 @@ class ProgressDatabase:
         """Logs a completed Freiburger test run into database."""
         with self._get_connection() as conn:
             cursor = conn.cursor()
-            now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             cursor.execute("""
                 INSERT INTO test_runs (timestamp, test_name, list_num, total_words, correct_words, score_percent)
                 VALUES (?, ?, ?, ?, ?, ?)
@@ -635,4 +643,65 @@ class ProgressDatabase:
                 "correct_words": r[5],
                 "score_percent": r[6]
             } for r in cursor.fetchall()]
+
+    def get_weak_exercises(self, limit: int = 15) -> dict:
+        """
+        Identifies categories with low accuracy (<60%) or high errors from training logs
+        and returns a curated list of exercises targeting those weak areas with audiologic rationale notes.
+        """
+        with self._lock:
+            with self._get_connection() as conn:
+                cursor = conn.cursor()
+                cursor.execute("""
+                    SELECT category, COUNT(*), SUM(is_correct), AVG(score)
+                    FROM training_logs
+                    WHERE category IS NOT NULL AND category != ''
+                    GROUP BY category
+                    HAVING (CAST(SUM(is_correct) AS FLOAT) / COUNT(*)) < 0.65 OR COUNT(*) - SUM(is_correct) > 1
+                    ORDER BY (CAST(SUM(is_correct) AS FLOAT) / COUNT(*)) ASC, COUNT(*) DESC
+                """)
+                weak_cats = []
+                cat_stats = {}
+                for row in cursor.fetchall():
+                    cat, total_c, corr_c, avg_s = row
+                    corr_c = corr_c or 0
+                    acc = round((corr_c / total_c * 100.0), 1) if total_c > 0 else 0.0
+                    weak_cats.append(cat)
+                    cat_stats[cat] = {"accuracy": acc, "errors": total_c - corr_c}
+
+                exercises_pool = []
+                all_ex = self.get_all_exercises()
+
+                if weak_cats:
+                    for cat in weak_cats:
+                        acc = cat_stats[cat]["accuracy"]
+                        errs = cat_stats[cat]["errors"]
+                        rationale = f"⚠️ Trefferquote bei '{cat}' liegt bei {acc}% ({errs} Fehler)"
+
+                        # Search matching minimal pairs
+                        for item in all_ex.get("minimal_pairs", []):
+                            if item.get("category") == cat or cat in item.get("category", ""):
+                                exercises_pool.append({**item, "mod_type": "minimal_pairs", "rationale": rationale})
+
+                        # Search matching sentences
+                        for item in all_ex.get("sentences", []):
+                            if item.get("category") == cat or cat in item.get("category", ""):
+                                exercises_pool.append({**item, "mod_type": "sentences", "rationale": rationale})
+
+                # Fallback / General Diagnostic Pool if weak categories are insufficient
+                if len(exercises_pool) < limit:
+                    rationale = "🔍 Diagnose-Übung: Erfasse deine persönliche Trefferquote"
+                    for mod_key in ["minimal_pairs", "monosyllables", "numbers", "sentences"]:
+                        items = all_ex.get(mod_key, [])
+                        for item in items[:4]:
+                            if not any(e.get("id") == item.get("id") for e in exercises_pool):
+                                exercises_pool.append({**item, "mod_type": mod_key, "rationale": rationale})
+
+                return {
+                    "weak_categories": weak_cats,
+                    "count": len(exercises_pool[:limit]),
+                    "exercises": exercises_pool[:limit]
+                }
+
+
 

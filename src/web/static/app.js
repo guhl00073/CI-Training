@@ -28,6 +28,23 @@ let isPlaying = false;
 let audioBalance = 0.0;
 let audioVolume = 1.0;
 let noiseVolume = 0.4;
+
+function getIPASimple(word) {
+  if (!word) return "";
+  const norm = String(word).toLowerCase().trim();
+  const dict = {
+    "pass": "[pas]", "bass": "[bas]", "tasse": "['tasə]", "dasse": "['dasə]",
+    "haus": "[haʊ̯s]", "maus": "[maʊ̯s]", "kamm": "[kam]", "komm": "[kɔm]",
+    "bus": "[bʊs]", "dach": "[dax]", "fisch": "[fɪʃ]", "brot": "[bʁoːt]",
+    "strand": "[ʃtʁant]", "herbst": "[hɛʁpst]", "katze": "['katsə]", "mond": "[moːnt]",
+    "zug": "[tsuːk]", "buch": "[buːx]", "schiff": "[ʃɪf]", "sonne": "['zɔnə]",
+    "tisch": "[tɪʃ]", "bett": "[bɛt]", "hund": "[hʊnt]"
+  };
+  if (dict[norm]) return dict[norm];
+  if (norm.startsWith("sch")) return `[${norm.replace('sch', 'ʃ')}]`;
+  if (norm.startsWith("ch")) return `[${norm.replace('ch', 'ç')}]`;
+  return `[${norm.replace('z', 'ts')}]`;
+}
 let audioRate = 1.0;
 let maskNoise = false;
 let ambientNoise = false;
@@ -40,6 +57,42 @@ let selectedFreqFilter = "none";
 let currentEditorView = "minimal_pairs";
 let autoStart = false;
 let autoMic = true;
+let adaptiveSNR = false;
+let correctStreak = 0;
+
+function announceA11y(text) {
+  const el = document.getElementById("a11yAnnouncer");
+  if (el) {
+    el.textContent = "";
+    setTimeout(() => { el.textContent = text; }, 50);
+  }
+}
+
+function handleAdaptiveSNR(isCorrect) {
+  if (!adaptiveSNR || !maskNoise) return;
+  if (isCorrect) {
+    correctStreak++;
+    if (correctStreak >= 3) {
+      noiseVolume = Math.min(0.85, Math.round((noiseVolume + 0.05) * 100) / 100);
+      correctStreak = 0;
+      const slider = document.getElementById("maskVolSlider");
+      const badge = document.getElementById("maskVolVal");
+      if (slider) slider.value = noiseVolume;
+      if (badge) badge.textContent = `${Math.round(noiseVolume * 100)}%`;
+      syncNoiseConfig();
+      showToast(`🎯 Adaptive SNR: Störschall auf ${Math.round(noiseVolume * 100)}% erhöht!`, "info");
+    }
+  } else {
+    correctStreak = 0;
+    noiseVolume = Math.max(0.10, Math.round((noiseVolume - 0.05) * 100) / 100);
+    const slider = document.getElementById("maskVolSlider");
+    const badge = document.getElementById("maskVolVal");
+    if (slider) slider.value = noiseVolume;
+    if (badge) badge.textContent = `${Math.round(noiseVolume * 100)}%`;
+    syncNoiseConfig();
+    showToast(`🎯 Adaptive SNR: Störschall auf ${Math.round(noiseVolume * 100)}% gesenkt.`, "info");
+  }
+}
 
 function calculateLevel(xp) {
   if (xp <= 500) return 1;
@@ -206,6 +259,26 @@ function initAudioControls() {
     autoMicToggle.addEventListener("change", (e) => setAutoMic(e.target.checked));
   }
 
+  const adaptiveSNRToggle = document.getElementById("adaptiveSNRToggle");
+  const adaptiveSNRVal = document.getElementById("adaptiveSNRVal");
+  if (adaptiveSNRToggle) {
+    adaptiveSNRToggle.addEventListener("change", (e) => {
+      adaptiveSNR = e.target.checked;
+      if (adaptiveSNRVal) adaptiveSNRVal.textContent = adaptiveSNR ? "Ein" : "Aus";
+      if (adaptiveSNR && !maskNoise) {
+        const maskToggle = document.getElementById("maskToggle");
+        if (maskToggle) {
+          maskToggle.checked = true;
+          maskNoise = true;
+          const maskVal = document.getElementById("maskVal");
+          if (maskVal) maskVal.textContent = "Ja";
+          syncNoiseConfig();
+        }
+      }
+      showToast(adaptiveSNR ? "🎯 Adaptive SNR aktiviert (Dynamischer Störschall)" : "Adaptive SNR deaktiviert", "info");
+    });
+  }
+
   document.querySelectorAll(".auto-start-check").forEach(chk => {
     chk.addEventListener("change", (e) => setAutoStart(e.target.checked));
   });
@@ -240,24 +313,44 @@ function setAutoMic(val) {
   updateAutoStartUI();
 }
 
-// Tab Navigation
-function initTabs() {
-  const tabBtns = document.querySelectorAll(".tab-btn");
-  const tabContents = document.querySelectorAll(".tab-content");
+function switchTab(tabId) {
+  const tabs = document.querySelectorAll(".tab-btn");
+  const contents = document.querySelectorAll(".tab-content");
+  tabs.forEach(t => t.classList.remove("active"));
+  contents.forEach(c => c.classList.remove("active"));
 
-  tabBtns.forEach(btn => {
+  const targetTab = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+  const targetContent = document.getElementById(`tab-${tabId}`);
+  if (targetTab) targetTab.classList.add("active");
+  if (targetContent) targetContent.classList.add("active");
+
+  if (tabId === "weakness") loadWeaknessExercises();
+  if (tabId === "stats") updateStats();
+  if (tabId === "editor") renderEditorList();
+}
+
+// Initialize Tabs
+function initTabs() {
+  const tabs = document.querySelectorAll(".tab-btn");
+  const contents = document.querySelectorAll(".tab-content");
+
+  tabs.forEach(btn => {
     btn.addEventListener("click", () => {
-      tabBtns.forEach(b => b.classList.remove("active"));
-      tabContents.forEach(c => c.classList.remove("active"));
+      tabs.forEach(t => t.classList.remove("active"));
+      contents.forEach(c => c.classList.remove("active"));
 
       btn.classList.add("active");
-      const targetTab = document.getElementById(`tab-${btn.dataset.tab}`);
-      if (targetTab) targetTab.classList.add("active");
+      const targetId = `tab-${btn.dataset.tab}`;
+      const targetContent = document.getElementById(targetId);
+      if (targetContent) {
+        targetContent.classList.add("active");
+      }
 
       if (btn.dataset.tab !== "noise" && !maskNoise) {
         stopNoiseAudio();
       }
 
+      if (btn.dataset.tab === "weakness") loadWeaknessExercises();
       if (btn.dataset.tab === "stats") updateStats();
       if (btn.dataset.tab === "editor") renderEditorList();
       if (btn.dataset.tab === "sent") {
@@ -330,6 +423,16 @@ function initTabs() {
 
   document.getElementById("sentPlayBtn").addEventListener("click", playSentAudio);
   document.getElementById("sentNextBtn").addEventListener("click", () => nextSentItem(true));
+  document.getElementById("sentModeMCBtn")?.addEventListener("click", () => setSentMode("mc"));
+  document.getElementById("sentModeFullBtn")?.addEventListener("click", () => setSentMode("full"));
+  document.getElementById("sentFullSubmitBtn")?.addEventListener("click", checkSentFullAnswer);
+  document.getElementById("sentFullInput")?.addEventListener("keypress", (e) => { if (e.key === "Enter") checkSentFullAnswer(); });
+
+  // Schwachstellen-Training Buttons
+  document.getElementById("weaknessQuickBtn")?.addEventListener("click", () => switchTab("weakness"));
+  document.getElementById("refreshWeaknessBtn")?.addEventListener("click", loadWeaknessExercises);
+  document.getElementById("weaknessPlayBtn")?.addEventListener("click", playWeaknessAudio);
+  document.getElementById("weaknessNextBtn")?.addEventListener("click", () => nextWeaknessItem(true));
 
   // Störschall Buttons
   document.getElementById("noisePlayBtn")?.addEventListener("click", playNoiseAudio);
@@ -441,23 +544,6 @@ function nextMPItem(userTriggered = false) {
   const cardsContainer = document.querySelector("#tab-mp .cards-grid");
   cardsContainer.innerHTML = "";
 
-function getIPASimple(word) {
-  if (!word) return "";
-  const norm = String(word).toLowerCase().trim();
-  const dict = {
-    "pass": "[pas]", "bass": "[bas]", "tasse": "['tasə]", "dasse": "['dasə]",
-    "haus": "[haʊ̯s]", "maus": "[maʊ̯s]", "kamm": "[kam]", "komm": "[kɔm]",
-    "bus": "[bʊs]", "dach": "[dax]", "fisch": "[fɪʃ]", "brot": "[bʁoːt]",
-    "strand": "[ʃtʁant]", "herbst": "[hɛʁpst]", "katze": "['katsə]", "mond": "[moːnt]",
-    "zug": "[tsuːk]", "buch": "[buːx]", "schiff": "[ʃɪf]", "sonne": "['zɔnə]",
-    "tisch": "[tɪʃ]", "bett": "[bɛt]", "hund": "[hʊnt]"
-  };
-  if (dict[norm]) return dict[norm];
-  if (norm.startsWith("sch")) return `[${norm.replace('sch', 'ʃ')}]`;
-  if (norm.startsWith("ch")) return `[${norm.replace('ch', 'ç')}]`;
-  return `[${norm.replace('z', 'ts')}]`;
-}
-
   currentMPWords.forEach((word, idx) => {
     const card = document.createElement("div");
     card.className = "option-card";
@@ -540,11 +626,15 @@ async function checkMPAnswer(chosenIndex) {
   if (isCorrect) {
     feedback.innerHTML = `<div>✓ Richtig! Es war '<strong>${currentMPTargetWord}</strong>'. (+20 XP)</div>${ipaHtml}`;
     feedback.className = "feedback-banner success";
+    announceA11y(`Richtig! Es war ${currentMPTargetWord}. Plus 20 Punkte.`);
     addXP(20);
   } else {
     feedback.innerHTML = `<div>✗ Falsch. Gesprochen wurde '<strong>${currentMPTargetWord}</strong>' (du hast '${chosenWord}' gewählt).</div>${ipaHtml}`;
     feedback.className = "feedback-banner danger";
+    announceA11y(`Falsch. Gesprochen wurde ${currentMPTargetWord}, du hast ${chosenWord} gewählt.`);
   }
+
+  handleAdaptiveSNR(isCorrect);
 
   if (autoStart) {
     setTimeout(() => nextMPItem(true), 1800);
@@ -896,12 +986,42 @@ function renderSentCards() {
   });
 }
 
+let sentMode = "mc"; // "mc" or "full"
+
+function setSentMode(mode) {
+  sentMode = mode;
+  const mcBtn = document.getElementById("sentModeMCBtn");
+  const fullBtn = document.getElementById("sentModeFullBtn");
+  const cardsGrid = document.getElementById("sentCardsGrid");
+  const fullContainer = document.getElementById("sentFullContainer");
+  const contextBox = document.getElementById("sentContextBox");
+  const hintText = document.getElementById("sentHintText");
+
+  if (mcBtn) mcBtn.classList.toggle("active", mode === "mc");
+  if (fullBtn) fullBtn.classList.toggle("active", mode === "full");
+
+  if (mode === "full") {
+    if (cardsGrid) cardsGrid.classList.add("hidden");
+    if (fullContainer) fullContainer.classList.remove("hidden");
+    if (hintText) hintText.textContent = "Höre den ganzen Satz und tippe den gesamten Satz ein (oder sprich nach).";
+    if (contextBox) contextBox.style.display = "none";
+  } else {
+    if (cardsGrid) cardsGrid.classList.remove("hidden");
+    if (fullContainer) fullContainer.classList.add("hidden");
+    if (hintText) hintText.textContent = "Höre den ganzen Satz und wähle das herausgehörte Schlüsselwort.";
+    if (contextBox) contextBox.style.display = "block";
+  }
+}
+
 function nextSentItem(userTriggered = false) {
   if (!exercises.sentences || exercises.sentences.length === 0) return;
   currentSent = exercises.sentences[Math.floor(Math.random() * exercises.sentences.length)];
   sentAttempted = false;
 
   renderSentCards();
+
+  const inp = document.getElementById("sentFullInput");
+  if (inp) inp.value = "";
 
   const feedback = document.getElementById("sentFeedback");
   if (feedback) feedback.className = "feedback-banner hidden";
@@ -915,6 +1035,9 @@ function nextSentItem(userTriggered = false) {
 function playSentAudio() {
   if (!currentSent || !currentSent.sentence) return;
   playTTS(currentSent.sentence, "Ganzen Satz");
+  if (sentMode === "full" && (autoMic || autoStart)) {
+    startAutoMic("sentFull");
+  }
 }
 
 async function checkSentAnswer(chosenIndex) {
@@ -946,13 +1069,17 @@ async function checkSentAnswer(chosenIndex) {
       feedback.textContent = `✓ Richtig! Es war '${currentSentTargetWord}'. (+35 XP)`;
       feedback.className = "feedback-banner success";
     }
+    announceA11y(`Richtig! Es war ${currentSentTargetWord}. Plus 35 Punkte.`);
     addXP(35);
   } else {
     if (feedback) {
       feedback.textContent = `✗ Falsch. Gesprochen wurde '${currentSentTargetWord}' (du hast '${chosenWord}' gewählt).`;
       feedback.className = "feedback-banner danger";
     }
+    announceA11y(`Falsch. Gesprochen wurde ${currentSentTargetWord}, du hast ${chosenWord} gewählt.`);
   }
+
+  handleAdaptiveSNR(isCorrect);
 
   await fetch("/api/evaluate", {
     method: "POST",
@@ -967,6 +1094,56 @@ async function checkSentAnswer(chosenIndex) {
 
   if (autoStart) {
     setTimeout(() => nextSentItem(true), 1800);
+  }
+}
+
+async function checkSentFullAnswer() {
+  if (sentAttempted) return;
+  sentAttempted = true;
+
+  const userInput = document.getElementById("sentFullInput")?.value.trim() || "";
+  const target = currentSent ? currentSent.sentence : "";
+
+  const res = await fetch("/api/evaluate", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      target: target,
+      user_input: userInput,
+      module: "Sentences_Full",
+      category: currentSent ? currentSent.category : "OLSA Ganzsatz"
+    })
+  });
+  const data = await res.json();
+  const feedback = document.getElementById("sentFeedback");
+
+  if (feedback) {
+    let wordSpansHtml = "";
+    if (data.word_results) {
+      wordSpansHtml = `<div style="margin-top:0.6rem; display:flex; flex-wrap:wrap; gap:0.4rem; justify-content:center;">` +
+        data.word_results.map(w => {
+          const bg = w.status === "correct" ? "rgba(16,185,129,0.3)" : "rgba(239,68,68,0.3)";
+          const border = w.status === "correct" ? "#10B981" : "#EF4444";
+          return `<span style="background:${bg}; border:1px solid ${border}; padding:0.25rem 0.6rem; border-radius:6px; font-weight:700; color:white;">${escapeHtml(w.word)}</span>`;
+        }).join("") + `</div>`;
+    }
+
+    feedback.innerHTML = `<div>${data.message} ${data.is_correct ? "(+50 XP)" : ""}</div>` +
+      `<div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.4rem;">Ziel: "${escapeHtml(target)}"</div>` +
+      wordSpansHtml;
+
+    feedback.className = `feedback-banner ${data.is_correct ? "success" : "danger"}`;
+  }
+
+  announceA11y(data.message);
+  handleAdaptiveSNR(data.is_correct);
+
+  if (data.is_correct) {
+    addXP(50);
+  }
+
+  if (autoStart) {
+    setTimeout(() => nextSentItem(true), 2400);
   }
 }
 
@@ -2130,4 +2307,160 @@ function initKeyboardShortcuts() {
     }
   });
 }
+
+// ─── Schwachstellen-Training ──────────────────────────────────────
+let weaknessExercises = [];
+let currentWeaknessIndex = 0;
+let currentWeaknessItem = null;
+let weaknessAttempted = false;
+
+async function loadWeaknessExercises() {
+  const noticeEl = document.getElementById("weaknessNotice");
+  if (noticeEl) noticeEl.innerHTML = `<span>🔍 Analysiere Ihre Übungshistorie & Schwachstellen...</span>`;
+
+  try {
+    const res = await fetch("/api/exercises/weaknesses");
+    const data = await res.json();
+    weaknessExercises = data.exercises || [];
+    currentWeaknessIndex = 0;
+
+    if (noticeEl) {
+      if (data.weak_categories && data.weak_categories.length > 0) {
+        noticeEl.innerHTML = `<span>🎯 <strong>${data.weak_categories.length} Schwachstelle(n) identifiziert:</strong> ${escapeHtml(data.weak_categories.join(", "))}. Gezielte Übungen geladen.</span>`;
+        noticeEl.style.background = "rgba(239,68,68,0.15)";
+        noticeEl.style.borderColor = "rgba(239,68,68,0.4)";
+        noticeEl.style.color = "#FCA5A5";
+      } else {
+        noticeEl.innerHTML = `<span>🌟 Keine gravierenden Schwachstellen (< 60% Trefferquote) gefunden. Diagnose-Katalog mit ausgewogenen Übungen geladen.</span>`;
+        noticeEl.style.background = "rgba(16,185,129,0.15)";
+        noticeEl.style.borderColor = "rgba(16,185,129,0.4)";
+        noticeEl.style.color = "#6EE7B7";
+      }
+    }
+
+    nextWeaknessItem();
+  } catch (e) {
+    if (noticeEl) noticeEl.innerHTML = `<span>Fehler beim Laden des Schwachstellentrainings.</span>`;
+  }
+}
+
+function nextWeaknessItem(userTriggered = false) {
+  if (!weaknessExercises || weaknessExercises.length === 0) return;
+
+  currentWeaknessItem = weaknessExercises[currentWeaknessIndex % weaknessExercises.length];
+  currentWeaknessIndex++;
+  weaknessAttempted = false;
+
+  const area = document.getElementById("weaknessExerciseArea");
+  const feedback = document.getElementById("weaknessFeedback");
+  if (feedback) feedback.className = "feedback-banner hidden";
+
+  if (!area || !currentWeaknessItem) return;
+
+  const rationale = currentWeaknessItem.rationale || "Gezieltes Hörtraining";
+  const modType = currentWeaknessItem.mod_type || "minimal_pairs";
+
+  let inputHtml = "";
+  let targetWord = currentWeaknessItem.word || currentWeaknessItem.target_word || currentWeaknessItem.value || "";
+
+  if (modType === "minimal_pairs") {
+    const opts = currentWeaknessItem.options || [currentWeaknessItem.word_a, currentWeaknessItem.word_b];
+    targetWord = currentWeaknessItem.word_a || opts[0];
+    inputHtml = `<div class="cards-grid" style="margin-top:1rem;">` +
+      opts.map((opt, idx) => `
+        <div class="option-card" onclick="checkWeaknessAnswer('${escapeHtml(opt)}')">
+          <span class="card-word">${escapeHtml(opt)}</span>
+        </div>
+      `).join("") + `</div>`;
+  } else if (modType === "sentences") {
+    targetWord = currentWeaknessItem.target_word || currentWeaknessItem.sentence;
+    const opts = currentWeaknessItem.options || [targetWord, "Wort 2", "Wort 3"];
+    inputHtml = `
+      <div style="background:rgba(15,23,42,0.6); padding:1rem; border-radius:12px; margin-bottom:1rem; text-align:left; border:1px solid var(--panel-border);">
+        <span style="color:var(--text-muted);">Satzkontext:</span>
+        <h4 style="font-size:1.3rem; color:white; margin-top:0.3rem;">"${escapeHtml(currentWeaknessItem.sentence)}"</h4>
+      </div>
+      <div class="cards-grid">` +
+      opts.map(opt => `
+        <div class="option-card" onclick="checkWeaknessAnswer('${escapeHtml(opt)}')">
+          <span class="card-word">${escapeHtml(opt)}</span>
+        </div>
+      `).join("") + `</div>`;
+  } else {
+    inputHtml = `
+      <div class="input-wrapper" style="max-width:500px; margin:1rem auto 0 auto; display:flex; gap:0.5rem;">
+        <input type="text" id="weaknessInput" placeholder="Antwort eingeben..." class="custom-input" style="flex:1;">
+        <button class="btn btn-primary" onclick="checkWeaknessAnswer(document.getElementById('weaknessInput').value)">Prüfen</button>
+      </div>
+    `;
+  }
+
+  area.innerHTML = `
+    <div style="background:rgba(30,41,59,0.5); padding:1.2rem; border-radius:14px; border:1px solid var(--panel-border);">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.8rem;">
+        <span class="cat-tag" style="background:rgba(239,68,68,0.2); color:#FCA5A5; border-color:rgba(239,68,68,0.4);">
+          ${escapeHtml(rationale)}
+        </span>
+        <span class="val-badge">${escapeHtml(currentWeaknessItem.category || "Schwachstelle")}</span>
+      </div>
+      ${inputHtml}
+    </div>
+  `;
+
+  const inputEl = document.getElementById("weaknessInput");
+  if (inputEl) {
+    inputEl.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") checkWeaknessAnswer(inputEl.value);
+    });
+  }
+
+  setStatus(`Schwachstellen-Übung bereit (${currentWeaknessItem.category || ""}).`);
+
+  if (userTriggered && autoStart) {
+    playWeaknessAudio();
+  }
+}
+
+function playWeaknessAudio() {
+  if (!currentWeaknessItem) return;
+  const speechText = currentWeaknessItem.sentence || currentWeaknessItem.word_a || currentWeaknessItem.word || currentWeaknessItem.target_word || currentWeaknessItem.spoken || currentWeaknessItem.value || "";
+  playTTS(speechText, "Schwachstellen-Audio");
+}
+
+async function checkWeaknessAnswer(userVal) {
+  if (weaknessAttempted || !currentWeaknessItem) return;
+  weaknessAttempted = true;
+
+  const targetWord = currentWeaknessItem.word_a || currentWeaknessItem.target_word || currentWeaknessItem.word || currentWeaknessItem.value || "";
+  const category = currentWeaknessItem.category || "Schwachstelle";
+
+  const res = await fetch("/api/evaluate", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      target: targetWord,
+      user_input: userVal,
+      module: "Schwachstellen",
+      category: category
+    })
+  });
+  const data = await res.json();
+  const feedback = document.getElementById("weaknessFeedback");
+
+  if (feedback) {
+    feedback.textContent = data.message;
+    feedback.className = `feedback-banner ${data.is_correct ? "success" : "danger"}`;
+  }
+
+  announceA11y(data.message);
+  handleAdaptiveSNR(data.is_correct);
+
+  if (data.is_correct) addXP(40);
+
+  if (autoStart) {
+    setTimeout(() => nextWeaknessItem(true), 1800);
+  }
+}
+window.checkWeaknessAnswer = checkWeaknessAnswer;
+
 

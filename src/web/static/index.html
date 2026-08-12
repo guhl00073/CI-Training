@@ -15,8 +15,9 @@
 </head>
 <body>
 
-  <!-- Toast Notification Container -->
+  <!-- Toast Notification Container & ARIA Live Announcer -->
   <div id="toastContainer"></div>
+  <div id="a11yAnnouncer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
 
   <div class="app-container">
     <!-- Header Navbar -->
@@ -33,6 +34,9 @@
         </div>
       </div>
       <div class="header-status">
+        <button id="weaknessQuickBtn" class="btn btn-secondary btn-sm" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.35rem 0.75rem; font-size:0.85rem;" title="Persönliche Schwachstellen gezielt trainieren">
+          <span>🎯</span> Schwachstellen
+        </button>
         <button id="openHelpBtn" class="btn btn-secondary btn-sm" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.35rem 0.75rem; font-size:0.85rem;" title="Online-Hilfe & Tastenkürzel (Taste: H oder ?)">
           <span>❓</span> Hilfe & Hotkeys
         </button>
@@ -139,6 +143,19 @@
           </div>
 
           <div class="ctrl-group">
+            <label for="adaptiveSNRToggle" style="cursor:pointer; width:100%; box-sizing:border-box;">
+              <span class="label-left"><span class="icon">🎯</span> Adaptive SNR (Autom. Rauschen)</span>
+              <div style="display:flex; align-items:center; gap:0.5rem; flex-shrink:0;">
+                <span id="adaptiveSNRVal" class="val-badge">Aus</span>
+                <span class="switch-toggle" style="flex-shrink:0;">
+                  <input type="checkbox" id="adaptiveSNRToggle">
+                  <span class="slider round"></span>
+                </span>
+              </div>
+            </label>
+          </div>
+
+          <div class="ctrl-group">
             <label for="voiceSelect">
               <span class="label-left"><span class="icon">🗣</span> Sprecher-Stimme</span>
             </label>
@@ -184,6 +201,9 @@
       </button>
       <button class="tab-btn" data-tab="memory">
         <span class="tab-icon">🧠</span> Auditiv. Gedächtnis
+      </button>
+      <button class="tab-btn" data-tab="weakness">
+        <span class="tab-icon">🎯</span> Schwachstellen
       </button>
       <button class="tab-btn" data-tab="stats">
         <span class="tab-icon">📊</span> Statistik & Heatmap
@@ -366,7 +386,12 @@
       <div class="glass-card exercise-box">
         <div class="box-header">
           <span id="sentCategory" class="cat-tag">Kategorie: Alltagssätze</span>
-          <p class="hint-text">Höre den ganzen Satz und wähle das herausgehörte Schlüsselwort.</p>
+          <p id="sentHintText" class="hint-text">Höre den ganzen Satz und wähle das herausgehörte Schlüsselwort.</p>
+        </div>
+
+        <div style="display:flex; justify-content:center; gap:0.6rem; margin-bottom:1rem; flex-wrap:wrap;">
+          <button id="sentModeMCBtn" class="seg-btn active" style="padding:0.4rem 0.9rem; font-size:0.85rem;">🔘 Wort-Fokus (Multiple Choice)</button>
+          <button id="sentModeFullBtn" class="seg-btn" style="padding:0.4rem 0.9rem; font-size:0.85rem;">✍️ Ganzsatz-Diktat (Freie Eingabe)</button>
         </div>
 
         <div class="action-bar">
@@ -380,14 +405,50 @@
           </label>
         </div>
 
-        <div style="background: rgba(15, 23, 42, 0.6); padding: 1.2rem; border-radius: 14px; text-align: left; border: 1px solid var(--panel-border);">
+        <div id="sentContextBox" style="background: rgba(15, 23, 42, 0.6); padding: 1.2rem; border-radius: 14px; text-align: left; border: 1px solid var(--panel-border);">
           <span style="font-size: 1.2rem; color: var(--text-muted);">Satzkontext:</span>
           <h3 id="sentDisplay" style="font-size: 1.6rem; color: white; margin-top: 0.4rem;">"..."</h3>
         </div>
 
         <div id="sentCardsGrid" class="cards-grid" style="margin-top: 1rem;"></div>
 
+        <!-- Ganzsatz-Diktat Input Section -->
+        <div id="sentFullContainer" class="hidden" style="margin-top:1.2rem;">
+          <div class="input-wrapper" style="max-width:650px; margin:0 auto; display:flex; gap:0.5rem;">
+            <input type="text" id="sentFullInput" placeholder="Gesprochenen Satz hier eingeben oder sprechen..." class="custom-input" style="flex:1;">
+            <button id="sentFullMicBtn" class="btn btn-secondary" title="Nachsprechen (Mikrofon)">🎙</button>
+            <button id="sentFullSubmitBtn" class="btn btn-primary">Prüfen</button>
+          </div>
+        </div>
+
         <div id="sentFeedback" class="feedback-banner hidden" style="margin-top: 1rem;"></div>
+      </div>
+    </main>
+
+    <!-- Tab 5b: Schwachstellen-Training -->
+    <main id="tab-weakness" class="tab-content">
+      <div class="glass-card exercise-box">
+        <div class="box-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.8rem;">
+          <div>
+            <h2 style="font-family:var(--font-heading); font-size:1.4rem; color:white;">🎯 Adaptives Schwachstellen-Training</h2>
+            <p class="subtitle">Gezielte Übungen für Ihre fehleranfälligsten Phonem-Kategorien (< 60% Genauigkeit)</p>
+          </div>
+          <button id="refreshWeaknessBtn" class="btn btn-secondary btn-sm">🔄 Neu analysieren</button>
+        </div>
+
+        <div id="weaknessNotice" style="margin:1rem 0; padding:0.8rem 1rem; background:rgba(59,130,246,0.15); border:1px solid rgba(59,130,246,0.3); border-radius:10px; font-size:0.9rem; text-align:left; color:#93C5FD;">
+          <span>🔍 Analysiere Übungshistorie...</span>
+        </div>
+
+        <div class="action-bar" style="margin-top:1rem;">
+          <button id="weaknessPlayBtn" class="btn btn-primary btn-glow">
+            <span class="icon">▶</span> Audio abspielen
+          </button>
+          <button id="weaknessNextBtn" class="btn btn-secondary">Nächste Schwachstellen-Übung ➔</button>
+        </div>
+
+        <div id="weaknessExerciseArea" style="margin-top:1.2rem;"></div>
+        <div id="weaknessFeedback" class="feedback-banner hidden" style="margin-top: 1rem;"></div>
       </div>
     </main>
 

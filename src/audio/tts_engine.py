@@ -29,6 +29,49 @@ class TTSEngine:
     def __init__(self, cache_dir: str = ".cache/audio"):
         self.cache_dir = pathlib.Path(cache_dir)
         self.cache_dir.mkdir(parents=True, exist_ok=True)
+        self.cleanup_cache()
+
+    def cleanup_cache(self, max_age_days: float = 7.0, max_size_mb: float = 100.0) -> int:
+        """Purges old or excessive cached audio files to prevent disk bloat."""
+        if not self.cache_dir.exists():
+            return 0
+
+        import time
+        now = time.time()
+        max_age_sec = max_age_days * 86400.0
+        max_bytes = max_size_mb * 1024 * 1024
+        removed_count = 0
+
+        files = [f for f in self.cache_dir.iterdir() if f.is_file()]
+        # Sort by mtime ascending (oldest first)
+        files.sort(key=lambda f: f.stat().st_mtime)
+
+        # 1. Purge files older than max_age_days
+        remaining = []
+        for f in files:
+            try:
+                stat = f.stat()
+                if (now - stat.st_mtime) > max_age_sec:
+                    f.unlink()
+                    removed_count += 1
+                else:
+                    remaining.append((f, stat.st_size))
+            except Exception:
+                pass
+
+        # 2. Enforce total size limit (max_size_mb)
+        total_size = sum(size for _, size in remaining)
+        for f, size in remaining:
+            if total_size <= max_bytes:
+                break
+            try:
+                f.unlink()
+                total_size -= size
+                removed_count += 1
+            except Exception:
+                pass
+
+        return removed_count
 
     def _get_cache_path(self, text: str, voice: str, rate: float) -> pathlib.Path:
         key = f"{text}_{voice}_{rate}"
@@ -98,6 +141,9 @@ class TTSEngine:
         return None
 
     def _generate_google_tts(self, text: str, output_path: str, voice: str = "Anna") -> str:
+        if os.environ.get("CI_TRAINER_OFFLINE") == "1":
+            return None
+
         encoded_text = urllib.parse.quote(text)
         url = f"https://translate.google.com/translate_tts?ie=UTF-8&q={encoded_text}&tl=de&client=tw-ob"
         headers = {'User-Agent': 'Mozilla/5.0'}
@@ -132,7 +178,7 @@ class TTSEngine:
                                         os.replace(temp_output, output_path)
 
                         return output_path
-        except Exception as e:
+        except BaseException as e:
             print(f"[TTSEngine] Google TTS fallback notice: {e}")
         return None
 
