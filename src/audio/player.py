@@ -6,6 +6,7 @@ import threading
 import sys
 import shutil
 import atexit
+import uuid
 
 class AudioPlayer:
     """
@@ -257,8 +258,8 @@ class AudioPlayer:
 
                 if filter_parts:
                     filter_str = ",".join(filter_parts)
-                    temp_speech = tempfile.mktemp(suffix="_speech.wav", dir=".cache/audio")
                     os.makedirs(".cache/audio", exist_ok=True)
+                    temp_speech = os.path.join(".cache/audio", f"temp_{uuid.uuid4().hex[:8]}_speech.wav")
                     cmd_filter = [
                         ffmpeg_path, "-y", "-i", file_path,
                         "-af", filter_str, temp_speech

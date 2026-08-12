@@ -15,7 +15,7 @@ class ProgressDatabase:
 
     def __init__(self, db_path: str = "data/ci-training.db"):
         self.db_path = str(db_path)
-        self._lock = threading.Lock()
+        self._lock = threading.RLock()
         if self.db_path != ":memory:":
             pathlib.Path(self.db_path).parent.mkdir(parents=True, exist_ok=True)
         self.conn = sqlite3.connect(self.db_path, check_same_thread=False)
