@@ -1,0 +1,1155 @@
+[
+  {
+    "id": "mp_r_01",
+    "category": "Reim-Gruppe (-ut)",
+    "source": "Marburger Minimalpaar-Katalog",
+    "options": [
+      "Mut",
+      "Glut",
+      "Flut",
+      "Gut",
+      "Hut",
+      "Wut"
+    ],
+    "difficulty": "Schwer",
+    "hint": "Anlautdifferenzierung bei -ut"
+  },
+  {
+    "category": "Reim-Gruppe (-ein)",
+    "source": "Marburger Minimalpaar-Katalog",
+    "id": "mp_r_02",
+    "options": [
+      "Bein",
+      "Pein",
+      "Stein",
+      "Wein",
+      "Fein"
+    ],
+    "hint": "Anlautdifferenzierung bei -ein",
+    "difficulty": "Mittel"
+  },
+  {
+    "id": "mp_r_03",
+    "category": "Reim-Gruppe (-anne)",
+    "source": "Marburger Minimalpaar-Katalog",
+    "options": [
+      "Kanne",
+      "Panne",
+      "Tanne",
+      "Wanne"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Anlautdifferenzierung bei -anne"
+  },
+  {
+    "id": "mp_r_04",
+    "category": "Reim-Gruppe (-and)",
+    "source": "Marburger Minimalpaar-Katalog",
+    "options": [
+      "Hand",
+      "Wand",
+      "Band",
+      "Land",
+      "Sand",
+      "Pfand"
+    ],
+    "difficulty": "Schwer",
+    "hint": "Anlautdifferenzierung bei -and"
+  },
+  {
+    "id": "mp_r_05",
+    "category": "Reim-Gruppe (-ock)",
+    "source": "Marburger Minimalpaar-Katalog",
+    "options": [
+      "Bock",
+      "Dock",
+      "Rock",
+      "Stock",
+      "Socke"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Anlautdifferenzierung bei -ock"
+  },
+  {
+    "id": "mp_r_06",
+    "category": "Reim-Gruppe (-aus)",
+    "source": "Marburger Minimalpaar-Katalog",
+    "options": [
+      "Haus",
+      "Maus",
+      "Laus",
+      "Raus",
+      "Klaus"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Anlautdifferenzierung bei -aus"
+  },
+  {
+    "id": "mp_r_07",
+    "category": "Reim-Gruppe (-ing)",
+    "source": "Marburger Minimalpaar-Katalog",
+    "options": [
+      "Ring",
+      "Ding",
+      "Sing",
+      "King",
+      "Gong"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Anlautdifferenzierung bei -ing"
+  },
+  {
+    "id": "mp_p_0001",
+    "category": "P vs. B",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Pass",
+    "word_b": "Bass",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Pass vs Bass"
+  },
+  {
+    "id": "mp_p_0002",
+    "category": "P vs. B",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Pein",
+    "word_b": "Bein",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Pein vs Bein"
+  },
+  {
+    "id": "mp_p_0003",
+    "category": "P vs. B",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Packen",
+    "word_b": "Backen",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Packen vs Backen"
+  },
+  {
+    "id": "mp_p_0004",
+    "category": "P vs. B",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Pech",
+    "word_b": "Bach",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Pech vs Bach"
+  },
+  {
+    "id": "mp_p_0005",
+    "category": "P vs. B",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Pille",
+    "word_b": "Bille",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Pille vs Bille"
+  },
+  {
+    "id": "mp_p_0006",
+    "category": "P vs. B",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Posten",
+    "word_b": "Borsten",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Posten vs Borsten"
+  },
+  {
+    "id": "mp_p_0007",
+    "category": "P vs. B",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Pfeil",
+    "word_b": "Beil",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Pfeil vs Beil"
+  },
+  {
+    "id": "mp_p_0008",
+    "category": "P vs. B",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Pute",
+    "word_b": "Bude",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Pute vs Bude"
+  },
+  {
+    "id": "mp_p_0009",
+    "category": "P vs. B",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Pakt",
+    "word_b": "Balg",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Pakt vs Balg"
+  },
+  {
+    "id": "mp_p_0010",
+    "category": "T vs. D",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Tasse",
+    "word_b": "Dose",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Tasse vs Dose"
+  },
+  {
+    "id": "mp_p_0011",
+    "category": "T vs. D",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Teich",
+    "word_b": "Deich",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Teich vs Deich"
+  },
+  {
+    "id": "mp_p_0012",
+    "category": "T vs. D",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Tank",
+    "word_b": "Dank",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Tank vs Dank"
+  },
+  {
+    "id": "mp_p_0013",
+    "category": "T vs. D",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Dorf",
+    "word_b": "Torf",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Dorf vs Torf"
+  },
+  {
+    "id": "mp_p_0014",
+    "category": "T vs. D",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Dach",
+    "word_b": "Fach",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Dach vs Fach"
+  },
+  {
+    "id": "mp_p_0016",
+    "category": "T vs. D",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Tonne",
+    "word_b": "Sonne",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Tonne vs Sonne"
+  },
+  {
+    "id": "mp_p_0018",
+    "category": "K vs. G",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Kanne",
+    "word_b": "Panne",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Kanne vs Panne"
+  },
+  {
+    "id": "mp_p_0019",
+    "category": "K vs. G",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Kasse",
+    "word_b": "Gasse",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Kasse vs Gasse"
+  },
+  {
+    "id": "mp_p_0020",
+    "category": "K vs. G",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Kunst",
+    "word_b": "Gunst",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Kunst vs Gunst"
+  },
+  {
+    "id": "mp_p_0021",
+    "category": "K vs. G",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Kuss",
+    "word_b": "Guss",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Kuss vs Guss"
+  },
+  {
+    "id": "mp_p_0022",
+    "category": "K vs. G",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Kamm",
+    "word_b": "Garn",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Kamm vs Garn"
+  },
+  {
+    "id": "mp_p_0023",
+    "category": "K vs. G",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Kiel",
+    "word_b": "Gips",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Kiel vs Gips"
+  },
+  {
+    "id": "mp_p_0024",
+    "category": "K vs. G",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Korn",
+    "word_b": "Zorn",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Korn vs Zorn"
+  },
+  {
+    "id": "mp_p_0025",
+    "category": "K vs. G",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Kuh",
+    "word_b": "Gut",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Kuh vs Gut"
+  },
+  {
+    "id": "mp_p_0026",
+    "category": "S vs. SCH",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Sonne",
+    "word_b": "Wonne",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Sonne vs Wonne"
+  },
+  {
+    "id": "mp_p_0027",
+    "category": "S vs. SCH",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Stein",
+    "word_b": "Bein",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Stein vs Bein"
+  },
+  {
+    "id": "mp_p_0028",
+    "category": "S vs. SCH",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Schiene",
+    "word_b": "Biene",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Schiene vs Biene"
+  },
+  {
+    "id": "mp_p_0029",
+    "category": "S vs. SCH",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Saale",
+    "word_b": "Schale",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Saale vs Schale"
+  },
+  {
+    "id": "mp_p_0030",
+    "category": "S vs. SCH",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Sonne",
+    "word_b": "Wonne",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Sonne vs Wonne"
+  },
+  {
+    "id": "mp_p_0031",
+    "category": "S vs. SCH",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Sieg",
+    "word_b": "Schock",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Sieg vs Schock"
+  },
+  {
+    "id": "mp_p_0032",
+    "category": "S vs. SCH",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Saft",
+    "word_b": "Schaft",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Saft vs Schaft"
+  },
+  {
+    "id": "mp_p_0033",
+    "category": "R vs. L",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Ratte",
+    "word_b": "Latte",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Ratte vs Latte"
+  },
+  {
+    "id": "mp_p_0034",
+    "category": "R vs. L",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Riese",
+    "word_b": "Liese",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Riese vs Liese"
+  },
+  {
+    "id": "mp_p_0035",
+    "category": "R vs. L",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Rolle",
+    "word_b": "Wolle",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Rolle vs Wolle"
+  },
+  {
+    "id": "mp_p_0036",
+    "category": "R vs. L",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Rast",
+    "word_b": "Last",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Rast vs Last"
+  },
+  {
+    "id": "mp_p_0037",
+    "category": "R vs. L",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Rumpf",
+    "word_b": "Sumpf",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Rumpf vs Sumpf"
+  },
+  {
+    "id": "mp_p_0038",
+    "category": "R vs. L",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Rasse",
+    "word_b": "Kasse",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Rasse vs Kasse"
+  },
+  {
+    "id": "mp_p_0039",
+    "category": "M vs. N",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Maus",
+    "word_b": "Haus",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Maus vs Haus"
+  },
+  {
+    "id": "mp_p_0040",
+    "category": "M vs. N",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Kamm",
+    "word_b": "Kann",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Kamm vs Kann"
+  },
+  {
+    "id": "mp_p_0041",
+    "category": "M vs. N",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Mein",
+    "word_b": "Nein",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Mein vs Nein"
+  },
+  {
+    "id": "mp_p_0042",
+    "category": "M vs. N",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Mund",
+    "word_b": "Hund",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Mund vs Hund"
+  },
+  {
+    "id": "mp_p_0043",
+    "category": "M vs. N",
+    "source": "Marburger Minimalpaar-Katalog",
+    "word_a": "Masse",
+    "word_b": "Nasse",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Masse vs Nasse"
+  },
+  {
+    "id": "mp_fw_01",
+    "category": "F vs. W",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Fee",
+      "Weh"
+    ],
+    "difficulty": "Einfach",
+    "hint": "Anlautdifferenzierung /f/ (stimmlos) vs. /v/ (stimmhaft)"
+  },
+  {
+    "id": "mp_fw_02",
+    "category": "F vs. W",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "fiel",
+      "viel"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Gleichlautendes Paar (Homophonie) / Beachtung des Kontexts"
+  },
+  {
+    "id": "mp_fw_03",
+    "category": "F vs. W",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "fest",
+      "West"
+    ],
+    "difficulty": "Einfach",
+    "hint": "Anlautdifferenzierung F vs. W bei -est"
+  },
+  {
+    "id": "mp_fw_04",
+    "category": "F vs. W",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Falte",
+      "Welle"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Anlautdifferenzierung F vs. W bei zweisilbigen Wörtern"
+  },
+  {
+    "id": "mp_fw_05",
+    "category": "F vs. W",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Fisch",
+      "Wisch"
+    ],
+    "difficulty": "Einfach",
+    "hint": "Anlautdifferenzierung F vs. W bei Auslaut -isch"
+  },
+  {
+    "id": "mp_fw_06",
+    "category": "F vs. W",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Fahne",
+      "Wanne"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung F vs. W mit Vokallänge"
+  },
+  {
+    "id": "mp_fw_07",
+    "category": "F vs. W",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Feld",
+      "Welt"
+    ],
+    "difficulty": "Einfach",
+    "hint": "Anlautdifferenzierung F vs. W bei kurzem /e/"
+  },
+  {
+    "id": "mp_fw_08",
+    "category": "F vs. W",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Form",
+      "Wurm"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Konsonant & Vokal-Kontrast F/o vs. W/u"
+  },
+  {
+    "id": "mp_wb_01",
+    "category": "W vs. B",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Welle",
+      "Bälle"
+    ],
+    "difficulty": "Einfach",
+    "hint": "Differenzierung W (Reibelaut) vs. B (Verschlusslaut)"
+  },
+  {
+    "id": "mp_wb_02",
+    "category": "W vs. B",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "wach",
+      "Bach"
+    ],
+    "difficulty": "Einfach",
+    "hint": "Anlautdifferenzierung W vs. B bei -ach"
+  },
+  {
+    "id": "mp_wb_03",
+    "category": "W vs. B",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Wand",
+      "Band"
+    ],
+    "difficulty": "Einfach",
+    "hint": "Anlautdifferenzierung W vs. B bei -and"
+  },
+  {
+    "id": "mp_wb_04",
+    "category": "W vs. B",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Wein",
+      "Bein"
+    ],
+    "difficulty": "Einfach",
+    "hint": "Anlautdifferenzierung W vs. B bei Diphthong -ein"
+  },
+  {
+    "id": "mp_wb_05",
+    "category": "W vs. B",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "wild",
+      "Bild"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Anlautdifferenzierung W vs. B bei kurzem /i/"
+  },
+  {
+    "id": "mp_wb_06",
+    "category": "W vs. B",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Wecker",
+      "Bäcker"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Anlautdifferenzierung W vs. B bei zweisilbigen Wörtern"
+  },
+  {
+    "id": "mp_wb_07",
+    "category": "W vs. B",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Wolle",
+      "Bolle"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Anlautdifferenzierung W vs. B bei -olle"
+  },
+  {
+    "id": "mp_wb_08",
+    "category": "W vs. B",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Wind",
+      "Bind"
+    ],
+    "difficulty": "Einfach",
+    "hint": "Anlautdifferenzierung W vs. B bei -ind"
+  },
+  {
+    "id": "mp_fs_01",
+    "category": "F vs. S",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Fee",
+      "See"
+    ],
+    "difficulty": "Einfach",
+    "hint": "Frikativ-Differenzierung Lippe (F) vs. Zunge/Zähne (S)"
+  },
+  {
+    "id": "mp_fs_02",
+    "category": "F vs. S",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Fahne",
+      "Sahne"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Anlautdifferenzierung F vs. S bei zweisilbigen Wörtern"
+  },
+  {
+    "id": "mp_fs_03",
+    "category": "F vs. S",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Affe",
+      "Asse"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Inlautdifferenzierung Doppel-F vs. Doppel-S"
+  },
+  {
+    "id": "mp_fs_04",
+    "category": "F vs. S",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Fell",
+      "Senn"
+    ],
+    "difficulty": "Schwer",
+    "hint": "Konsonantendifferenzierung F vs. S"
+  },
+  {
+    "id": "mp_fs_05",
+    "category": "F vs. S",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Fink",
+      "Zink"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Anlautdifferenzierung F vs. Z (TS)"
+  },
+  {
+    "id": "mp_fs_06",
+    "category": "F vs. S",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Fuhre",
+      "Suche"
+    ],
+    "difficulty": "Schwer",
+    "hint": "Frikativkontrast im Anlaut"
+  },
+  {
+    "id": "mp_sz_01",
+    "category": "S vs. Z",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Kasse",
+      "Katze"
+    ],
+    "difficulty": "Einfach",
+    "hint": "Inlautunterscheidung Doppel-S /s/ vs. TZ /ts/"
+  },
+  {
+    "id": "mp_sz_02",
+    "category": "S vs. Z",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Tasse",
+      "Tatze"
+    ],
+    "difficulty": "Einfach",
+    "hint": "Inlautunterscheidung Doppel-S vs. TZ"
+  },
+  {
+    "id": "mp_sz_03",
+    "category": "S vs. Z",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Haus",
+      "Zaun"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Anlautunterscheidung S vs. Z"
+  },
+  {
+    "id": "mp_sz_04",
+    "category": "S vs. Z",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Seile",
+      "Zeile"
+    ],
+    "difficulty": "Einfach",
+    "hint": "Anlautunterscheidung S vs. Z vor Diphthong -ei"
+  },
+  {
+    "id": "mp_sz_05",
+    "category": "S vs. Z",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Siel",
+      "Ziel"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Anlautunterscheidung S vs. Z vor langem /i/"
+  },
+  {
+    "id": "mp_sz_06",
+    "category": "S vs. Z",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Sonne",
+      "Zone"
+    ],
+    "difficulty": "Schwer",
+    "hint": "Anlautunterscheidung S vs. Z mit Vokallängenunterschied"
+  },
+  {
+    "id": "mp_nng_01",
+    "category": "N vs. NG",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Wanne",
+      "Wange"
+    ],
+    "difficulty": "Einfach",
+    "hint": "Inlautdifferenzierung N (Zungenspitze) vs. NG (Zungenrücken)"
+  },
+  {
+    "id": "mp_nng_02",
+    "category": "N vs. NG",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Hennen",
+      "hängen"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Inlautdifferenzierung -nn- vs. -ng-"
+  },
+  {
+    "id": "mp_nng_03",
+    "category": "N vs. NG",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Rinne",
+      "Ringe"
+    ],
+    "difficulty": "Einfach",
+    "hint": "Inlautdifferenzierung -nn- vs. -ng- bei kurzem /i/"
+  },
+  {
+    "id": "mp_nng_04",
+    "category": "N vs. NG",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Sinn",
+      "Singen"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Auslaut vs. Inlaut N / NG"
+  },
+  {
+    "id": "mp_nng_05",
+    "category": "N vs. NG",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Kanne",
+      "Klang"
+    ],
+    "difficulty": "Schwer",
+    "hint": "Unterscheidung N vs. NG mit Konsonantenhäufung"
+  },
+  {
+    "id": "mp_nng_06",
+    "category": "N vs. NG",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Tanne",
+      "Tang"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Auslaut-Nasal vs. Inlaut-Nasal"
+  },
+  {
+    "id": "mp_vokal_01",
+    "category": "Vokallänge (Kurz vs. Lang)",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Bahn",
+      "Bann"
+    ],
+    "difficulty": "Einfach",
+    "hint": "Langes /aː/ vs. kurzes /a/"
+  },
+  {
+    "id": "mp_vokal_02",
+    "category": "Vokallänge (Kurz vs. Lang)",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Miete",
+      "Mitte"
+    ],
+    "difficulty": "Einfach",
+    "hint": "Langes /iː/ vs. kurzes /ɪ/"
+  },
+  {
+    "id": "mp_vokal_03",
+    "category": "Vokallänge (Kurz vs. Lang)",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Wal",
+      "Wall"
+    ],
+    "difficulty": "Einfach",
+    "hint": "Langes /aː/ vs. kurzes /a/"
+  },
+  {
+    "id": "mp_vokal_04",
+    "category": "Vokallänge (Kurz vs. Lang)",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Besen",
+      "besser"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Langes /eː/ vs. kurzes /ɛ/"
+  },
+  {
+    "id": "mp_vokal_05",
+    "category": "Vokallänge (Kurz vs. Lang)",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "viel",
+      "Film"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Langes /iː/ vs. kurzes /ɪ/ mit Konsonant"
+  },
+  {
+    "id": "mp_vokal_06",
+    "category": "Vokallänge (Kurz vs. Lang)",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Haken",
+      "Hacken"
+    ],
+    "difficulty": "Einfach",
+    "hint": "Langes /aː/ vs. kurzes /a/"
+  },
+  {
+    "id": "mp_vokal_07",
+    "category": "Vokallänge (Kurz vs. Lang)",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Nase",
+      "nasse"
+    ],
+    "difficulty": "Einfach",
+    "hint": "Langes /aː/ vs. kurzes /a/"
+  },
+  {
+    "id": "mp_vokal_08",
+    "category": "Vokallänge (Kurz vs. Lang)",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Hüte",
+      "Hütte"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Langes Umlaut /yː/ vs. kurzes /ʏ/"
+  },
+  {
+    "id": "mp_vokal_09",
+    "category": "Vokallänge (Kurz vs. Lang)",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Robe",
+      "Robbe"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Langes /oː/ vs. kurzes /ɔ/"
+  },
+  {
+    "id": "mp_vokal_10",
+    "category": "Vokallänge (Kurz vs. Lang)",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Schal",
+      "Schall"
+    ],
+    "difficulty": "Einfach",
+    "hint": "Langes /aː/ vs. kurzes /a/"
+  },
+  {
+    "id": "mp_vokal_11",
+    "category": "Vokallänge (Kurz vs. Lang)",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Aal",
+      "All"
+    ],
+    "difficulty": "Einfach",
+    "hint": "Langes /aː/ vs. kurzes /a/"
+  },
+  {
+    "id": "mp_vokal_12",
+    "category": "Vokallänge (Kurz vs. Lang)",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Ofen",
+      "offen"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Langes /oː/ vs. kurzes /ɔ/"
+  },
+  {
+    "id": "mp_ch_01",
+    "category": "CH vs. SCH",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Kirche",
+      "Kirsche"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Ich-Laut /ç/ vs. SCH /ʃ/"
+  },
+  {
+    "id": "mp_ch_02",
+    "category": "CH vs. SCH",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Dich",
+      "Fisch"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Ich-Laut /ç/ vs. SCH /ʃ/ im Auslaut"
+  },
+  {
+    "id": "mp_ch_03",
+    "category": "CH vs. SCH",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "mischen",
+      "Wochen"
+    ],
+    "difficulty": "Schwer",
+    "hint": "SCH vs. Ach-Laut /x/"
+  },
+  {
+    "id": "mp_ch_04",
+    "category": "CH vs. K",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Dach",
+      "Dank"
+    ],
+    "difficulty": "Einfach",
+    "hint": "Ach-Laut /x/ vs. Plosiv K"
+  },
+  {
+    "id": "mp_ch_05",
+    "category": "CH vs. K",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Buch",
+      "Bock"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Ach-Laut /x/ vs. Plosiv K"
+  },
+  {
+    "id": "mp_ch_06",
+    "category": "CH vs. K",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "lachen",
+      "Laken"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Inlaut Ach-Laut /x/ vs. Doppel-K"
+  },
+  {
+    "id": "mp_rh_01",
+    "category": "R vs. H",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Rad",
+      "Had"
+    ],
+    "difficulty": "Einfach",
+    "hint": "Unterscheidung Rad vs Hut",
+    "word_a": "Rad",
+    "word_b": "Hut"
+  },
+  {
+    "id": "mp_rh_02",
+    "category": "R vs. H",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Rot",
+      "Hut"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Anlautdifferenzierung R vs. H mit Vokalkontrast"
+  },
+  {
+    "id": "mp_rh_03",
+    "category": "R vs. H",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Rose",
+      "Hose"
+    ],
+    "difficulty": "Einfach",
+    "hint": "Anlautdifferenzierung R vs. H vor -ose"
+  },
+  {
+    "id": "mp_rh_04",
+    "category": "R vs. H",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Rasse",
+      "Hasse"
+    ],
+    "difficulty": "Einfach",
+    "hint": "Anlautdifferenzierung R vs. H vor -asse"
+  },
+  {
+    "id": "mp_rh_05",
+    "category": "R vs. H",
+    "source": "Logopädischer Minimalpaar-Katalog",
+    "options": [
+      "Rind",
+      "Hind"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung Rind vs Kind",
+    "word_a": "Rind",
+    "word_b": "Kind"
+  },
+  {
+    "id": "mp_r_08",
+    "category": "Reim-Gruppe (-ecke)",
+    "source": "Marburger Minimalpaar-Katalog",
+    "options": [
+      "Ecke",
+      "Decke",
+      "Hecke",
+      "Schnecke",
+      "Stecke"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Anlautdifferenzierung bei -ecke"
+  },
+  {
+    "id": "mp_r_09",
+    "category": "Reim-Gruppe (-atz)",
+    "source": "Marburger Minimalpaar-Katalog",
+    "options": [
+      "Satz",
+      "Katz",
+      "Platz",
+      "Schatz",
+      "Fratz"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Anlautdifferenzierung bei -atz"
+  },
+  {
+    "id": "mp_r_10",
+    "category": "Reim-Gruppe (-iege)",
+    "source": "Marburger Minimalpaar-Katalog",
+    "options": [
+      "Wiege",
+      "Liege",
+      "Ziege",
+      "Fliege"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Anlautdifferenzierung bei -iege"
+  },
+  {
+    "id": "mp_r_11",
+    "category": "Reim-Gruppe (-ern)",
+    "source": "Marburger Minimalpaar-Katalog",
+    "options": [
+      "Stern",
+      "Kern",
+      "Gern",
+      "Lern"
+    ],
+    "difficulty": "Mittel",
+    "hint": "Anlautdifferenzierung bei -ern"
+  }
+]

@@ -1,0 +1,6618 @@
+[
+  {
+    "id": "sent_0001",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja kauft sechs rote Steine.",
+    "target_word": "sechs",
+    "options": [
+      "sechs",
+      "drei",
+      "zwölf"
+    ],
+    "hint": "Achte auf die Anzahl 'sechs' im Satz."
+  },
+  {
+    "id": "sent_0002",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter kauft drei rote Steine.",
+    "target_word": "Steine",
+    "options": [
+      "Blumen",
+      "Messer",
+      "Steine",
+      "Kisten"
+    ],
+    "hint": "Achte auf das Objekt 'Steine' am Satzende."
+  },
+  {
+    "id": "sent_0003",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas nimmt zwei grüne Kisten.",
+    "target_word": "grüne",
+    "options": [
+      "rote",
+      "neue",
+      "grüne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'grüne'."
+  },
+  {
+    "id": "sent_0004",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja sieht acht kleine Bilder.",
+    "target_word": "kleine",
+    "options": [
+      "kleine",
+      "neue",
+      "große"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'kleine'."
+  },
+  {
+    "id": "sent_0005",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina sieht acht kleine Stühle.",
+    "target_word": "kleine",
+    "options": [
+      "schöne",
+      "kleine",
+      "alte"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'kleine'."
+  },
+  {
+    "id": "sent_0006",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter gewinnt sechs kleine Steine.",
+    "target_word": "Steine",
+    "options": [
+      "Blumen",
+      "Uhren",
+      "Steine",
+      "Bilder"
+    ],
+    "hint": "Achte auf das Objekt 'Steine' am Satzende."
+  },
+  {
+    "id": "sent_0007",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich gewinnt sechs kleine Messer.",
+    "target_word": "sechs",
+    "options": [
+      "fünf",
+      "zwölf",
+      "sechs"
+    ],
+    "hint": "Achte auf die Anzahl 'sechs' im Satz."
+  },
+  {
+    "id": "sent_0008",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin nimmt zehn rote Bilder.",
+    "target_word": "Bilder",
+    "options": [
+      "Bilder",
+      "Uhren",
+      "Steine",
+      "Äpfel"
+    ],
+    "hint": "Achte auf das Objekt 'Bilder' am Satzende."
+  },
+  {
+    "id": "sent_0009",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja gewinnt zwölf neue Steine.",
+    "target_word": "Tanja",
+    "options": [
+      "Nina",
+      "Michael",
+      "Tanja"
+    ],
+    "hint": "Achte auf den Namen 'Tanja' am Satzanfang."
+  },
+  {
+    "id": "sent_0010",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan gewinnt zehn warme Blumen.",
+    "target_word": "Stefan",
+    "options": [
+      "Michael",
+      "Kerstin",
+      "Stefan"
+    ],
+    "hint": "Achte auf den Namen 'Stefan' am Satzanfang."
+  },
+  {
+    "id": "sent_0011",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina findet drei große Tassen.",
+    "target_word": "drei",
+    "options": [
+      "fünf",
+      "drei",
+      "neun"
+    ],
+    "hint": "Achte auf die Anzahl 'drei' im Satz."
+  },
+  {
+    "id": "sent_0012",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin sucht zwölf starke Stühle.",
+    "target_word": "starke",
+    "options": [
+      "kühle",
+      "starke",
+      "große"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'starke'."
+  },
+  {
+    "id": "sent_0013",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina nimmt sieben kleine Blumen.",
+    "target_word": "Nina",
+    "options": [
+      "Michael",
+      "Stefan",
+      "Nina"
+    ],
+    "hint": "Achte auf den Namen 'Nina' am Satzanfang."
+  },
+  {
+    "id": "sent_0014",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina bekommt zehn kleine Blumen.",
+    "target_word": "zehn",
+    "options": [
+      "vier",
+      "sieben",
+      "zehn"
+    ],
+    "hint": "Achte auf die Anzahl 'zehn' im Satz."
+  },
+  {
+    "id": "sent_0015",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas schenkt neun große Tassen.",
+    "target_word": "große",
+    "options": [
+      "neue",
+      "alte",
+      "große"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'große'."
+  },
+  {
+    "id": "sent_0016",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas sieht drei starke Tassen.",
+    "target_word": "drei",
+    "options": [
+      "fünf",
+      "drei",
+      "zehn"
+    ],
+    "hint": "Achte auf die Anzahl 'drei' im Satz."
+  },
+  {
+    "id": "sent_0017",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris zählt zwölf schöne Steine.",
+    "target_word": "zwölf",
+    "options": [
+      "zwölf",
+      "sechs",
+      "acht"
+    ],
+    "hint": "Achte auf die Anzahl 'zwölf' im Satz."
+  },
+  {
+    "id": "sent_0018",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael zählt neun kleine Steine.",
+    "target_word": "neun",
+    "options": [
+      "drei",
+      "sieben",
+      "neun"
+    ],
+    "hint": "Achte auf die Anzahl 'neun' im Satz."
+  },
+  {
+    "id": "sent_0019",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas gewinnt zwei kleine Äpfel.",
+    "target_word": "zwei",
+    "options": [
+      "drei",
+      "zwei",
+      "vier"
+    ],
+    "hint": "Achte auf die Anzahl 'zwei' im Satz."
+  },
+  {
+    "id": "sent_0020",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina gewinnt sechs starke Steine.",
+    "target_word": "sechs",
+    "options": [
+      "sechs",
+      "fünf",
+      "zehn"
+    ],
+    "hint": "Achte auf die Anzahl 'sechs' im Satz."
+  },
+  {
+    "id": "sent_0021",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta sieht drei schöne Bilder.",
+    "target_word": "Britta",
+    "options": [
+      "Michael",
+      "Britta",
+      "Nina"
+    ],
+    "hint": "Achte auf den Namen 'Britta' am Satzanfang."
+  },
+  {
+    "id": "sent_0022",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja kauft acht neue Tassen.",
+    "target_word": "acht",
+    "options": [
+      "acht",
+      "fünf",
+      "zwölf"
+    ],
+    "hint": "Achte auf die Anzahl 'acht' im Satz."
+  },
+  {
+    "id": "sent_0023",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan sucht vier alte Uhren.",
+    "target_word": "vier",
+    "options": [
+      "drei",
+      "vier",
+      "zehn"
+    ],
+    "hint": "Achte auf die Anzahl 'vier' im Satz."
+  },
+  {
+    "id": "sent_0024",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter zählt zwei kleine Steine.",
+    "target_word": "zwei",
+    "options": [
+      "zehn",
+      "zwei",
+      "neun"
+    ],
+    "hint": "Achte auf die Anzahl 'zwei' im Satz."
+  },
+  {
+    "id": "sent_0025",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin kauft vier schöne Äpfel.",
+    "target_word": "Kerstin",
+    "options": [
+      "Kerstin",
+      "Nina",
+      "Doris"
+    ],
+    "hint": "Achte auf den Namen 'Kerstin' am Satzanfang."
+  },
+  {
+    "id": "sent_0026",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina findet vier rote Blumen.",
+    "target_word": "vier",
+    "options": [
+      "vier",
+      "zwei",
+      "zwölf"
+    ],
+    "hint": "Achte auf die Anzahl 'vier' im Satz."
+  },
+  {
+    "id": "sent_0027",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter kauft zwölf starke Stühle.",
+    "target_word": "zwölf",
+    "options": [
+      "zwei",
+      "drei",
+      "zwölf"
+    ],
+    "hint": "Achte auf die Anzahl 'zwölf' im Satz."
+  },
+  {
+    "id": "sent_0028",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas sieht fünf schöne Tassen.",
+    "target_word": "fünf",
+    "options": [
+      "fünf",
+      "drei",
+      "zwei"
+    ],
+    "hint": "Achte auf die Anzahl 'fünf' im Satz."
+  },
+  {
+    "id": "sent_0029",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris gewinnt sieben rote Blumen.",
+    "target_word": "Doris",
+    "options": [
+      "Doris",
+      "Ulrich",
+      "Stefan"
+    ],
+    "hint": "Achte auf den Namen 'Doris' am Satzanfang."
+  },
+  {
+    "id": "sent_0030",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja kauft neun kühle Messer.",
+    "target_word": "Messer",
+    "options": [
+      "Blumen",
+      "Tassen",
+      "Messer",
+      "Steine"
+    ],
+    "hint": "Achte auf das Objekt 'Messer' am Satzende."
+  },
+  {
+    "id": "sent_0031",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja gewinnt sieben alte Bücher.",
+    "target_word": "Tanja",
+    "options": [
+      "Thomas",
+      "Tanja",
+      "Ulrich"
+    ],
+    "hint": "Achte auf den Namen 'Tanja' am Satzanfang."
+  },
+  {
+    "id": "sent_0032",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina nimmt drei grüne Blumen.",
+    "target_word": "Blumen",
+    "options": [
+      "Tassen",
+      "Blumen",
+      "Stühle",
+      "Bücher"
+    ],
+    "hint": "Achte auf das Objekt 'Blumen' am Satzende."
+  },
+  {
+    "id": "sent_0033",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich gewinnt sechs warme Uhren.",
+    "target_word": "warme",
+    "options": [
+      "warme",
+      "große",
+      "kleine"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'warme'."
+  },
+  {
+    "id": "sent_0034",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris kauft zwei neue Bücher.",
+    "target_word": "neue",
+    "options": [
+      "neue",
+      "grüne",
+      "warme"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'neue'."
+  },
+  {
+    "id": "sent_0035",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina kauft drei kleine Bücher.",
+    "target_word": "Bücher",
+    "options": [
+      "Steine",
+      "Blumen",
+      "Bücher",
+      "Kisten"
+    ],
+    "hint": "Achte auf das Objekt 'Bücher' am Satzende."
+  },
+  {
+    "id": "sent_0036",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich kauft sieben rote Steine.",
+    "target_word": "Steine",
+    "options": [
+      "Bilder",
+      "Uhren",
+      "Steine",
+      "Kisten"
+    ],
+    "hint": "Achte auf das Objekt 'Steine' am Satzende."
+  },
+  {
+    "id": "sent_0037",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan sucht zwei grüne Bilder.",
+    "target_word": "Stefan",
+    "options": [
+      "Doris",
+      "Ulrich",
+      "Stefan"
+    ],
+    "hint": "Achte auf den Namen 'Stefan' am Satzanfang."
+  },
+  {
+    "id": "sent_0038",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin kauft neun rote Steine.",
+    "target_word": "Kerstin",
+    "options": [
+      "Ulrich",
+      "Doris",
+      "Kerstin"
+    ],
+    "hint": "Achte auf den Namen 'Kerstin' am Satzanfang."
+  },
+  {
+    "id": "sent_0039",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter gewinnt acht neue Blumen.",
+    "target_word": "Blumen",
+    "options": [
+      "Blumen",
+      "Bilder",
+      "Kisten",
+      "Stühle"
+    ],
+    "hint": "Achte auf das Objekt 'Blumen' am Satzende."
+  },
+  {
+    "id": "sent_0040",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter sieht sechs grüne Messer.",
+    "target_word": "grüne",
+    "options": [
+      "grüne",
+      "große",
+      "kleine"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'grüne'."
+  },
+  {
+    "id": "sent_0041",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich schenkt acht kühle Stühle.",
+    "target_word": "Stühle",
+    "options": [
+      "Bücher",
+      "Kisten",
+      "Steine",
+      "Stühle"
+    ],
+    "hint": "Achte auf das Objekt 'Stühle' am Satzende."
+  },
+  {
+    "id": "sent_0042",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter zählt zehn rote Bilder.",
+    "target_word": "Peter",
+    "options": [
+      "Peter",
+      "Stefan",
+      "Kerstin"
+    ],
+    "hint": "Achte auf den Namen 'Peter' am Satzanfang."
+  },
+  {
+    "id": "sent_0043",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja nimmt zehn alte Kisten.",
+    "target_word": "alte",
+    "options": [
+      "starke",
+      "alte",
+      "neue"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'alte'."
+  },
+  {
+    "id": "sent_0044",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta sucht acht grüne Messer.",
+    "target_word": "grüne",
+    "options": [
+      "grüne",
+      "große",
+      "starke"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'grüne'."
+  },
+  {
+    "id": "sent_0045",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta sucht zwölf kühle Bilder.",
+    "target_word": "Britta",
+    "options": [
+      "Nina",
+      "Britta",
+      "Thomas"
+    ],
+    "hint": "Achte auf den Namen 'Britta' am Satzanfang."
+  },
+  {
+    "id": "sent_0046",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina findet vier kleine Blumen.",
+    "target_word": "kleine",
+    "options": [
+      "kleine",
+      "grüne",
+      "alte"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'kleine'."
+  },
+  {
+    "id": "sent_0047",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta gewinnt vier große Äpfel.",
+    "target_word": "vier",
+    "options": [
+      "vier",
+      "drei",
+      "zehn"
+    ],
+    "hint": "Achte auf die Anzahl 'vier' im Satz."
+  },
+  {
+    "id": "sent_0048",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas gewinnt acht starke Kisten.",
+    "target_word": "acht",
+    "options": [
+      "zwei",
+      "vier",
+      "acht"
+    ],
+    "hint": "Achte auf die Anzahl 'acht' im Satz."
+  },
+  {
+    "id": "sent_0049",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta bekommt zehn starke Äpfel.",
+    "target_word": "zehn",
+    "options": [
+      "neun",
+      "drei",
+      "zehn"
+    ],
+    "hint": "Achte auf die Anzahl 'zehn' im Satz."
+  },
+  {
+    "id": "sent_0050",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina zählt zwölf neue Uhren.",
+    "target_word": "Nina",
+    "options": [
+      "Michael",
+      "Thomas",
+      "Nina"
+    ],
+    "hint": "Achte auf den Namen 'Nina' am Satzanfang."
+  },
+  {
+    "id": "sent_0051",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael nimmt fünf alte Stühle.",
+    "target_word": "Michael",
+    "options": [
+      "Doris",
+      "Michael",
+      "Britta"
+    ],
+    "hint": "Achte auf den Namen 'Michael' am Satzanfang."
+  },
+  {
+    "id": "sent_0052",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris gewinnt sechs neue Bilder.",
+    "target_word": "Bilder",
+    "options": [
+      "Bücher",
+      "Bilder",
+      "Messer",
+      "Tassen"
+    ],
+    "hint": "Achte auf das Objekt 'Bilder' am Satzende."
+  },
+  {
+    "id": "sent_0053",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta sieht acht schöne Bilder.",
+    "target_word": "Britta",
+    "options": [
+      "Peter",
+      "Michael",
+      "Britta"
+    ],
+    "hint": "Achte auf den Namen 'Britta' am Satzanfang."
+  },
+  {
+    "id": "sent_0054",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin malt zwei kühle Kisten.",
+    "target_word": "Kerstin",
+    "options": [
+      "Kerstin",
+      "Ulrich",
+      "Peter"
+    ],
+    "hint": "Achte auf den Namen 'Kerstin' am Satzanfang."
+  },
+  {
+    "id": "sent_0055",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin zählt zehn kühle Steine.",
+    "target_word": "Kerstin",
+    "options": [
+      "Kerstin",
+      "Doris",
+      "Britta"
+    ],
+    "hint": "Achte auf den Namen 'Kerstin' am Satzanfang."
+  },
+  {
+    "id": "sent_0056",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter sucht sieben schöne Bücher.",
+    "target_word": "Peter",
+    "options": [
+      "Tanja",
+      "Peter",
+      "Britta"
+    ],
+    "hint": "Achte auf den Namen 'Peter' am Satzanfang."
+  },
+  {
+    "id": "sent_0057",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja sucht vier starke Bücher.",
+    "target_word": "Bücher",
+    "options": [
+      "Bücher",
+      "Uhren",
+      "Steine",
+      "Bilder"
+    ],
+    "hint": "Achte auf das Objekt 'Bücher' am Satzende."
+  },
+  {
+    "id": "sent_0058",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich sucht sechs schöne Blumen.",
+    "target_word": "Blumen",
+    "options": [
+      "Äpfel",
+      "Kisten",
+      "Stühle",
+      "Blumen"
+    ],
+    "hint": "Achte auf das Objekt 'Blumen' am Satzende."
+  },
+  {
+    "id": "sent_0059",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja kauft zwei rote Steine.",
+    "target_word": "Steine",
+    "options": [
+      "Bücher",
+      "Steine",
+      "Blumen",
+      "Tassen"
+    ],
+    "hint": "Achte auf das Objekt 'Steine' am Satzende."
+  },
+  {
+    "id": "sent_0060",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas gewinnt neun alte Bilder.",
+    "target_word": "neun",
+    "options": [
+      "vier",
+      "neun",
+      "drei"
+    ],
+    "hint": "Achte auf die Anzahl 'neun' im Satz."
+  },
+  {
+    "id": "sent_0061",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas kauft sechs kühle Kisten.",
+    "target_word": "Thomas",
+    "options": [
+      "Britta",
+      "Thomas",
+      "Tanja"
+    ],
+    "hint": "Achte auf den Namen 'Thomas' am Satzanfang."
+  },
+  {
+    "id": "sent_0062",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja nimmt zwölf kleine Messer.",
+    "target_word": "Messer",
+    "options": [
+      "Stühle",
+      "Bilder",
+      "Messer",
+      "Kisten"
+    ],
+    "hint": "Achte auf das Objekt 'Messer' am Satzende."
+  },
+  {
+    "id": "sent_0063",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter sucht neun kleine Kisten.",
+    "target_word": "kleine",
+    "options": [
+      "rote",
+      "kleine",
+      "warme"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'kleine'."
+  },
+  {
+    "id": "sent_0064",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina nimmt zwölf warme Uhren.",
+    "target_word": "Nina",
+    "options": [
+      "Doris",
+      "Nina",
+      "Kerstin"
+    ],
+    "hint": "Achte auf den Namen 'Nina' am Satzanfang."
+  },
+  {
+    "id": "sent_0065",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja nimmt neun rote Uhren.",
+    "target_word": "Tanja",
+    "options": [
+      "Tanja",
+      "Peter",
+      "Kerstin"
+    ],
+    "hint": "Achte auf den Namen 'Tanja' am Satzanfang."
+  },
+  {
+    "id": "sent_0066",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan findet fünf neue Blumen.",
+    "target_word": "neue",
+    "options": [
+      "alte",
+      "neue",
+      "kühle"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'neue'."
+  },
+  {
+    "id": "sent_0067",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina gewinnt drei rote Kisten.",
+    "target_word": "Nina",
+    "options": [
+      "Nina",
+      "Thomas",
+      "Britta"
+    ],
+    "hint": "Achte auf den Namen 'Nina' am Satzanfang."
+  },
+  {
+    "id": "sent_0068",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael findet zwei kleine Blumen.",
+    "target_word": "zwei",
+    "options": [
+      "zwei",
+      "sechs",
+      "neun"
+    ],
+    "hint": "Achte auf die Anzahl 'zwei' im Satz."
+  },
+  {
+    "id": "sent_0069",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael zählt zehn neue Kisten.",
+    "target_word": "neue",
+    "options": [
+      "neue",
+      "warme",
+      "schöne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'neue'."
+  },
+  {
+    "id": "sent_0070",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris gewinnt drei rote Bilder.",
+    "target_word": "Bilder",
+    "options": [
+      "Bilder",
+      "Tassen",
+      "Bücher",
+      "Messer"
+    ],
+    "hint": "Achte auf das Objekt 'Bilder' am Satzende."
+  },
+  {
+    "id": "sent_0071",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris malt zehn kühle Blumen.",
+    "target_word": "Blumen",
+    "options": [
+      "Tassen",
+      "Steine",
+      "Blumen",
+      "Bilder"
+    ],
+    "hint": "Achte auf das Objekt 'Blumen' am Satzende."
+  },
+  {
+    "id": "sent_0072",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter zählt vier alte Äpfel.",
+    "target_word": "Äpfel",
+    "options": [
+      "Äpfel",
+      "Kisten",
+      "Bilder",
+      "Messer"
+    ],
+    "hint": "Achte auf das Objekt 'Äpfel' am Satzende."
+  },
+  {
+    "id": "sent_0073",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja kauft zwölf alte Uhren.",
+    "target_word": "Tanja",
+    "options": [
+      "Nina",
+      "Kerstin",
+      "Tanja"
+    ],
+    "hint": "Achte auf den Namen 'Tanja' am Satzanfang."
+  },
+  {
+    "id": "sent_0074",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris findet drei kleine Kisten.",
+    "target_word": "Doris",
+    "options": [
+      "Tanja",
+      "Peter",
+      "Doris"
+    ],
+    "hint": "Achte auf den Namen 'Doris' am Satzanfang."
+  },
+  {
+    "id": "sent_0075",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas nimmt drei rote Tassen.",
+    "target_word": "Thomas",
+    "options": [
+      "Thomas",
+      "Kerstin",
+      "Britta"
+    ],
+    "hint": "Achte auf den Namen 'Thomas' am Satzanfang."
+  },
+  {
+    "id": "sent_0076",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris malt acht alte Messer.",
+    "target_word": "Messer",
+    "options": [
+      "Steine",
+      "Messer",
+      "Bilder",
+      "Tassen"
+    ],
+    "hint": "Achte auf das Objekt 'Messer' am Satzende."
+  },
+  {
+    "id": "sent_0077",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan gewinnt vier warme Tassen.",
+    "target_word": "vier",
+    "options": [
+      "vier",
+      "neun",
+      "zwei"
+    ],
+    "hint": "Achte auf die Anzahl 'vier' im Satz."
+  },
+  {
+    "id": "sent_0078",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris kauft fünf alte Blumen.",
+    "target_word": "Doris",
+    "options": [
+      "Britta",
+      "Doris",
+      "Tanja"
+    ],
+    "hint": "Achte auf den Namen 'Doris' am Satzanfang."
+  },
+  {
+    "id": "sent_0079",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin sieht zehn rote Bücher.",
+    "target_word": "rote",
+    "options": [
+      "grüne",
+      "kleine",
+      "rote"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'rote'."
+  },
+  {
+    "id": "sent_0080",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris malt zwölf alte Uhren.",
+    "target_word": "Uhren",
+    "options": [
+      "Uhren",
+      "Blumen",
+      "Stühle",
+      "Bilder"
+    ],
+    "hint": "Achte auf das Objekt 'Uhren' am Satzende."
+  },
+  {
+    "id": "sent_0081",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael sieht zwölf große Kisten.",
+    "target_word": "große",
+    "options": [
+      "neue",
+      "kleine",
+      "große"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'große'."
+  },
+  {
+    "id": "sent_0082",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas malt zwei alte Messer.",
+    "target_word": "Messer",
+    "options": [
+      "Uhren",
+      "Messer",
+      "Bücher",
+      "Blumen"
+    ],
+    "hint": "Achte auf das Objekt 'Messer' am Satzende."
+  },
+  {
+    "id": "sent_0083",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas sucht neun kleine Uhren.",
+    "target_word": "kleine",
+    "options": [
+      "schöne",
+      "kleine",
+      "starke"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'kleine'."
+  },
+  {
+    "id": "sent_0084",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan schenkt acht starke Blumen.",
+    "target_word": "Stefan",
+    "options": [
+      "Peter",
+      "Stefan",
+      "Thomas"
+    ],
+    "hint": "Achte auf den Namen 'Stefan' am Satzanfang."
+  },
+  {
+    "id": "sent_0085",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich nimmt sieben kleine Kisten.",
+    "target_word": "Kisten",
+    "options": [
+      "Stühle",
+      "Messer",
+      "Steine",
+      "Kisten"
+    ],
+    "hint": "Achte auf das Objekt 'Kisten' am Satzende."
+  },
+  {
+    "id": "sent_0086",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas findet neun große Steine.",
+    "target_word": "große",
+    "options": [
+      "große",
+      "rote",
+      "kühle"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'große'."
+  },
+  {
+    "id": "sent_0087",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael sieht zwei kühle Steine.",
+    "target_word": "zwei",
+    "options": [
+      "zwei",
+      "sieben",
+      "drei"
+    ],
+    "hint": "Achte auf die Anzahl 'zwei' im Satz."
+  },
+  {
+    "id": "sent_0088",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja gewinnt drei starke Tassen.",
+    "target_word": "drei",
+    "options": [
+      "drei",
+      "zehn",
+      "sieben"
+    ],
+    "hint": "Achte auf die Anzahl 'drei' im Satz."
+  },
+  {
+    "id": "sent_0089",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin findet neun rote Uhren.",
+    "target_word": "neun",
+    "options": [
+      "acht",
+      "neun",
+      "fünf"
+    ],
+    "hint": "Achte auf die Anzahl 'neun' im Satz."
+  },
+  {
+    "id": "sent_0090",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja nimmt acht neue Stühle.",
+    "target_word": "neue",
+    "options": [
+      "neue",
+      "große",
+      "alte"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'neue'."
+  },
+  {
+    "id": "sent_0091",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas malt neun grüne Uhren.",
+    "target_word": "Thomas",
+    "options": [
+      "Thomas",
+      "Ulrich",
+      "Nina"
+    ],
+    "hint": "Achte auf den Namen 'Thomas' am Satzanfang."
+  },
+  {
+    "id": "sent_0092",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael schenkt fünf rote Messer.",
+    "target_word": "Michael",
+    "options": [
+      "Kerstin",
+      "Britta",
+      "Michael"
+    ],
+    "hint": "Achte auf den Namen 'Michael' am Satzanfang."
+  },
+  {
+    "id": "sent_0093",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael sucht acht grüne Uhren.",
+    "target_word": "Uhren",
+    "options": [
+      "Bilder",
+      "Kisten",
+      "Bücher",
+      "Uhren"
+    ],
+    "hint": "Achte auf das Objekt 'Uhren' am Satzende."
+  },
+  {
+    "id": "sent_0094",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina findet zwei grüne Kisten.",
+    "target_word": "zwei",
+    "options": [
+      "zwei",
+      "zehn",
+      "vier"
+    ],
+    "hint": "Achte auf die Anzahl 'zwei' im Satz."
+  },
+  {
+    "id": "sent_0095",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas sucht drei neue Stühle.",
+    "target_word": "Thomas",
+    "options": [
+      "Ulrich",
+      "Thomas",
+      "Michael"
+    ],
+    "hint": "Achte auf den Namen 'Thomas' am Satzanfang."
+  },
+  {
+    "id": "sent_0096",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas sieht fünf alte Steine.",
+    "target_word": "Steine",
+    "options": [
+      "Tassen",
+      "Messer",
+      "Uhren",
+      "Steine"
+    ],
+    "hint": "Achte auf das Objekt 'Steine' am Satzende."
+  },
+  {
+    "id": "sent_0097",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris kauft zwei neue Äpfel.",
+    "target_word": "neue",
+    "options": [
+      "kühle",
+      "neue",
+      "schöne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'neue'."
+  },
+  {
+    "id": "sent_0098",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta zählt acht kühle Bücher.",
+    "target_word": "acht",
+    "options": [
+      "acht",
+      "vier",
+      "drei"
+    ],
+    "hint": "Achte auf die Anzahl 'acht' im Satz."
+  },
+  {
+    "id": "sent_0099",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas gewinnt neun kühle Bücher.",
+    "target_word": "neun",
+    "options": [
+      "neun",
+      "sechs",
+      "zehn"
+    ],
+    "hint": "Achte auf die Anzahl 'neun' im Satz."
+  },
+  {
+    "id": "sent_0100",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter findet sechs warme Bücher.",
+    "target_word": "Bücher",
+    "options": [
+      "Bücher",
+      "Stühle",
+      "Bilder",
+      "Kisten"
+    ],
+    "hint": "Achte auf das Objekt 'Bücher' am Satzende."
+  },
+  {
+    "id": "sent_0101",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris findet sechs rote Kisten.",
+    "target_word": "Doris",
+    "options": [
+      "Doris",
+      "Britta",
+      "Tanja"
+    ],
+    "hint": "Achte auf den Namen 'Doris' am Satzanfang."
+  },
+  {
+    "id": "sent_0102",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas nimmt sechs große Kisten.",
+    "target_word": "große",
+    "options": [
+      "große",
+      "kleine",
+      "kühle"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'große'."
+  },
+  {
+    "id": "sent_0103",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris gewinnt zwölf neue Steine.",
+    "target_word": "zwölf",
+    "options": [
+      "sechs",
+      "zwölf",
+      "vier"
+    ],
+    "hint": "Achte auf die Anzahl 'zwölf' im Satz."
+  },
+  {
+    "id": "sent_0104",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter nimmt neun große Messer.",
+    "target_word": "große",
+    "options": [
+      "große",
+      "grüne",
+      "rote"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'große'."
+  },
+  {
+    "id": "sent_0105",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin bekommt fünf grüne Stühle.",
+    "target_word": "grüne",
+    "options": [
+      "neue",
+      "kühle",
+      "grüne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'grüne'."
+  },
+  {
+    "id": "sent_0106",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael nimmt sieben kleine Uhren.",
+    "target_word": "Uhren",
+    "options": [
+      "Uhren",
+      "Bücher",
+      "Steine",
+      "Kisten"
+    ],
+    "hint": "Achte auf das Objekt 'Uhren' am Satzende."
+  },
+  {
+    "id": "sent_0107",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja sucht zwei alte Stühle.",
+    "target_word": "Stühle",
+    "options": [
+      "Stühle",
+      "Uhren",
+      "Messer",
+      "Bilder"
+    ],
+    "hint": "Achte auf das Objekt 'Stühle' am Satzende."
+  },
+  {
+    "id": "sent_0108",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich sieht fünf starke Äpfel.",
+    "target_word": "starke",
+    "options": [
+      "starke",
+      "rote",
+      "kleine"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'starke'."
+  },
+  {
+    "id": "sent_0109",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris sucht drei grüne Äpfel.",
+    "target_word": "Äpfel",
+    "options": [
+      "Bilder",
+      "Stühle",
+      "Tassen",
+      "Äpfel"
+    ],
+    "hint": "Achte auf das Objekt 'Äpfel' am Satzende."
+  },
+  {
+    "id": "sent_0110",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin findet sieben warme Kisten.",
+    "target_word": "sieben",
+    "options": [
+      "sieben",
+      "drei",
+      "neun"
+    ],
+    "hint": "Achte auf die Anzahl 'sieben' im Satz."
+  },
+  {
+    "id": "sent_0111",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris kauft sieben rote Uhren.",
+    "target_word": "Doris",
+    "options": [
+      "Kerstin",
+      "Britta",
+      "Doris"
+    ],
+    "hint": "Achte auf den Namen 'Doris' am Satzanfang."
+  },
+  {
+    "id": "sent_0112",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina schenkt zwei schöne Blumen.",
+    "target_word": "zwei",
+    "options": [
+      "vier",
+      "zehn",
+      "zwei"
+    ],
+    "hint": "Achte auf die Anzahl 'zwei' im Satz."
+  },
+  {
+    "id": "sent_0113",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas kauft zwei neue Steine.",
+    "target_word": "zwei",
+    "options": [
+      "sechs",
+      "zwei",
+      "vier"
+    ],
+    "hint": "Achte auf die Anzahl 'zwei' im Satz."
+  },
+  {
+    "id": "sent_0114",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas gewinnt fünf neue Bücher.",
+    "target_word": "Bücher",
+    "options": [
+      "Bilder",
+      "Tassen",
+      "Bücher",
+      "Steine"
+    ],
+    "hint": "Achte auf das Objekt 'Bücher' am Satzende."
+  },
+  {
+    "id": "sent_0115",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter bekommt zwei neue Steine.",
+    "target_word": "neue",
+    "options": [
+      "grüne",
+      "neue",
+      "große"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'neue'."
+  },
+  {
+    "id": "sent_0116",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan sucht zehn kleine Tassen.",
+    "target_word": "Stefan",
+    "options": [
+      "Nina",
+      "Stefan",
+      "Kerstin"
+    ],
+    "hint": "Achte auf den Namen 'Stefan' am Satzanfang."
+  },
+  {
+    "id": "sent_0117",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael zählt fünf kühle Äpfel.",
+    "target_word": "kühle",
+    "options": [
+      "große",
+      "starke",
+      "kühle"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'kühle'."
+  },
+  {
+    "id": "sent_0118",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin sucht drei starke Uhren.",
+    "target_word": "Uhren",
+    "options": [
+      "Blumen",
+      "Bilder",
+      "Uhren",
+      "Tassen"
+    ],
+    "hint": "Achte auf das Objekt 'Uhren' am Satzende."
+  },
+  {
+    "id": "sent_0119",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris malt zwölf warme Bilder.",
+    "target_word": "Doris",
+    "options": [
+      "Doris",
+      "Ulrich",
+      "Thomas"
+    ],
+    "hint": "Achte auf den Namen 'Doris' am Satzanfang."
+  },
+  {
+    "id": "sent_0120",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja sieht zehn rote Kisten.",
+    "target_word": "Tanja",
+    "options": [
+      "Tanja",
+      "Michael",
+      "Doris"
+    ],
+    "hint": "Achte auf den Namen 'Tanja' am Satzanfang."
+  },
+  {
+    "id": "sent_0121",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin sucht drei neue Kisten.",
+    "target_word": "neue",
+    "options": [
+      "schöne",
+      "alte",
+      "neue"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'neue'."
+  },
+  {
+    "id": "sent_0122",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja sieht drei kleine Kisten.",
+    "target_word": "Kisten",
+    "options": [
+      "Blumen",
+      "Bilder",
+      "Bücher",
+      "Kisten"
+    ],
+    "hint": "Achte auf das Objekt 'Kisten' am Satzende."
+  },
+  {
+    "id": "sent_0123",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja sucht sieben schöne Äpfel.",
+    "target_word": "schöne",
+    "options": [
+      "alte",
+      "neue",
+      "schöne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'schöne'."
+  },
+  {
+    "id": "sent_0124",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan findet fünf kleine Bilder.",
+    "target_word": "kleine",
+    "options": [
+      "grüne",
+      "kleine",
+      "neue"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'kleine'."
+  },
+  {
+    "id": "sent_0125",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin zählt zwölf kühle Stühle.",
+    "target_word": "Stühle",
+    "options": [
+      "Stühle",
+      "Blumen",
+      "Tassen",
+      "Äpfel"
+    ],
+    "hint": "Achte auf das Objekt 'Stühle' am Satzende."
+  },
+  {
+    "id": "sent_0126",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich schenkt zwei grüne Bücher.",
+    "target_word": "Ulrich",
+    "options": [
+      "Tanja",
+      "Ulrich",
+      "Stefan"
+    ],
+    "hint": "Achte auf den Namen 'Ulrich' am Satzanfang."
+  },
+  {
+    "id": "sent_0127",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja zählt fünf schöne Kisten.",
+    "target_word": "Tanja",
+    "options": [
+      "Tanja",
+      "Britta",
+      "Kerstin"
+    ],
+    "hint": "Achte auf den Namen 'Tanja' am Satzanfang."
+  },
+  {
+    "id": "sent_0128",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich malt zwölf kleine Äpfel.",
+    "target_word": "zwölf",
+    "options": [
+      "vier",
+      "zwölf",
+      "zwei"
+    ],
+    "hint": "Achte auf die Anzahl 'zwölf' im Satz."
+  },
+  {
+    "id": "sent_0129",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris findet acht starke Messer.",
+    "target_word": "Doris",
+    "options": [
+      "Michael",
+      "Ulrich",
+      "Doris"
+    ],
+    "hint": "Achte auf den Namen 'Doris' am Satzanfang."
+  },
+  {
+    "id": "sent_0130",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich sucht drei alte Messer.",
+    "target_word": "Ulrich",
+    "options": [
+      "Thomas",
+      "Doris",
+      "Ulrich"
+    ],
+    "hint": "Achte auf den Namen 'Ulrich' am Satzanfang."
+  },
+  {
+    "id": "sent_0131",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin malt zwei große Steine.",
+    "target_word": "große",
+    "options": [
+      "große",
+      "rote",
+      "alte"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'große'."
+  },
+  {
+    "id": "sent_0132",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich sieht zwei starke Kisten.",
+    "target_word": "zwei",
+    "options": [
+      "fünf",
+      "zwei",
+      "neun"
+    ],
+    "hint": "Achte auf die Anzahl 'zwei' im Satz."
+  },
+  {
+    "id": "sent_0133",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina zählt sieben kleine Kisten.",
+    "target_word": "Kisten",
+    "options": [
+      "Steine",
+      "Äpfel",
+      "Uhren",
+      "Kisten"
+    ],
+    "hint": "Achte auf das Objekt 'Kisten' am Satzende."
+  },
+  {
+    "id": "sent_0134",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas sucht acht alte Tassen.",
+    "target_word": "Thomas",
+    "options": [
+      "Ulrich",
+      "Peter",
+      "Thomas"
+    ],
+    "hint": "Achte auf den Namen 'Thomas' am Satzanfang."
+  },
+  {
+    "id": "sent_0135",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich sieht acht kleine Steine.",
+    "target_word": "Ulrich",
+    "options": [
+      "Ulrich",
+      "Tanja",
+      "Michael"
+    ],
+    "hint": "Achte auf den Namen 'Ulrich' am Satzanfang."
+  },
+  {
+    "id": "sent_0136",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich gewinnt sieben grüne Tassen.",
+    "target_word": "Tassen",
+    "options": [
+      "Uhren",
+      "Tassen",
+      "Messer",
+      "Blumen"
+    ],
+    "hint": "Achte auf das Objekt 'Tassen' am Satzende."
+  },
+  {
+    "id": "sent_0137",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta sieht vier alte Steine.",
+    "target_word": "vier",
+    "options": [
+      "drei",
+      "fünf",
+      "vier"
+    ],
+    "hint": "Achte auf die Anzahl 'vier' im Satz."
+  },
+  {
+    "id": "sent_0138",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael malt zwölf starke Messer.",
+    "target_word": "starke",
+    "options": [
+      "grüne",
+      "starke",
+      "neue"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'starke'."
+  },
+  {
+    "id": "sent_0139",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael findet sechs alte Messer.",
+    "target_word": "Messer",
+    "options": [
+      "Tassen",
+      "Messer",
+      "Bilder",
+      "Bücher"
+    ],
+    "hint": "Achte auf das Objekt 'Messer' am Satzende."
+  },
+  {
+    "id": "sent_0140",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter schenkt sechs kleine Tassen.",
+    "target_word": "Peter",
+    "options": [
+      "Tanja",
+      "Peter",
+      "Nina"
+    ],
+    "hint": "Achte auf den Namen 'Peter' am Satzanfang."
+  },
+  {
+    "id": "sent_0141",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich malt neun warme Bücher.",
+    "target_word": "Bücher",
+    "options": [
+      "Stühle",
+      "Bücher",
+      "Uhren",
+      "Tassen"
+    ],
+    "hint": "Achte auf das Objekt 'Bücher' am Satzende."
+  },
+  {
+    "id": "sent_0142",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina bekommt zwei rote Uhren.",
+    "target_word": "Nina",
+    "options": [
+      "Nina",
+      "Stefan",
+      "Thomas"
+    ],
+    "hint": "Achte auf den Namen 'Nina' am Satzanfang."
+  },
+  {
+    "id": "sent_0143",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris sucht acht neue Messer.",
+    "target_word": "Messer",
+    "options": [
+      "Bücher",
+      "Bilder",
+      "Tassen",
+      "Messer"
+    ],
+    "hint": "Achte auf das Objekt 'Messer' am Satzende."
+  },
+  {
+    "id": "sent_0144",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris nimmt zwölf grüne Bilder.",
+    "target_word": "Bilder",
+    "options": [
+      "Bücher",
+      "Kisten",
+      "Bilder",
+      "Messer"
+    ],
+    "hint": "Achte auf das Objekt 'Bilder' am Satzende."
+  },
+  {
+    "id": "sent_0145",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris zählt acht neue Bücher.",
+    "target_word": "Bücher",
+    "options": [
+      "Äpfel",
+      "Bücher",
+      "Uhren",
+      "Kisten"
+    ],
+    "hint": "Achte auf das Objekt 'Bücher' am Satzende."
+  },
+  {
+    "id": "sent_0146",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta schenkt neun rote Steine.",
+    "target_word": "neun",
+    "options": [
+      "drei",
+      "neun",
+      "vier"
+    ],
+    "hint": "Achte auf die Anzahl 'neun' im Satz."
+  },
+  {
+    "id": "sent_0147",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina zählt zehn große Bilder.",
+    "target_word": "zehn",
+    "options": [
+      "acht",
+      "vier",
+      "zehn"
+    ],
+    "hint": "Achte auf die Anzahl 'zehn' im Satz."
+  },
+  {
+    "id": "sent_0148",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas bekommt neun große Kisten.",
+    "target_word": "große",
+    "options": [
+      "große",
+      "alte",
+      "warme"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'große'."
+  },
+  {
+    "id": "sent_0149",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael gewinnt zehn rote Blumen.",
+    "target_word": "Michael",
+    "options": [
+      "Michael",
+      "Britta",
+      "Ulrich"
+    ],
+    "hint": "Achte auf den Namen 'Michael' am Satzanfang."
+  },
+  {
+    "id": "sent_0150",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael nimmt acht warme Stühle.",
+    "target_word": "Michael",
+    "options": [
+      "Stefan",
+      "Michael",
+      "Britta"
+    ],
+    "hint": "Achte auf den Namen 'Michael' am Satzanfang."
+  },
+  {
+    "id": "sent_0151",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris kauft neun neue Stühle.",
+    "target_word": "Stühle",
+    "options": [
+      "Tassen",
+      "Messer",
+      "Bücher",
+      "Stühle"
+    ],
+    "hint": "Achte auf das Objekt 'Stühle' am Satzende."
+  },
+  {
+    "id": "sent_0152",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael zählt vier schöne Tassen.",
+    "target_word": "vier",
+    "options": [
+      "acht",
+      "zehn",
+      "vier"
+    ],
+    "hint": "Achte auf die Anzahl 'vier' im Satz."
+  },
+  {
+    "id": "sent_0153",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter sucht zehn neue Steine.",
+    "target_word": "Peter",
+    "options": [
+      "Stefan",
+      "Kerstin",
+      "Peter"
+    ],
+    "hint": "Achte auf den Namen 'Peter' am Satzanfang."
+  },
+  {
+    "id": "sent_0154",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich sieht sieben grüne Bücher.",
+    "target_word": "Bücher",
+    "options": [
+      "Bücher",
+      "Kisten",
+      "Stühle",
+      "Bilder"
+    ],
+    "hint": "Achte auf das Objekt 'Bücher' am Satzende."
+  },
+  {
+    "id": "sent_0155",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael malt zwei kleine Äpfel.",
+    "target_word": "kleine",
+    "options": [
+      "kleine",
+      "alte",
+      "rote"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'kleine'."
+  },
+  {
+    "id": "sent_0156",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja nimmt fünf alte Tassen.",
+    "target_word": "Tassen",
+    "options": [
+      "Blumen",
+      "Uhren",
+      "Tassen",
+      "Kisten"
+    ],
+    "hint": "Achte auf das Objekt 'Tassen' am Satzende."
+  },
+  {
+    "id": "sent_0157",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael malt zehn große Stühle.",
+    "target_word": "zehn",
+    "options": [
+      "sechs",
+      "zehn",
+      "vier"
+    ],
+    "hint": "Achte auf die Anzahl 'zehn' im Satz."
+  },
+  {
+    "id": "sent_0158",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas schenkt fünf kühle Kisten.",
+    "target_word": "fünf",
+    "options": [
+      "drei",
+      "acht",
+      "fünf"
+    ],
+    "hint": "Achte auf die Anzahl 'fünf' im Satz."
+  },
+  {
+    "id": "sent_0159",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin findet zwei schöne Bilder.",
+    "target_word": "schöne",
+    "options": [
+      "neue",
+      "große",
+      "schöne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'schöne'."
+  },
+  {
+    "id": "sent_0160",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta sieht zwölf neue Bücher.",
+    "target_word": "Bücher",
+    "options": [
+      "Bücher",
+      "Uhren",
+      "Messer",
+      "Kisten"
+    ],
+    "hint": "Achte auf das Objekt 'Bücher' am Satzende."
+  },
+  {
+    "id": "sent_0161",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael bekommt vier kleine Uhren.",
+    "target_word": "Uhren",
+    "options": [
+      "Steine",
+      "Äpfel",
+      "Uhren",
+      "Blumen"
+    ],
+    "hint": "Achte auf das Objekt 'Uhren' am Satzende."
+  },
+  {
+    "id": "sent_0162",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris zählt acht warme Uhren.",
+    "target_word": "warme",
+    "options": [
+      "warme",
+      "rote",
+      "große"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'warme'."
+  },
+  {
+    "id": "sent_0163",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter schenkt sechs kleine Bilder.",
+    "target_word": "Peter",
+    "options": [
+      "Peter",
+      "Nina",
+      "Michael"
+    ],
+    "hint": "Achte auf den Namen 'Peter' am Satzanfang."
+  },
+  {
+    "id": "sent_0164",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan findet neun neue Stühle.",
+    "target_word": "neue",
+    "options": [
+      "starke",
+      "kleine",
+      "neue"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'neue'."
+  },
+  {
+    "id": "sent_0165",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas bekommt zehn alte Bilder.",
+    "target_word": "Bilder",
+    "options": [
+      "Bilder",
+      "Stühle",
+      "Tassen",
+      "Kisten"
+    ],
+    "hint": "Achte auf das Objekt 'Bilder' am Satzende."
+  },
+  {
+    "id": "sent_0166",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas sucht vier starke Bilder.",
+    "target_word": "Thomas",
+    "options": [
+      "Thomas",
+      "Peter",
+      "Ulrich"
+    ],
+    "hint": "Achte auf den Namen 'Thomas' am Satzanfang."
+  },
+  {
+    "id": "sent_0167",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris kauft drei schöne Bilder.",
+    "target_word": "drei",
+    "options": [
+      "drei",
+      "zwei",
+      "fünf"
+    ],
+    "hint": "Achte auf die Anzahl 'drei' im Satz."
+  },
+  {
+    "id": "sent_0168",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter bekommt drei rote Bilder.",
+    "target_word": "rote",
+    "options": [
+      "starke",
+      "rote",
+      "große"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'rote'."
+  },
+  {
+    "id": "sent_0169",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael schenkt sieben starke Tassen.",
+    "target_word": "sieben",
+    "options": [
+      "sieben",
+      "acht",
+      "zwölf"
+    ],
+    "hint": "Achte auf die Anzahl 'sieben' im Satz."
+  },
+  {
+    "id": "sent_0170",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris gewinnt drei große Bücher.",
+    "target_word": "Doris",
+    "options": [
+      "Thomas",
+      "Doris",
+      "Michael"
+    ],
+    "hint": "Achte auf den Namen 'Doris' am Satzanfang."
+  },
+  {
+    "id": "sent_0171",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris nimmt neun rote Messer.",
+    "target_word": "rote",
+    "options": [
+      "warme",
+      "alte",
+      "rote"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'rote'."
+  },
+  {
+    "id": "sent_0172",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja findet vier starke Tassen.",
+    "target_word": "starke",
+    "options": [
+      "starke",
+      "neue",
+      "kleine"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'starke'."
+  },
+  {
+    "id": "sent_0173",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris bekommt vier neue Stühle.",
+    "target_word": "vier",
+    "options": [
+      "drei",
+      "sechs",
+      "vier"
+    ],
+    "hint": "Achte auf die Anzahl 'vier' im Satz."
+  },
+  {
+    "id": "sent_0174",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael kauft sieben warme Messer.",
+    "target_word": "warme",
+    "options": [
+      "starke",
+      "warme",
+      "grüne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'warme'."
+  },
+  {
+    "id": "sent_0175",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja nimmt acht starke Stühle.",
+    "target_word": "Tanja",
+    "options": [
+      "Stefan",
+      "Michael",
+      "Tanja"
+    ],
+    "hint": "Achte auf den Namen 'Tanja' am Satzanfang."
+  },
+  {
+    "id": "sent_0176",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja findet neun warme Bilder.",
+    "target_word": "neun",
+    "options": [
+      "vier",
+      "zwölf",
+      "neun"
+    ],
+    "hint": "Achte auf die Anzahl 'neun' im Satz."
+  },
+  {
+    "id": "sent_0177",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina kauft drei warme Bücher.",
+    "target_word": "warme",
+    "options": [
+      "kühle",
+      "warme",
+      "grüne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'warme'."
+  },
+  {
+    "id": "sent_0178",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich zählt sechs kleine Blumen.",
+    "target_word": "sechs",
+    "options": [
+      "sieben",
+      "zwölf",
+      "sechs"
+    ],
+    "hint": "Achte auf die Anzahl 'sechs' im Satz."
+  },
+  {
+    "id": "sent_0179",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas zählt drei warme Bücher.",
+    "target_word": "drei",
+    "options": [
+      "fünf",
+      "drei",
+      "acht"
+    ],
+    "hint": "Achte auf die Anzahl 'drei' im Satz."
+  },
+  {
+    "id": "sent_0180",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter sieht zwei kühle Blumen.",
+    "target_word": "zwei",
+    "options": [
+      "zwei",
+      "drei",
+      "neun"
+    ],
+    "hint": "Achte auf die Anzahl 'zwei' im Satz."
+  },
+  {
+    "id": "sent_0181",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris findet fünf schöne Blumen.",
+    "target_word": "Doris",
+    "options": [
+      "Peter",
+      "Tanja",
+      "Doris"
+    ],
+    "hint": "Achte auf den Namen 'Doris' am Satzanfang."
+  },
+  {
+    "id": "sent_0182",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin findet neun rote Bilder.",
+    "target_word": "neun",
+    "options": [
+      "neun",
+      "sieben",
+      "zwölf"
+    ],
+    "hint": "Achte auf die Anzahl 'neun' im Satz."
+  },
+  {
+    "id": "sent_0183",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin bekommt sieben warme Stühle.",
+    "target_word": "Stühle",
+    "options": [
+      "Uhren",
+      "Steine",
+      "Bilder",
+      "Stühle"
+    ],
+    "hint": "Achte auf das Objekt 'Stühle' am Satzende."
+  },
+  {
+    "id": "sent_0184",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta bekommt drei große Blumen.",
+    "target_word": "Britta",
+    "options": [
+      "Doris",
+      "Michael",
+      "Britta"
+    ],
+    "hint": "Achte auf den Namen 'Britta' am Satzanfang."
+  },
+  {
+    "id": "sent_0185",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas schenkt fünf grüne Uhren.",
+    "target_word": "Thomas",
+    "options": [
+      "Doris",
+      "Thomas",
+      "Michael"
+    ],
+    "hint": "Achte auf den Namen 'Thomas' am Satzanfang."
+  },
+  {
+    "id": "sent_0186",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja sucht zehn starke Steine.",
+    "target_word": "zehn",
+    "options": [
+      "zwei",
+      "sieben",
+      "zehn"
+    ],
+    "hint": "Achte auf die Anzahl 'zehn' im Satz."
+  },
+  {
+    "id": "sent_0187",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael malt neun alte Stühle.",
+    "target_word": "Stühle",
+    "options": [
+      "Stühle",
+      "Tassen",
+      "Messer",
+      "Kisten"
+    ],
+    "hint": "Achte auf das Objekt 'Stühle' am Satzende."
+  },
+  {
+    "id": "sent_0188",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin schenkt zwei schöne Äpfel.",
+    "target_word": "zwei",
+    "options": [
+      "sieben",
+      "acht",
+      "zwei"
+    ],
+    "hint": "Achte auf die Anzahl 'zwei' im Satz."
+  },
+  {
+    "id": "sent_0189",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina findet zehn alte Messer.",
+    "target_word": "Messer",
+    "options": [
+      "Messer",
+      "Steine",
+      "Bücher",
+      "Tassen"
+    ],
+    "hint": "Achte auf das Objekt 'Messer' am Satzende."
+  },
+  {
+    "id": "sent_0190",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan gewinnt zwölf warme Kisten.",
+    "target_word": "Kisten",
+    "options": [
+      "Kisten",
+      "Tassen",
+      "Äpfel",
+      "Messer"
+    ],
+    "hint": "Achte auf das Objekt 'Kisten' am Satzende."
+  },
+  {
+    "id": "sent_0191",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan malt zehn grüne Bilder.",
+    "target_word": "grüne",
+    "options": [
+      "grüne",
+      "rote",
+      "starke"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'grüne'."
+  },
+  {
+    "id": "sent_0192",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas schenkt zehn warme Stühle.",
+    "target_word": "Thomas",
+    "options": [
+      "Michael",
+      "Doris",
+      "Thomas"
+    ],
+    "hint": "Achte auf den Namen 'Thomas' am Satzanfang."
+  },
+  {
+    "id": "sent_0193",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich sieht acht kühle Blumen.",
+    "target_word": "Blumen",
+    "options": [
+      "Kisten",
+      "Blumen",
+      "Bilder",
+      "Stühle"
+    ],
+    "hint": "Achte auf das Objekt 'Blumen' am Satzende."
+  },
+  {
+    "id": "sent_0194",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas findet vier warme Messer.",
+    "target_word": "Thomas",
+    "options": [
+      "Stefan",
+      "Britta",
+      "Thomas"
+    ],
+    "hint": "Achte auf den Namen 'Thomas' am Satzanfang."
+  },
+  {
+    "id": "sent_0195",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta kauft neun neue Kisten.",
+    "target_word": "neun",
+    "options": [
+      "neun",
+      "fünf",
+      "acht"
+    ],
+    "hint": "Achte auf die Anzahl 'neun' im Satz."
+  },
+  {
+    "id": "sent_0196",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter bekommt zehn rote Stühle.",
+    "target_word": "rote",
+    "options": [
+      "starke",
+      "rote",
+      "warme"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'rote'."
+  },
+  {
+    "id": "sent_0197",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael zählt sieben warme Bilder.",
+    "target_word": "warme",
+    "options": [
+      "rote",
+      "starke",
+      "warme"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'warme'."
+  },
+  {
+    "id": "sent_0198",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina nimmt fünf alte Blumen.",
+    "target_word": "fünf",
+    "options": [
+      "fünf",
+      "acht",
+      "zehn"
+    ],
+    "hint": "Achte auf die Anzahl 'fünf' im Satz."
+  },
+  {
+    "id": "sent_0199",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina nimmt sechs kleine Messer.",
+    "target_word": "Nina",
+    "options": [
+      "Ulrich",
+      "Kerstin",
+      "Nina"
+    ],
+    "hint": "Achte auf den Namen 'Nina' am Satzanfang."
+  },
+  {
+    "id": "sent_0200",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter nimmt drei neue Uhren.",
+    "target_word": "neue",
+    "options": [
+      "rote",
+      "warme",
+      "neue"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'neue'."
+  },
+  {
+    "id": "sent_0201",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina nimmt vier kleine Messer.",
+    "target_word": "vier",
+    "options": [
+      "sechs",
+      "vier",
+      "zwei"
+    ],
+    "hint": "Achte auf die Anzahl 'vier' im Satz."
+  },
+  {
+    "id": "sent_0202",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta kauft drei schöne Bilder.",
+    "target_word": "Britta",
+    "options": [
+      "Tanja",
+      "Stefan",
+      "Britta"
+    ],
+    "hint": "Achte auf den Namen 'Britta' am Satzanfang."
+  },
+  {
+    "id": "sent_0203",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin findet neun rote Blumen.",
+    "target_word": "rote",
+    "options": [
+      "neue",
+      "große",
+      "rote"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'rote'."
+  },
+  {
+    "id": "sent_0204",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina kauft vier schöne Bücher.",
+    "target_word": "Bücher",
+    "options": [
+      "Uhren",
+      "Tassen",
+      "Bücher",
+      "Stühle"
+    ],
+    "hint": "Achte auf das Objekt 'Bücher' am Satzende."
+  },
+  {
+    "id": "sent_0205",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris malt zwölf kleine Bilder.",
+    "target_word": "kleine",
+    "options": [
+      "kühle",
+      "warme",
+      "kleine"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'kleine'."
+  },
+  {
+    "id": "sent_0206",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris gewinnt drei neue Bücher.",
+    "target_word": "Doris",
+    "options": [
+      "Stefan",
+      "Ulrich",
+      "Doris"
+    ],
+    "hint": "Achte auf den Namen 'Doris' am Satzanfang."
+  },
+  {
+    "id": "sent_0207",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris malt fünf grüne Messer.",
+    "target_word": "Doris",
+    "options": [
+      "Kerstin",
+      "Michael",
+      "Doris"
+    ],
+    "hint": "Achte auf den Namen 'Doris' am Satzanfang."
+  },
+  {
+    "id": "sent_0208",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja bekommt vier starke Bilder.",
+    "target_word": "vier",
+    "options": [
+      "sieben",
+      "vier",
+      "zwei"
+    ],
+    "hint": "Achte auf die Anzahl 'vier' im Satz."
+  },
+  {
+    "id": "sent_0209",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael nimmt sieben alte Messer.",
+    "target_word": "Messer",
+    "options": [
+      "Uhren",
+      "Bilder",
+      "Messer",
+      "Blumen"
+    ],
+    "hint": "Achte auf das Objekt 'Messer' am Satzende."
+  },
+  {
+    "id": "sent_0210",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael nimmt vier schöne Stühle.",
+    "target_word": "schöne",
+    "options": [
+      "alte",
+      "schöne",
+      "kleine"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'schöne'."
+  },
+  {
+    "id": "sent_0211",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta bekommt neun grüne Uhren.",
+    "target_word": "grüne",
+    "options": [
+      "starke",
+      "grüne",
+      "warme"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'grüne'."
+  },
+  {
+    "id": "sent_0212",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta malt drei warme Uhren.",
+    "target_word": "warme",
+    "options": [
+      "kleine",
+      "kühle",
+      "warme"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'warme'."
+  },
+  {
+    "id": "sent_0213",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas zählt vier grüne Bilder.",
+    "target_word": "Thomas",
+    "options": [
+      "Thomas",
+      "Tanja",
+      "Britta"
+    ],
+    "hint": "Achte auf den Namen 'Thomas' am Satzanfang."
+  },
+  {
+    "id": "sent_0214",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja zählt neun große Uhren.",
+    "target_word": "neun",
+    "options": [
+      "acht",
+      "neun",
+      "zwölf"
+    ],
+    "hint": "Achte auf die Anzahl 'neun' im Satz."
+  },
+  {
+    "id": "sent_0215",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina findet sechs große Kisten.",
+    "target_word": "große",
+    "options": [
+      "kleine",
+      "große",
+      "alte"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'große'."
+  },
+  {
+    "id": "sent_0216",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter sucht sieben kleine Stühle.",
+    "target_word": "Stühle",
+    "options": [
+      "Äpfel",
+      "Stühle",
+      "Tassen",
+      "Uhren"
+    ],
+    "hint": "Achte auf das Objekt 'Stühle' am Satzende."
+  },
+  {
+    "id": "sent_0217",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan sucht sieben schöne Uhren.",
+    "target_word": "Stefan",
+    "options": [
+      "Michael",
+      "Stefan",
+      "Tanja"
+    ],
+    "hint": "Achte auf den Namen 'Stefan' am Satzanfang."
+  },
+  {
+    "id": "sent_0218",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich sieht vier warme Kisten.",
+    "target_word": "vier",
+    "options": [
+      "zwei",
+      "sechs",
+      "vier"
+    ],
+    "hint": "Achte auf die Anzahl 'vier' im Satz."
+  },
+  {
+    "id": "sent_0219",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael zählt acht warme Kisten.",
+    "target_word": "acht",
+    "options": [
+      "zehn",
+      "acht",
+      "fünf"
+    ],
+    "hint": "Achte auf die Anzahl 'acht' im Satz."
+  },
+  {
+    "id": "sent_0220",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris gewinnt drei große Kisten.",
+    "target_word": "Kisten",
+    "options": [
+      "Steine",
+      "Äpfel",
+      "Messer",
+      "Kisten"
+    ],
+    "hint": "Achte auf das Objekt 'Kisten' am Satzende."
+  },
+  {
+    "id": "sent_0221",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael malt zwei rote Äpfel.",
+    "target_word": "Michael",
+    "options": [
+      "Nina",
+      "Michael",
+      "Britta"
+    ],
+    "hint": "Achte auf den Namen 'Michael' am Satzanfang."
+  },
+  {
+    "id": "sent_0222",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter bekommt zehn alte Steine.",
+    "target_word": "alte",
+    "options": [
+      "rote",
+      "alte",
+      "schöne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'alte'."
+  },
+  {
+    "id": "sent_0223",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina gewinnt acht alte Blumen.",
+    "target_word": "Blumen",
+    "options": [
+      "Blumen",
+      "Messer",
+      "Bücher",
+      "Kisten"
+    ],
+    "hint": "Achte auf das Objekt 'Blumen' am Satzende."
+  },
+  {
+    "id": "sent_0224",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter schenkt acht warme Bilder.",
+    "target_word": "Peter",
+    "options": [
+      "Peter",
+      "Britta",
+      "Michael"
+    ],
+    "hint": "Achte auf den Namen 'Peter' am Satzanfang."
+  },
+  {
+    "id": "sent_0225",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan zählt neun rote Steine.",
+    "target_word": "rote",
+    "options": [
+      "warme",
+      "grüne",
+      "rote"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'rote'."
+  },
+  {
+    "id": "sent_0226",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin zählt zehn grüne Kisten.",
+    "target_word": "zehn",
+    "options": [
+      "fünf",
+      "zehn",
+      "sechs"
+    ],
+    "hint": "Achte auf die Anzahl 'zehn' im Satz."
+  },
+  {
+    "id": "sent_0227",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael schenkt drei warme Steine.",
+    "target_word": "Steine",
+    "options": [
+      "Bilder",
+      "Uhren",
+      "Kisten",
+      "Steine"
+    ],
+    "hint": "Achte auf das Objekt 'Steine' am Satzende."
+  },
+  {
+    "id": "sent_0228",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas zählt fünf starke Steine.",
+    "target_word": "starke",
+    "options": [
+      "alte",
+      "große",
+      "starke"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'starke'."
+  },
+  {
+    "id": "sent_0229",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja findet fünf kühle Steine.",
+    "target_word": "Tanja",
+    "options": [
+      "Tanja",
+      "Kerstin",
+      "Doris"
+    ],
+    "hint": "Achte auf den Namen 'Tanja' am Satzanfang."
+  },
+  {
+    "id": "sent_0230",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael zählt sieben alte Blumen.",
+    "target_word": "alte",
+    "options": [
+      "warme",
+      "alte",
+      "kühle"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'alte'."
+  },
+  {
+    "id": "sent_0231",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael schenkt fünf neue Bilder.",
+    "target_word": "Michael",
+    "options": [
+      "Peter",
+      "Michael",
+      "Britta"
+    ],
+    "hint": "Achte auf den Namen 'Michael' am Satzanfang."
+  },
+  {
+    "id": "sent_0232",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter nimmt zehn kühle Messer.",
+    "target_word": "Peter",
+    "options": [
+      "Britta",
+      "Ulrich",
+      "Peter"
+    ],
+    "hint": "Achte auf den Namen 'Peter' am Satzanfang."
+  },
+  {
+    "id": "sent_0233",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta sucht zwölf rote Uhren.",
+    "target_word": "rote",
+    "options": [
+      "rote",
+      "neue",
+      "warme"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'rote'."
+  },
+  {
+    "id": "sent_0234",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael bekommt sieben grüne Bücher.",
+    "target_word": "Michael",
+    "options": [
+      "Stefan",
+      "Michael",
+      "Peter"
+    ],
+    "hint": "Achte auf den Namen 'Michael' am Satzanfang."
+  },
+  {
+    "id": "sent_0235",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja kauft zwei schöne Bücher.",
+    "target_word": "zwei",
+    "options": [
+      "vier",
+      "fünf",
+      "zwei"
+    ],
+    "hint": "Achte auf die Anzahl 'zwei' im Satz."
+  },
+  {
+    "id": "sent_0236",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina findet sieben große Messer.",
+    "target_word": "Nina",
+    "options": [
+      "Peter",
+      "Michael",
+      "Nina"
+    ],
+    "hint": "Achte auf den Namen 'Nina' am Satzanfang."
+  },
+  {
+    "id": "sent_0237",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter kauft zehn alte Stühle.",
+    "target_word": "alte",
+    "options": [
+      "große",
+      "starke",
+      "alte"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'alte'."
+  },
+  {
+    "id": "sent_0238",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja zählt vier rote Steine.",
+    "target_word": "rote",
+    "options": [
+      "neue",
+      "rote",
+      "schöne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'rote'."
+  },
+  {
+    "id": "sent_0239",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich sucht neun kühle Steine.",
+    "target_word": "neun",
+    "options": [
+      "sechs",
+      "neun",
+      "drei"
+    ],
+    "hint": "Achte auf die Anzahl 'neun' im Satz."
+  },
+  {
+    "id": "sent_0240",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja sucht acht schöne Stühle.",
+    "target_word": "Tanja",
+    "options": [
+      "Peter",
+      "Tanja",
+      "Thomas"
+    ],
+    "hint": "Achte auf den Namen 'Tanja' am Satzanfang."
+  },
+  {
+    "id": "sent_0241",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja findet acht neue Messer.",
+    "target_word": "Messer",
+    "options": [
+      "Messer",
+      "Tassen",
+      "Äpfel",
+      "Stühle"
+    ],
+    "hint": "Achte auf das Objekt 'Messer' am Satzende."
+  },
+  {
+    "id": "sent_0242",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris kauft drei alte Stühle.",
+    "target_word": "Stühle",
+    "options": [
+      "Äpfel",
+      "Stühle",
+      "Bilder",
+      "Bücher"
+    ],
+    "hint": "Achte auf das Objekt 'Stühle' am Satzende."
+  },
+  {
+    "id": "sent_0243",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin sieht sechs grüne Messer.",
+    "target_word": "sechs",
+    "options": [
+      "acht",
+      "sechs",
+      "neun"
+    ],
+    "hint": "Achte auf die Anzahl 'sechs' im Satz."
+  },
+  {
+    "id": "sent_0244",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja zählt sieben große Tassen.",
+    "target_word": "Tanja",
+    "options": [
+      "Tanja",
+      "Stefan",
+      "Doris"
+    ],
+    "hint": "Achte auf den Namen 'Tanja' am Satzanfang."
+  },
+  {
+    "id": "sent_0245",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich kauft sechs starke Uhren.",
+    "target_word": "sechs",
+    "options": [
+      "neun",
+      "sechs",
+      "acht"
+    ],
+    "hint": "Achte auf die Anzahl 'sechs' im Satz."
+  },
+  {
+    "id": "sent_0246",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas sucht drei kühle Blumen.",
+    "target_word": "drei",
+    "options": [
+      "zwölf",
+      "drei",
+      "vier"
+    ],
+    "hint": "Achte auf die Anzahl 'drei' im Satz."
+  },
+  {
+    "id": "sent_0247",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin bekommt acht neue Bilder.",
+    "target_word": "Bilder",
+    "options": [
+      "Bilder",
+      "Äpfel",
+      "Tassen",
+      "Bücher"
+    ],
+    "hint": "Achte auf das Objekt 'Bilder' am Satzende."
+  },
+  {
+    "id": "sent_0248",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja bekommt drei grüne Kisten.",
+    "target_word": "Tanja",
+    "options": [
+      "Thomas",
+      "Michael",
+      "Tanja"
+    ],
+    "hint": "Achte auf den Namen 'Tanja' am Satzanfang."
+  },
+  {
+    "id": "sent_0249",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja schenkt zehn kleine Messer.",
+    "target_word": "kleine",
+    "options": [
+      "kleine",
+      "große",
+      "starke"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'kleine'."
+  },
+  {
+    "id": "sent_0250",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin sieht zehn rote Messer.",
+    "target_word": "zehn",
+    "options": [
+      "vier",
+      "acht",
+      "zehn"
+    ],
+    "hint": "Achte auf die Anzahl 'zehn' im Satz."
+  },
+  {
+    "id": "sent_0251",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris nimmt neun grüne Tassen.",
+    "target_word": "neun",
+    "options": [
+      "neun",
+      "sechs",
+      "acht"
+    ],
+    "hint": "Achte auf die Anzahl 'neun' im Satz."
+  },
+  {
+    "id": "sent_0252",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael sieht sieben alte Steine.",
+    "target_word": "Michael",
+    "options": [
+      "Britta",
+      "Nina",
+      "Michael"
+    ],
+    "hint": "Achte auf den Namen 'Michael' am Satzanfang."
+  },
+  {
+    "id": "sent_0253",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris kauft acht neue Messer.",
+    "target_word": "Doris",
+    "options": [
+      "Doris",
+      "Nina",
+      "Kerstin"
+    ],
+    "hint": "Achte auf den Namen 'Doris' am Satzanfang."
+  },
+  {
+    "id": "sent_0254",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas bekommt sechs neue Messer.",
+    "target_word": "sechs",
+    "options": [
+      "acht",
+      "zehn",
+      "sechs"
+    ],
+    "hint": "Achte auf die Anzahl 'sechs' im Satz."
+  },
+  {
+    "id": "sent_0255",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich nimmt neun kühle Steine.",
+    "target_word": "kühle",
+    "options": [
+      "kühle",
+      "alte",
+      "schöne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'kühle'."
+  },
+  {
+    "id": "sent_0256",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja malt fünf kühle Stühle.",
+    "target_word": "fünf",
+    "options": [
+      "fünf",
+      "zwölf",
+      "zwei"
+    ],
+    "hint": "Achte auf die Anzahl 'fünf' im Satz."
+  },
+  {
+    "id": "sent_0257",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta findet sechs kleine Kisten.",
+    "target_word": "Britta",
+    "options": [
+      "Ulrich",
+      "Stefan",
+      "Britta"
+    ],
+    "hint": "Achte auf den Namen 'Britta' am Satzanfang."
+  },
+  {
+    "id": "sent_0258",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan sucht acht kleine Uhren.",
+    "target_word": "Stefan",
+    "options": [
+      "Michael",
+      "Stefan",
+      "Thomas"
+    ],
+    "hint": "Achte auf den Namen 'Stefan' am Satzanfang."
+  },
+  {
+    "id": "sent_0259",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich zählt zwölf kleine Tassen.",
+    "target_word": "zwölf",
+    "options": [
+      "sieben",
+      "zwölf",
+      "vier"
+    ],
+    "hint": "Achte auf die Anzahl 'zwölf' im Satz."
+  },
+  {
+    "id": "sent_0260",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas sucht sieben schöne Tassen.",
+    "target_word": "Tassen",
+    "options": [
+      "Tassen",
+      "Bilder",
+      "Messer",
+      "Bücher"
+    ],
+    "hint": "Achte auf das Objekt 'Tassen' am Satzende."
+  },
+  {
+    "id": "sent_0261",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin findet zwölf warme Bücher.",
+    "target_word": "warme",
+    "options": [
+      "starke",
+      "große",
+      "warme"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'warme'."
+  },
+  {
+    "id": "sent_0262",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin sieht drei grüne Bilder.",
+    "target_word": "grüne",
+    "options": [
+      "warme",
+      "schöne",
+      "grüne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'grüne'."
+  },
+  {
+    "id": "sent_0263",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich findet drei starke Uhren.",
+    "target_word": "starke",
+    "options": [
+      "kleine",
+      "alte",
+      "starke"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'starke'."
+  },
+  {
+    "id": "sent_0264",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter schenkt drei grüne Steine.",
+    "target_word": "drei",
+    "options": [
+      "drei",
+      "fünf",
+      "zwölf"
+    ],
+    "hint": "Achte auf die Anzahl 'drei' im Satz."
+  },
+  {
+    "id": "sent_0265",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael gewinnt acht grüne Bücher.",
+    "target_word": "Michael",
+    "options": [
+      "Kerstin",
+      "Michael",
+      "Peter"
+    ],
+    "hint": "Achte auf den Namen 'Michael' am Satzanfang."
+  },
+  {
+    "id": "sent_0266",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael malt acht schöne Äpfel.",
+    "target_word": "acht",
+    "options": [
+      "fünf",
+      "acht",
+      "sechs"
+    ],
+    "hint": "Achte auf die Anzahl 'acht' im Satz."
+  },
+  {
+    "id": "sent_0267",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas sieht zehn grüne Bilder.",
+    "target_word": "grüne",
+    "options": [
+      "warme",
+      "alte",
+      "grüne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'grüne'."
+  },
+  {
+    "id": "sent_0268",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael zählt sieben kühle Kisten.",
+    "target_word": "Michael",
+    "options": [
+      "Michael",
+      "Ulrich",
+      "Tanja"
+    ],
+    "hint": "Achte auf den Namen 'Michael' am Satzanfang."
+  },
+  {
+    "id": "sent_0269",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas bekommt sechs kühle Messer.",
+    "target_word": "Messer",
+    "options": [
+      "Bilder",
+      "Messer",
+      "Äpfel",
+      "Bücher"
+    ],
+    "hint": "Achte auf das Objekt 'Messer' am Satzende."
+  },
+  {
+    "id": "sent_0270",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan schenkt vier warme Kisten.",
+    "target_word": "Stefan",
+    "options": [
+      "Michael",
+      "Stefan",
+      "Britta"
+    ],
+    "hint": "Achte auf den Namen 'Stefan' am Satzanfang."
+  },
+  {
+    "id": "sent_0271",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael zählt vier warme Bücher.",
+    "target_word": "Michael",
+    "options": [
+      "Stefan",
+      "Doris",
+      "Michael"
+    ],
+    "hint": "Achte auf den Namen 'Michael' am Satzanfang."
+  },
+  {
+    "id": "sent_0272",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael malt zwei neue Äpfel.",
+    "target_word": "Michael",
+    "options": [
+      "Michael",
+      "Britta",
+      "Stefan"
+    ],
+    "hint": "Achte auf den Namen 'Michael' am Satzanfang."
+  },
+  {
+    "id": "sent_0273",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin findet acht starke Uhren.",
+    "target_word": "acht",
+    "options": [
+      "zwei",
+      "drei",
+      "acht"
+    ],
+    "hint": "Achte auf die Anzahl 'acht' im Satz."
+  },
+  {
+    "id": "sent_0274",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter nimmt fünf warme Blumen.",
+    "target_word": "fünf",
+    "options": [
+      "zehn",
+      "fünf",
+      "zwölf"
+    ],
+    "hint": "Achte auf die Anzahl 'fünf' im Satz."
+  },
+  {
+    "id": "sent_0275",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas sieht sechs warme Bilder.",
+    "target_word": "Bilder",
+    "options": [
+      "Stühle",
+      "Messer",
+      "Steine",
+      "Bilder"
+    ],
+    "hint": "Achte auf das Objekt 'Bilder' am Satzende."
+  },
+  {
+    "id": "sent_0276",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris kauft neun alte Bilder.",
+    "target_word": "Bilder",
+    "options": [
+      "Tassen",
+      "Uhren",
+      "Bilder",
+      "Stühle"
+    ],
+    "hint": "Achte auf das Objekt 'Bilder' am Satzende."
+  },
+  {
+    "id": "sent_0277",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas sucht vier kühle Bücher.",
+    "target_word": "vier",
+    "options": [
+      "vier",
+      "sechs",
+      "zwei"
+    ],
+    "hint": "Achte auf die Anzahl 'vier' im Satz."
+  },
+  {
+    "id": "sent_0278",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina nimmt zwölf warme Bücher.",
+    "target_word": "warme",
+    "options": [
+      "warme",
+      "alte",
+      "kühle"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'warme'."
+  },
+  {
+    "id": "sent_0279",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina sieht vier schöne Äpfel.",
+    "target_word": "schöne",
+    "options": [
+      "grüne",
+      "kühle",
+      "schöne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'schöne'."
+  },
+  {
+    "id": "sent_0280",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich gewinnt acht starke Bücher.",
+    "target_word": "starke",
+    "options": [
+      "kühle",
+      "starke",
+      "schöne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'starke'."
+  },
+  {
+    "id": "sent_0281",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja sucht zehn alte Bilder.",
+    "target_word": "Tanja",
+    "options": [
+      "Nina",
+      "Tanja",
+      "Kerstin"
+    ],
+    "hint": "Achte auf den Namen 'Tanja' am Satzanfang."
+  },
+  {
+    "id": "sent_0282",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja findet sieben kleine Stühle.",
+    "target_word": "Tanja",
+    "options": [
+      "Michael",
+      "Doris",
+      "Tanja"
+    ],
+    "hint": "Achte auf den Namen 'Tanja' am Satzanfang."
+  },
+  {
+    "id": "sent_0283",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris schenkt sechs neue Stühle.",
+    "target_word": "sechs",
+    "options": [
+      "zehn",
+      "sechs",
+      "acht"
+    ],
+    "hint": "Achte auf die Anzahl 'sechs' im Satz."
+  },
+  {
+    "id": "sent_0284",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter sieht neun große Tassen.",
+    "target_word": "neun",
+    "options": [
+      "zwölf",
+      "zehn",
+      "neun"
+    ],
+    "hint": "Achte auf die Anzahl 'neun' im Satz."
+  },
+  {
+    "id": "sent_0285",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta bekommt sechs grüne Blumen.",
+    "target_word": "Blumen",
+    "options": [
+      "Kisten",
+      "Blumen",
+      "Äpfel",
+      "Bilder"
+    ],
+    "hint": "Achte auf das Objekt 'Blumen' am Satzende."
+  },
+  {
+    "id": "sent_0286",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter sucht sechs rote Kisten.",
+    "target_word": "Kisten",
+    "options": [
+      "Tassen",
+      "Äpfel",
+      "Kisten",
+      "Messer"
+    ],
+    "hint": "Achte auf das Objekt 'Kisten' am Satzende."
+  },
+  {
+    "id": "sent_0287",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas gewinnt zehn starke Äpfel.",
+    "target_word": "Äpfel",
+    "options": [
+      "Kisten",
+      "Äpfel",
+      "Bücher",
+      "Uhren"
+    ],
+    "hint": "Achte auf das Objekt 'Äpfel' am Satzende."
+  },
+  {
+    "id": "sent_0288",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael sieht fünf schöne Tassen.",
+    "target_word": "Tassen",
+    "options": [
+      "Steine",
+      "Bücher",
+      "Tassen",
+      "Kisten"
+    ],
+    "hint": "Achte auf das Objekt 'Tassen' am Satzende."
+  },
+  {
+    "id": "sent_0289",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan bekommt drei warme Messer.",
+    "target_word": "Messer",
+    "options": [
+      "Stühle",
+      "Messer",
+      "Uhren",
+      "Bücher"
+    ],
+    "hint": "Achte auf das Objekt 'Messer' am Satzende."
+  },
+  {
+    "id": "sent_0290",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin malt neun rote Tassen.",
+    "target_word": "Tassen",
+    "options": [
+      "Tassen",
+      "Bücher",
+      "Steine",
+      "Bilder"
+    ],
+    "hint": "Achte auf das Objekt 'Tassen' am Satzende."
+  },
+  {
+    "id": "sent_0291",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich bekommt fünf alte Tassen.",
+    "target_word": "fünf",
+    "options": [
+      "zwölf",
+      "fünf",
+      "sieben"
+    ],
+    "hint": "Achte auf die Anzahl 'fünf' im Satz."
+  },
+  {
+    "id": "sent_0292",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris gewinnt zehn kühle Stühle.",
+    "target_word": "zehn",
+    "options": [
+      "acht",
+      "zehn",
+      "sechs"
+    ],
+    "hint": "Achte auf die Anzahl 'zehn' im Satz."
+  },
+  {
+    "id": "sent_0293",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta findet acht kleine Steine.",
+    "target_word": "Britta",
+    "options": [
+      "Britta",
+      "Peter",
+      "Tanja"
+    ],
+    "hint": "Achte auf den Namen 'Britta' am Satzanfang."
+  },
+  {
+    "id": "sent_0294",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan sucht zwölf schöne Bilder.",
+    "target_word": "zwölf",
+    "options": [
+      "neun",
+      "drei",
+      "zwölf"
+    ],
+    "hint": "Achte auf die Anzahl 'zwölf' im Satz."
+  },
+  {
+    "id": "sent_0295",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter nimmt fünf große Äpfel.",
+    "target_word": "Peter",
+    "options": [
+      "Peter",
+      "Thomas",
+      "Ulrich"
+    ],
+    "hint": "Achte auf den Namen 'Peter' am Satzanfang."
+  },
+  {
+    "id": "sent_0296",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin sucht drei warme Stühle.",
+    "target_word": "drei",
+    "options": [
+      "vier",
+      "drei",
+      "sieben"
+    ],
+    "hint": "Achte auf die Anzahl 'drei' im Satz."
+  },
+  {
+    "id": "sent_0297",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina gewinnt vier warme Bilder.",
+    "target_word": "Nina",
+    "options": [
+      "Nina",
+      "Tanja",
+      "Doris"
+    ],
+    "hint": "Achte auf den Namen 'Nina' am Satzanfang."
+  },
+  {
+    "id": "sent_0298",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta kauft fünf kleine Kisten.",
+    "target_word": "Kisten",
+    "options": [
+      "Bücher",
+      "Äpfel",
+      "Kisten",
+      "Stühle"
+    ],
+    "hint": "Achte auf das Objekt 'Kisten' am Satzende."
+  },
+  {
+    "id": "sent_0299",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan kauft vier starke Bilder.",
+    "target_word": "starke",
+    "options": [
+      "neue",
+      "grüne",
+      "starke"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'starke'."
+  },
+  {
+    "id": "sent_0300",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja kauft sieben schöne Blumen.",
+    "target_word": "Blumen",
+    "options": [
+      "Blumen",
+      "Bilder",
+      "Tassen",
+      "Steine"
+    ],
+    "hint": "Achte auf das Objekt 'Blumen' am Satzende."
+  },
+  {
+    "id": "sent_0301",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter findet zwölf grüne Bilder.",
+    "target_word": "zwölf",
+    "options": [
+      "sechs",
+      "zwölf",
+      "drei"
+    ],
+    "hint": "Achte auf die Anzahl 'zwölf' im Satz."
+  },
+  {
+    "id": "sent_0302",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta zählt zwei große Äpfel.",
+    "target_word": "zwei",
+    "options": [
+      "zwei",
+      "zehn",
+      "drei"
+    ],
+    "hint": "Achte auf die Anzahl 'zwei' im Satz."
+  },
+  {
+    "id": "sent_0303",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan bekommt zwei warme Kisten.",
+    "target_word": "zwei",
+    "options": [
+      "zwei",
+      "sechs",
+      "acht"
+    ],
+    "hint": "Achte auf die Anzahl 'zwei' im Satz."
+  },
+  {
+    "id": "sent_0304",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris sieht zwölf neue Tassen.",
+    "target_word": "Tassen",
+    "options": [
+      "Blumen",
+      "Uhren",
+      "Steine",
+      "Tassen"
+    ],
+    "hint": "Achte auf das Objekt 'Tassen' am Satzende."
+  },
+  {
+    "id": "sent_0305",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael nimmt sechs neue Tassen.",
+    "target_word": "Michael",
+    "options": [
+      "Ulrich",
+      "Peter",
+      "Michael"
+    ],
+    "hint": "Achte auf den Namen 'Michael' am Satzanfang."
+  },
+  {
+    "id": "sent_0306",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas nimmt zwölf rote Uhren.",
+    "target_word": "rote",
+    "options": [
+      "warme",
+      "rote",
+      "alte"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'rote'."
+  },
+  {
+    "id": "sent_0307",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan kauft acht große Steine.",
+    "target_word": "große",
+    "options": [
+      "schöne",
+      "kleine",
+      "große"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'große'."
+  },
+  {
+    "id": "sent_0308",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris sieht fünf warme Steine.",
+    "target_word": "Doris",
+    "options": [
+      "Peter",
+      "Nina",
+      "Doris"
+    ],
+    "hint": "Achte auf den Namen 'Doris' am Satzanfang."
+  },
+  {
+    "id": "sent_0309",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja kauft fünf warme Kisten.",
+    "target_word": "warme",
+    "options": [
+      "starke",
+      "warme",
+      "kleine"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'warme'."
+  },
+  {
+    "id": "sent_0310",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina bekommt acht kleine Messer.",
+    "target_word": "Messer",
+    "options": [
+      "Messer",
+      "Tassen",
+      "Kisten",
+      "Bücher"
+    ],
+    "hint": "Achte auf das Objekt 'Messer' am Satzende."
+  },
+  {
+    "id": "sent_0311",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin schenkt sieben starke Blumen.",
+    "target_word": "sieben",
+    "options": [
+      "drei",
+      "fünf",
+      "sieben"
+    ],
+    "hint": "Achte auf die Anzahl 'sieben' im Satz."
+  },
+  {
+    "id": "sent_0312",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan sieht vier starke Uhren.",
+    "target_word": "starke",
+    "options": [
+      "starke",
+      "schöne",
+      "kleine"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'starke'."
+  },
+  {
+    "id": "sent_0313",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta findet sechs starke Blumen.",
+    "target_word": "Blumen",
+    "options": [
+      "Tassen",
+      "Blumen",
+      "Uhren",
+      "Bücher"
+    ],
+    "hint": "Achte auf das Objekt 'Blumen' am Satzende."
+  },
+  {
+    "id": "sent_0314",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta schenkt vier kleine Steine.",
+    "target_word": "kleine",
+    "options": [
+      "kleine",
+      "starke",
+      "große"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'kleine'."
+  },
+  {
+    "id": "sent_0315",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris bekommt zwei schöne Uhren.",
+    "target_word": "zwei",
+    "options": [
+      "vier",
+      "zehn",
+      "zwei"
+    ],
+    "hint": "Achte auf die Anzahl 'zwei' im Satz."
+  },
+  {
+    "id": "sent_0316",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja kauft zwei rote Bücher.",
+    "target_word": "zwei",
+    "options": [
+      "neun",
+      "zwei",
+      "acht"
+    ],
+    "hint": "Achte auf die Anzahl 'zwei' im Satz."
+  },
+  {
+    "id": "sent_0317",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas malt sechs kleine Äpfel.",
+    "target_word": "Äpfel",
+    "options": [
+      "Stühle",
+      "Uhren",
+      "Äpfel",
+      "Blumen"
+    ],
+    "hint": "Achte auf das Objekt 'Äpfel' am Satzende."
+  },
+  {
+    "id": "sent_0318",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja kauft neun große Bücher.",
+    "target_word": "Tanja",
+    "options": [
+      "Nina",
+      "Michael",
+      "Tanja"
+    ],
+    "hint": "Achte auf den Namen 'Tanja' am Satzanfang."
+  },
+  {
+    "id": "sent_0319",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin bekommt sieben rote Bücher.",
+    "target_word": "rote",
+    "options": [
+      "neue",
+      "warme",
+      "rote"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'rote'."
+  },
+  {
+    "id": "sent_0320",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas malt zwölf rote Blumen.",
+    "target_word": "Thomas",
+    "options": [
+      "Kerstin",
+      "Michael",
+      "Thomas"
+    ],
+    "hint": "Achte auf den Namen 'Thomas' am Satzanfang."
+  },
+  {
+    "id": "sent_0321",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris sucht vier schöne Steine.",
+    "target_word": "vier",
+    "options": [
+      "vier",
+      "zwei",
+      "zwölf"
+    ],
+    "hint": "Achte auf die Anzahl 'vier' im Satz."
+  },
+  {
+    "id": "sent_0322",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael zählt neun neue Messer.",
+    "target_word": "neue",
+    "options": [
+      "starke",
+      "alte",
+      "neue"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'neue'."
+  },
+  {
+    "id": "sent_0323",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich malt fünf große Blumen.",
+    "target_word": "Blumen",
+    "options": [
+      "Uhren",
+      "Kisten",
+      "Blumen",
+      "Stühle"
+    ],
+    "hint": "Achte auf das Objekt 'Blumen' am Satzende."
+  },
+  {
+    "id": "sent_0324",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta gewinnt sechs warme Äpfel.",
+    "target_word": "sechs",
+    "options": [
+      "neun",
+      "acht",
+      "sechs"
+    ],
+    "hint": "Achte auf die Anzahl 'sechs' im Satz."
+  },
+  {
+    "id": "sent_0325",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta malt sieben neue Messer.",
+    "target_word": "Messer",
+    "options": [
+      "Messer",
+      "Bücher",
+      "Blumen",
+      "Bilder"
+    ],
+    "hint": "Achte auf das Objekt 'Messer' am Satzende."
+  },
+  {
+    "id": "sent_0326",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan findet zwei kleine Äpfel.",
+    "target_word": "zwei",
+    "options": [
+      "zwei",
+      "sechs",
+      "drei"
+    ],
+    "hint": "Achte auf die Anzahl 'zwei' im Satz."
+  },
+  {
+    "id": "sent_0327",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter schenkt zwölf rote Bücher.",
+    "target_word": "rote",
+    "options": [
+      "grüne",
+      "schöne",
+      "rote"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'rote'."
+  },
+  {
+    "id": "sent_0328",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan malt vier kleine Stühle.",
+    "target_word": "kleine",
+    "options": [
+      "kleine",
+      "grüne",
+      "schöne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'kleine'."
+  },
+  {
+    "id": "sent_0329",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas sieht sieben alte Bilder.",
+    "target_word": "sieben",
+    "options": [
+      "sieben",
+      "vier",
+      "neun"
+    ],
+    "hint": "Achte auf die Anzahl 'sieben' im Satz."
+  },
+  {
+    "id": "sent_0330",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich bekommt zehn kühle Bilder.",
+    "target_word": "zehn",
+    "options": [
+      "zehn",
+      "acht",
+      "vier"
+    ],
+    "hint": "Achte auf die Anzahl 'zehn' im Satz."
+  },
+  {
+    "id": "sent_0331",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan bekommt zwei kühle Kisten.",
+    "target_word": "Kisten",
+    "options": [
+      "Uhren",
+      "Kisten",
+      "Bilder",
+      "Bücher"
+    ],
+    "hint": "Achte auf das Objekt 'Kisten' am Satzende."
+  },
+  {
+    "id": "sent_0332",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael bekommt sieben kleine Steine.",
+    "target_word": "kleine",
+    "options": [
+      "schöne",
+      "kleine",
+      "rote"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'kleine'."
+  },
+  {
+    "id": "sent_0333",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich findet zwei alte Steine.",
+    "target_word": "zwei",
+    "options": [
+      "acht",
+      "zwei",
+      "vier"
+    ],
+    "hint": "Achte auf die Anzahl 'zwei' im Satz."
+  },
+  {
+    "id": "sent_0334",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter kauft acht starke Kisten.",
+    "target_word": "acht",
+    "options": [
+      "acht",
+      "zehn",
+      "neun"
+    ],
+    "hint": "Achte auf die Anzahl 'acht' im Satz."
+  },
+  {
+    "id": "sent_0335",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina sucht drei starke Messer.",
+    "target_word": "drei",
+    "options": [
+      "fünf",
+      "zehn",
+      "drei"
+    ],
+    "hint": "Achte auf die Anzahl 'drei' im Satz."
+  },
+  {
+    "id": "sent_0336",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris kauft sieben alte Tassen.",
+    "target_word": "Tassen",
+    "options": [
+      "Blumen",
+      "Tassen",
+      "Steine",
+      "Kisten"
+    ],
+    "hint": "Achte auf das Objekt 'Tassen' am Satzende."
+  },
+  {
+    "id": "sent_0337",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina sieht sieben kühle Messer.",
+    "target_word": "Nina",
+    "options": [
+      "Peter",
+      "Nina",
+      "Kerstin"
+    ],
+    "hint": "Achte auf den Namen 'Nina' am Satzanfang."
+  },
+  {
+    "id": "sent_0338",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas sucht vier große Tassen.",
+    "target_word": "große",
+    "options": [
+      "große",
+      "kühle",
+      "alte"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'große'."
+  },
+  {
+    "id": "sent_0339",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris nimmt fünf kleine Äpfel.",
+    "target_word": "Doris",
+    "options": [
+      "Thomas",
+      "Nina",
+      "Doris"
+    ],
+    "hint": "Achte auf den Namen 'Doris' am Satzanfang."
+  },
+  {
+    "id": "sent_0340",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich kauft acht kleine Blumen.",
+    "target_word": "Ulrich",
+    "options": [
+      "Britta",
+      "Tanja",
+      "Ulrich"
+    ],
+    "hint": "Achte auf den Namen 'Ulrich' am Satzanfang."
+  },
+  {
+    "id": "sent_0341",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan nimmt drei starke Tassen.",
+    "target_word": "starke",
+    "options": [
+      "starke",
+      "warme",
+      "schöne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'starke'."
+  },
+  {
+    "id": "sent_0342",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja zählt acht grüne Bilder.",
+    "target_word": "Tanja",
+    "options": [
+      "Britta",
+      "Tanja",
+      "Kerstin"
+    ],
+    "hint": "Achte auf den Namen 'Tanja' am Satzanfang."
+  },
+  {
+    "id": "sent_0343",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris findet neun alte Steine.",
+    "target_word": "alte",
+    "options": [
+      "große",
+      "alte",
+      "grüne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'alte'."
+  },
+  {
+    "id": "sent_0344",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja schenkt zehn schöne Messer.",
+    "target_word": "zehn",
+    "options": [
+      "zehn",
+      "zwei",
+      "zwölf"
+    ],
+    "hint": "Achte auf die Anzahl 'zehn' im Satz."
+  },
+  {
+    "id": "sent_0345",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina findet zwölf rote Uhren.",
+    "target_word": "rote",
+    "options": [
+      "kleine",
+      "rote",
+      "starke"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'rote'."
+  },
+  {
+    "id": "sent_0346",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina malt zehn kühle Messer.",
+    "target_word": "zehn",
+    "options": [
+      "drei",
+      "neun",
+      "zehn"
+    ],
+    "hint": "Achte auf die Anzahl 'zehn' im Satz."
+  },
+  {
+    "id": "sent_0347",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta gewinnt vier große Kisten.",
+    "target_word": "Kisten",
+    "options": [
+      "Kisten",
+      "Messer",
+      "Steine",
+      "Uhren"
+    ],
+    "hint": "Achte auf das Objekt 'Kisten' am Satzende."
+  },
+  {
+    "id": "sent_0348",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich sieht drei schöne Stühle.",
+    "target_word": "Ulrich",
+    "options": [
+      "Ulrich",
+      "Kerstin",
+      "Thomas"
+    ],
+    "hint": "Achte auf den Namen 'Ulrich' am Satzanfang."
+  },
+  {
+    "id": "sent_0349",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter malt zwölf warme Kisten.",
+    "target_word": "Kisten",
+    "options": [
+      "Uhren",
+      "Bücher",
+      "Tassen",
+      "Kisten"
+    ],
+    "hint": "Achte auf das Objekt 'Kisten' am Satzende."
+  },
+  {
+    "id": "sent_0350",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris zählt sieben schöne Blumen.",
+    "target_word": "Doris",
+    "options": [
+      "Nina",
+      "Thomas",
+      "Doris"
+    ],
+    "hint": "Achte auf den Namen 'Doris' am Satzanfang."
+  },
+  {
+    "id": "sent_0351",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris sucht vier kühle Messer.",
+    "target_word": "Doris",
+    "options": [
+      "Michael",
+      "Doris",
+      "Peter"
+    ],
+    "hint": "Achte auf den Namen 'Doris' am Satzanfang."
+  },
+  {
+    "id": "sent_0352",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter findet sechs neue Äpfel.",
+    "target_word": "neue",
+    "options": [
+      "neue",
+      "kühle",
+      "alte"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'neue'."
+  },
+  {
+    "id": "sent_0353",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja gewinnt vier alte Uhren.",
+    "target_word": "alte",
+    "options": [
+      "neue",
+      "alte",
+      "starke"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'alte'."
+  },
+  {
+    "id": "sent_0354",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta findet fünf schöne Uhren.",
+    "target_word": "schöne",
+    "options": [
+      "grüne",
+      "große",
+      "schöne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'schöne'."
+  },
+  {
+    "id": "sent_0355",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina sucht vier warme Messer.",
+    "target_word": "Messer",
+    "options": [
+      "Kisten",
+      "Steine",
+      "Messer",
+      "Bücher"
+    ],
+    "hint": "Achte auf das Objekt 'Messer' am Satzende."
+  },
+  {
+    "id": "sent_0356",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter findet zwei neue Steine.",
+    "target_word": "neue",
+    "options": [
+      "neue",
+      "schöne",
+      "warme"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'neue'."
+  },
+  {
+    "id": "sent_0357",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja kauft fünf neue Uhren.",
+    "target_word": "Tanja",
+    "options": [
+      "Tanja",
+      "Britta",
+      "Nina"
+    ],
+    "hint": "Achte auf den Namen 'Tanja' am Satzanfang."
+  },
+  {
+    "id": "sent_0358",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich bekommt sechs kleine Blumen.",
+    "target_word": "Blumen",
+    "options": [
+      "Tassen",
+      "Äpfel",
+      "Blumen",
+      "Uhren"
+    ],
+    "hint": "Achte auf das Objekt 'Blumen' am Satzende."
+  },
+  {
+    "id": "sent_0359",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta nimmt acht warme Äpfel.",
+    "target_word": "Äpfel",
+    "options": [
+      "Kisten",
+      "Äpfel",
+      "Steine",
+      "Stühle"
+    ],
+    "hint": "Achte auf das Objekt 'Äpfel' am Satzende."
+  },
+  {
+    "id": "sent_0360",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta nimmt zwölf alte Blumen.",
+    "target_word": "Britta",
+    "options": [
+      "Britta",
+      "Kerstin",
+      "Michael"
+    ],
+    "hint": "Achte auf den Namen 'Britta' am Satzanfang."
+  },
+  {
+    "id": "sent_0361",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta findet sechs warme Messer.",
+    "target_word": "Britta",
+    "options": [
+      "Britta",
+      "Tanja",
+      "Peter"
+    ],
+    "hint": "Achte auf den Namen 'Britta' am Satzanfang."
+  },
+  {
+    "id": "sent_0362",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina malt zwölf alte Blumen.",
+    "target_word": "Blumen",
+    "options": [
+      "Blumen",
+      "Stühle",
+      "Bücher",
+      "Tassen"
+    ],
+    "hint": "Achte auf das Objekt 'Blumen' am Satzende."
+  },
+  {
+    "id": "sent_0363",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris nimmt sechs rote Bücher.",
+    "target_word": "sechs",
+    "options": [
+      "sechs",
+      "zwei",
+      "neun"
+    ],
+    "hint": "Achte auf die Anzahl 'sechs' im Satz."
+  },
+  {
+    "id": "sent_0364",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan kauft neun alte Blumen.",
+    "target_word": "Stefan",
+    "options": [
+      "Michael",
+      "Stefan",
+      "Thomas"
+    ],
+    "hint": "Achte auf den Namen 'Stefan' am Satzanfang."
+  },
+  {
+    "id": "sent_0365",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas malt fünf neue Steine.",
+    "target_word": "Thomas",
+    "options": [
+      "Ulrich",
+      "Doris",
+      "Thomas"
+    ],
+    "hint": "Achte auf den Namen 'Thomas' am Satzanfang."
+  },
+  {
+    "id": "sent_0366",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris sieht neun grüne Blumen.",
+    "target_word": "neun",
+    "options": [
+      "drei",
+      "sieben",
+      "neun"
+    ],
+    "hint": "Achte auf die Anzahl 'neun' im Satz."
+  },
+  {
+    "id": "sent_0367",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta nimmt acht neue Bilder.",
+    "target_word": "neue",
+    "options": [
+      "warme",
+      "alte",
+      "neue"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'neue'."
+  },
+  {
+    "id": "sent_0368",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter malt zwölf kühle Tassen.",
+    "target_word": "Peter",
+    "options": [
+      "Peter",
+      "Doris",
+      "Stefan"
+    ],
+    "hint": "Achte auf den Namen 'Peter' am Satzanfang."
+  },
+  {
+    "id": "sent_0369",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina nimmt acht große Bücher.",
+    "target_word": "acht",
+    "options": [
+      "acht",
+      "sieben",
+      "fünf"
+    ],
+    "hint": "Achte auf die Anzahl 'acht' im Satz."
+  },
+  {
+    "id": "sent_0370",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan schenkt vier kleine Uhren.",
+    "target_word": "kleine",
+    "options": [
+      "rote",
+      "kleine",
+      "schöne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'kleine'."
+  },
+  {
+    "id": "sent_0371",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter findet sechs rote Bücher.",
+    "target_word": "sechs",
+    "options": [
+      "drei",
+      "zehn",
+      "sechs"
+    ],
+    "hint": "Achte auf die Anzahl 'sechs' im Satz."
+  },
+  {
+    "id": "sent_0372",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin sucht acht starke Kisten.",
+    "target_word": "Kisten",
+    "options": [
+      "Bilder",
+      "Äpfel",
+      "Kisten",
+      "Steine"
+    ],
+    "hint": "Achte auf das Objekt 'Kisten' am Satzende."
+  },
+  {
+    "id": "sent_0373",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina gewinnt zwei große Steine.",
+    "target_word": "zwei",
+    "options": [
+      "acht",
+      "sieben",
+      "zwei"
+    ],
+    "hint": "Achte auf die Anzahl 'zwei' im Satz."
+  },
+  {
+    "id": "sent_0374",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin zählt zwölf alte Bücher.",
+    "target_word": "Bücher",
+    "options": [
+      "Bücher",
+      "Äpfel",
+      "Bilder",
+      "Steine"
+    ],
+    "hint": "Achte auf das Objekt 'Bücher' am Satzende."
+  },
+  {
+    "id": "sent_0375",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin bekommt sieben starke Bilder.",
+    "target_word": "sieben",
+    "options": [
+      "vier",
+      "neun",
+      "sieben"
+    ],
+    "hint": "Achte auf die Anzahl 'sieben' im Satz."
+  },
+  {
+    "id": "sent_0376",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta bekommt fünf große Messer.",
+    "target_word": "fünf",
+    "options": [
+      "drei",
+      "fünf",
+      "acht"
+    ],
+    "hint": "Achte auf die Anzahl 'fünf' im Satz."
+  },
+  {
+    "id": "sent_0377",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin nimmt zehn kühle Äpfel.",
+    "target_word": "Äpfel",
+    "options": [
+      "Stühle",
+      "Tassen",
+      "Bücher",
+      "Äpfel"
+    ],
+    "hint": "Achte auf das Objekt 'Äpfel' am Satzende."
+  },
+  {
+    "id": "sent_0378",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin sieht zehn alte Uhren.",
+    "target_word": "zehn",
+    "options": [
+      "zehn",
+      "zwei",
+      "fünf"
+    ],
+    "hint": "Achte auf die Anzahl 'zehn' im Satz."
+  },
+  {
+    "id": "sent_0379",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja zählt sechs kühle Messer.",
+    "target_word": "sechs",
+    "options": [
+      "neun",
+      "sechs",
+      "drei"
+    ],
+    "hint": "Achte auf die Anzahl 'sechs' im Satz."
+  },
+  {
+    "id": "sent_0380",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris sieht drei starke Steine.",
+    "target_word": "drei",
+    "options": [
+      "drei",
+      "sechs",
+      "sieben"
+    ],
+    "hint": "Achte auf die Anzahl 'drei' im Satz."
+  },
+  {
+    "id": "sent_0381",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris bekommt zwei warme Uhren.",
+    "target_word": "zwei",
+    "options": [
+      "zehn",
+      "acht",
+      "zwei"
+    ],
+    "hint": "Achte auf die Anzahl 'zwei' im Satz."
+  },
+  {
+    "id": "sent_0382",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter sieht drei kühle Uhren.",
+    "target_word": "drei",
+    "options": [
+      "vier",
+      "drei",
+      "zwölf"
+    ],
+    "hint": "Achte auf die Anzahl 'drei' im Satz."
+  },
+  {
+    "id": "sent_0383",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris gewinnt neun alte Blumen.",
+    "target_word": "Doris",
+    "options": [
+      "Peter",
+      "Tanja",
+      "Doris"
+    ],
+    "hint": "Achte auf den Namen 'Doris' am Satzanfang."
+  },
+  {
+    "id": "sent_0384",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris schenkt sieben schöne Tassen.",
+    "target_word": "Tassen",
+    "options": [
+      "Uhren",
+      "Tassen",
+      "Messer",
+      "Äpfel"
+    ],
+    "hint": "Achte auf das Objekt 'Tassen' am Satzende."
+  },
+  {
+    "id": "sent_0385",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich schenkt neun kühle Blumen.",
+    "target_word": "Blumen",
+    "options": [
+      "Tassen",
+      "Messer",
+      "Kisten",
+      "Blumen"
+    ],
+    "hint": "Achte auf das Objekt 'Blumen' am Satzende."
+  },
+  {
+    "id": "sent_0386",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael nimmt acht starke Kisten.",
+    "target_word": "acht",
+    "options": [
+      "drei",
+      "acht",
+      "vier"
+    ],
+    "hint": "Achte auf die Anzahl 'acht' im Satz."
+  },
+  {
+    "id": "sent_0387",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan sieht acht kühle Uhren.",
+    "target_word": "Stefan",
+    "options": [
+      "Michael",
+      "Stefan",
+      "Britta"
+    ],
+    "hint": "Achte auf den Namen 'Stefan' am Satzanfang."
+  },
+  {
+    "id": "sent_0388",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan findet neun kleine Kisten.",
+    "target_word": "Stefan",
+    "options": [
+      "Stefan",
+      "Tanja",
+      "Peter"
+    ],
+    "hint": "Achte auf den Namen 'Stefan' am Satzanfang."
+  },
+  {
+    "id": "sent_0389",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter zählt zwölf kühle Steine.",
+    "target_word": "kühle",
+    "options": [
+      "kleine",
+      "kühle",
+      "warme"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'kühle'."
+  },
+  {
+    "id": "sent_0390",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael schenkt acht grüne Stühle.",
+    "target_word": "Stühle",
+    "options": [
+      "Bücher",
+      "Stühle",
+      "Äpfel",
+      "Blumen"
+    ],
+    "hint": "Achte auf das Objekt 'Stühle' am Satzende."
+  },
+  {
+    "id": "sent_0391",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja findet sieben rote Bilder.",
+    "target_word": "rote",
+    "options": [
+      "rote",
+      "große",
+      "alte"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'rote'."
+  },
+  {
+    "id": "sent_0392",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin gewinnt drei starke Uhren.",
+    "target_word": "Kerstin",
+    "options": [
+      "Kerstin",
+      "Nina",
+      "Tanja"
+    ],
+    "hint": "Achte auf den Namen 'Kerstin' am Satzanfang."
+  },
+  {
+    "id": "sent_0393",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja findet zwei kleine Kisten.",
+    "target_word": "Tanja",
+    "options": [
+      "Thomas",
+      "Peter",
+      "Tanja"
+    ],
+    "hint": "Achte auf den Namen 'Tanja' am Satzanfang."
+  },
+  {
+    "id": "sent_0394",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina zählt fünf starke Bilder.",
+    "target_word": "starke",
+    "options": [
+      "starke",
+      "rote",
+      "große"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'starke'."
+  },
+  {
+    "id": "sent_0395",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina malt zwölf starke Bilder.",
+    "target_word": "Nina",
+    "options": [
+      "Tanja",
+      "Nina",
+      "Thomas"
+    ],
+    "hint": "Achte auf den Namen 'Nina' am Satzanfang."
+  },
+  {
+    "id": "sent_0396",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter schenkt sieben alte Stühle.",
+    "target_word": "alte",
+    "options": [
+      "große",
+      "kleine",
+      "alte"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'alte'."
+  },
+  {
+    "id": "sent_0397",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan sucht drei alte Messer.",
+    "target_word": "drei",
+    "options": [
+      "vier",
+      "drei",
+      "sechs"
+    ],
+    "hint": "Achte auf die Anzahl 'drei' im Satz."
+  },
+  {
+    "id": "sent_0398",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael gewinnt sieben kleine Kisten.",
+    "target_word": "Kisten",
+    "options": [
+      "Stühle",
+      "Kisten",
+      "Steine",
+      "Tassen"
+    ],
+    "hint": "Achte auf das Objekt 'Kisten' am Satzende."
+  },
+  {
+    "id": "sent_0399",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina kauft zehn schöne Messer.",
+    "target_word": "Nina",
+    "options": [
+      "Thomas",
+      "Nina",
+      "Stefan"
+    ],
+    "hint": "Achte auf den Namen 'Nina' am Satzanfang."
+  },
+  {
+    "id": "sent_0400",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan sieht acht kühle Messer.",
+    "target_word": "kühle",
+    "options": [
+      "schöne",
+      "kühle",
+      "warme"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'kühle'."
+  },
+  {
+    "id": "sent_0401",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris sucht sieben alte Uhren.",
+    "target_word": "sieben",
+    "options": [
+      "sieben",
+      "vier",
+      "neun"
+    ],
+    "hint": "Achte auf die Anzahl 'sieben' im Satz."
+  },
+  {
+    "id": "sent_0402",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina schenkt zehn rote Steine.",
+    "target_word": "zehn",
+    "options": [
+      "sechs",
+      "zehn",
+      "sieben"
+    ],
+    "hint": "Achte auf die Anzahl 'zehn' im Satz."
+  },
+  {
+    "id": "sent_0403",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan zählt zehn neue Tassen.",
+    "target_word": "neue",
+    "options": [
+      "neue",
+      "kühle",
+      "warme"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'neue'."
+  },
+  {
+    "id": "sent_0404",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina nimmt acht große Stühle.",
+    "target_word": "Stühle",
+    "options": [
+      "Äpfel",
+      "Tassen",
+      "Kisten",
+      "Stühle"
+    ],
+    "hint": "Achte auf das Objekt 'Stühle' am Satzende."
+  },
+  {
+    "id": "sent_0405",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta nimmt vier alte Blumen.",
+    "target_word": "vier",
+    "options": [
+      "zwei",
+      "sieben",
+      "vier"
+    ],
+    "hint": "Achte auf die Anzahl 'vier' im Satz."
+  },
+  {
+    "id": "sent_0406",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich findet drei kühle Stühle.",
+    "target_word": "drei",
+    "options": [
+      "neun",
+      "zwölf",
+      "drei"
+    ],
+    "hint": "Achte auf die Anzahl 'drei' im Satz."
+  },
+  {
+    "id": "sent_0407",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter sucht acht schöne Bilder.",
+    "target_word": "Bilder",
+    "options": [
+      "Blumen",
+      "Äpfel",
+      "Bilder",
+      "Tassen"
+    ],
+    "hint": "Achte auf das Objekt 'Bilder' am Satzende."
+  },
+  {
+    "id": "sent_0408",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas zählt zwölf rote Steine.",
+    "target_word": "rote",
+    "options": [
+      "warme",
+      "rote",
+      "grüne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'rote'."
+  },
+  {
+    "id": "sent_0409",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan bekommt zehn kleine Kisten.",
+    "target_word": "Kisten",
+    "options": [
+      "Uhren",
+      "Stühle",
+      "Kisten",
+      "Blumen"
+    ],
+    "hint": "Achte auf das Objekt 'Kisten' am Satzende."
+  },
+  {
+    "id": "sent_0410",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas nimmt zwei neue Uhren.",
+    "target_word": "zwei",
+    "options": [
+      "fünf",
+      "zwei",
+      "drei"
+    ],
+    "hint": "Achte auf die Anzahl 'zwei' im Satz."
+  },
+  {
+    "id": "sent_0411",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas nimmt neun kühle Stühle.",
+    "target_word": "kühle",
+    "options": [
+      "kleine",
+      "kühle",
+      "neue"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'kühle'."
+  },
+  {
+    "id": "sent_0412",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan zählt drei warme Bücher.",
+    "target_word": "Stefan",
+    "options": [
+      "Michael",
+      "Thomas",
+      "Stefan"
+    ],
+    "hint": "Achte auf den Namen 'Stefan' am Satzanfang."
+  },
+  {
+    "id": "sent_0413",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta gewinnt sieben neue Bilder.",
+    "target_word": "neue",
+    "options": [
+      "rote",
+      "neue",
+      "warme"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'neue'."
+  },
+  {
+    "id": "sent_0414",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja schenkt neun rote Messer.",
+    "target_word": "neun",
+    "options": [
+      "sieben",
+      "neun",
+      "zwei"
+    ],
+    "hint": "Achte auf die Anzahl 'neun' im Satz."
+  },
+  {
+    "id": "sent_0415",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin nimmt zehn alte Äpfel.",
+    "target_word": "alte",
+    "options": [
+      "warme",
+      "alte",
+      "kühle"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'alte'."
+  },
+  {
+    "id": "sent_0416",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris gewinnt sieben warme Tassen.",
+    "target_word": "Tassen",
+    "options": [
+      "Steine",
+      "Äpfel",
+      "Kisten",
+      "Tassen"
+    ],
+    "hint": "Achte auf das Objekt 'Tassen' am Satzende."
+  },
+  {
+    "id": "sent_0417",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin sieht fünf warme Kisten.",
+    "target_word": "Kisten",
+    "options": [
+      "Bücher",
+      "Steine",
+      "Kisten",
+      "Äpfel"
+    ],
+    "hint": "Achte auf das Objekt 'Kisten' am Satzende."
+  },
+  {
+    "id": "sent_0418",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja kauft vier alte Stühle.",
+    "target_word": "Stühle",
+    "options": [
+      "Stühle",
+      "Blumen",
+      "Steine",
+      "Messer"
+    ],
+    "hint": "Achte auf das Objekt 'Stühle' am Satzende."
+  },
+  {
+    "id": "sent_0419",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin schenkt zwei schöne Tassen.",
+    "target_word": "Tassen",
+    "options": [
+      "Äpfel",
+      "Kisten",
+      "Bücher",
+      "Tassen"
+    ],
+    "hint": "Achte auf das Objekt 'Tassen' am Satzende."
+  },
+  {
+    "id": "sent_0420",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris nimmt zwölf kleine Blumen.",
+    "target_word": "Doris",
+    "options": [
+      "Michael",
+      "Doris",
+      "Thomas"
+    ],
+    "hint": "Achte auf den Namen 'Doris' am Satzanfang."
+  },
+  {
+    "id": "sent_0421",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael bekommt zehn rote Bücher.",
+    "target_word": "Michael",
+    "options": [
+      "Thomas",
+      "Michael",
+      "Doris"
+    ],
+    "hint": "Achte auf den Namen 'Michael' am Satzanfang."
+  },
+  {
+    "id": "sent_0422",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris schenkt zwei warme Stühle.",
+    "target_word": "zwei",
+    "options": [
+      "drei",
+      "vier",
+      "zwei"
+    ],
+    "hint": "Achte auf die Anzahl 'zwei' im Satz."
+  },
+  {
+    "id": "sent_0423",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina zählt drei alte Steine.",
+    "target_word": "alte",
+    "options": [
+      "rote",
+      "alte",
+      "starke"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'alte'."
+  },
+  {
+    "id": "sent_0424",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan bekommt fünf kühle Blumen.",
+    "target_word": "fünf",
+    "options": [
+      "drei",
+      "fünf",
+      "vier"
+    ],
+    "hint": "Achte auf die Anzahl 'fünf' im Satz."
+  },
+  {
+    "id": "sent_0425",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina findet zehn kleine Blumen.",
+    "target_word": "Blumen",
+    "options": [
+      "Blumen",
+      "Tassen",
+      "Bilder",
+      "Stühle"
+    ],
+    "hint": "Achte auf das Objekt 'Blumen' am Satzende."
+  },
+  {
+    "id": "sent_0426",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan gewinnt drei alte Messer.",
+    "target_word": "Messer",
+    "options": [
+      "Messer",
+      "Bilder",
+      "Steine",
+      "Stühle"
+    ],
+    "hint": "Achte auf das Objekt 'Messer' am Satzende."
+  },
+  {
+    "id": "sent_0427",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas bekommt zwölf kühle Bilder.",
+    "target_word": "kühle",
+    "options": [
+      "grüne",
+      "schöne",
+      "kühle"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'kühle'."
+  },
+  {
+    "id": "sent_0428",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta gewinnt acht alte Bilder.",
+    "target_word": "acht",
+    "options": [
+      "acht",
+      "zehn",
+      "sieben"
+    ],
+    "hint": "Achte auf die Anzahl 'acht' im Satz."
+  },
+  {
+    "id": "sent_0429",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich nimmt neun warme Tassen.",
+    "target_word": "neun",
+    "options": [
+      "drei",
+      "sechs",
+      "neun"
+    ],
+    "hint": "Achte auf die Anzahl 'neun' im Satz."
+  },
+  {
+    "id": "sent_0430",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris sieht drei große Stühle.",
+    "target_word": "Stühle",
+    "options": [
+      "Stühle",
+      "Kisten",
+      "Äpfel",
+      "Steine"
+    ],
+    "hint": "Achte auf das Objekt 'Stühle' am Satzende."
+  },
+  {
+    "id": "sent_0431",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan schenkt acht rote Messer.",
+    "target_word": "rote",
+    "options": [
+      "grüne",
+      "rote",
+      "warme"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'rote'."
+  },
+  {
+    "id": "sent_0432",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin schenkt zehn große Steine.",
+    "target_word": "zehn",
+    "options": [
+      "vier",
+      "zehn",
+      "zwölf"
+    ],
+    "hint": "Achte auf die Anzahl 'zehn' im Satz."
+  },
+  {
+    "id": "sent_0433",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan malt zwölf grüne Uhren.",
+    "target_word": "grüne",
+    "options": [
+      "alte",
+      "grüne",
+      "große"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'grüne'."
+  },
+  {
+    "id": "sent_0434",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja nimmt sieben rote Äpfel.",
+    "target_word": "sieben",
+    "options": [
+      "sieben",
+      "acht",
+      "zwölf"
+    ],
+    "hint": "Achte auf die Anzahl 'sieben' im Satz."
+  },
+  {
+    "id": "sent_0435",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael kauft zwei neue Tassen.",
+    "target_word": "neue",
+    "options": [
+      "neue",
+      "grüne",
+      "alte"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'neue'."
+  },
+  {
+    "id": "sent_0436",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich malt drei warme Blumen.",
+    "target_word": "Ulrich",
+    "options": [
+      "Ulrich",
+      "Michael",
+      "Britta"
+    ],
+    "hint": "Achte auf den Namen 'Ulrich' am Satzanfang."
+  },
+  {
+    "id": "sent_0437",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael findet zwölf große Stühle.",
+    "target_word": "zwölf",
+    "options": [
+      "neun",
+      "vier",
+      "zwölf"
+    ],
+    "hint": "Achte auf die Anzahl 'zwölf' im Satz."
+  },
+  {
+    "id": "sent_0438",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina nimmt fünf grüne Bücher.",
+    "target_word": "fünf",
+    "options": [
+      "acht",
+      "fünf",
+      "drei"
+    ],
+    "hint": "Achte auf die Anzahl 'fünf' im Satz."
+  },
+  {
+    "id": "sent_0439",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin schenkt drei starke Uhren.",
+    "target_word": "Kerstin",
+    "options": [
+      "Kerstin",
+      "Britta",
+      "Stefan"
+    ],
+    "hint": "Achte auf den Namen 'Kerstin' am Satzanfang."
+  },
+  {
+    "id": "sent_0440",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter gewinnt zwei grüne Messer.",
+    "target_word": "zwei",
+    "options": [
+      "fünf",
+      "zwei",
+      "drei"
+    ],
+    "hint": "Achte auf die Anzahl 'zwei' im Satz."
+  },
+  {
+    "id": "sent_0441",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter bekommt sechs grüne Stühle.",
+    "target_word": "Peter",
+    "options": [
+      "Tanja",
+      "Ulrich",
+      "Peter"
+    ],
+    "hint": "Achte auf den Namen 'Peter' am Satzanfang."
+  },
+  {
+    "id": "sent_0442",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael malt neun starke Bücher.",
+    "target_word": "neun",
+    "options": [
+      "acht",
+      "neun",
+      "vier"
+    ],
+    "hint": "Achte auf die Anzahl 'neun' im Satz."
+  },
+  {
+    "id": "sent_0443",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas zählt sechs grüne Bilder.",
+    "target_word": "Thomas",
+    "options": [
+      "Thomas",
+      "Britta",
+      "Tanja"
+    ],
+    "hint": "Achte auf den Namen 'Thomas' am Satzanfang."
+  },
+  {
+    "id": "sent_0444",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan sieht zwei rote Stühle.",
+    "target_word": "Stefan",
+    "options": [
+      "Tanja",
+      "Britta",
+      "Stefan"
+    ],
+    "hint": "Achte auf den Namen 'Stefan' am Satzanfang."
+  },
+  {
+    "id": "sent_0445",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas malt zwei warme Stühle.",
+    "target_word": "Stühle",
+    "options": [
+      "Bilder",
+      "Stühle",
+      "Uhren",
+      "Tassen"
+    ],
+    "hint": "Achte auf das Objekt 'Stühle' am Satzende."
+  },
+  {
+    "id": "sent_0446",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin zählt acht neue Äpfel.",
+    "target_word": "Kerstin",
+    "options": [
+      "Kerstin",
+      "Nina",
+      "Britta"
+    ],
+    "hint": "Achte auf den Namen 'Kerstin' am Satzanfang."
+  },
+  {
+    "id": "sent_0447",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas malt drei schöne Bücher.",
+    "target_word": "schöne",
+    "options": [
+      "rote",
+      "warme",
+      "schöne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'schöne'."
+  },
+  {
+    "id": "sent_0448",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas zählt acht alte Steine.",
+    "target_word": "Steine",
+    "options": [
+      "Tassen",
+      "Bilder",
+      "Äpfel",
+      "Steine"
+    ],
+    "hint": "Achte auf das Objekt 'Steine' am Satzende."
+  },
+  {
+    "id": "sent_0449",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich sucht sieben kleine Bücher.",
+    "target_word": "Ulrich",
+    "options": [
+      "Ulrich",
+      "Doris",
+      "Thomas"
+    ],
+    "hint": "Achte auf den Namen 'Ulrich' am Satzanfang."
+  },
+  {
+    "id": "sent_0450",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas schenkt zwölf alte Kisten.",
+    "target_word": "zwölf",
+    "options": [
+      "neun",
+      "acht",
+      "zwölf"
+    ],
+    "hint": "Achte auf die Anzahl 'zwölf' im Satz."
+  },
+  {
+    "id": "sent_0451",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina zählt neun alte Blumen.",
+    "target_word": "alte",
+    "options": [
+      "starke",
+      "alte",
+      "grüne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'alte'."
+  },
+  {
+    "id": "sent_0452",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta findet vier kleine Steine.",
+    "target_word": "Britta",
+    "options": [
+      "Peter",
+      "Kerstin",
+      "Britta"
+    ],
+    "hint": "Achte auf den Namen 'Britta' am Satzanfang."
+  },
+  {
+    "id": "sent_0453",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter sieht vier starke Messer.",
+    "target_word": "Peter",
+    "options": [
+      "Thomas",
+      "Peter",
+      "Stefan"
+    ],
+    "hint": "Achte auf den Namen 'Peter' am Satzanfang."
+  },
+  {
+    "id": "sent_0454",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich sieht zwölf große Kisten.",
+    "target_word": "Ulrich",
+    "options": [
+      "Thomas",
+      "Ulrich",
+      "Doris"
+    ],
+    "hint": "Achte auf den Namen 'Ulrich' am Satzanfang."
+  },
+  {
+    "id": "sent_0455",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan findet neun große Steine.",
+    "target_word": "große",
+    "options": [
+      "alte",
+      "große",
+      "kleine"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'große'."
+  },
+  {
+    "id": "sent_0456",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas bekommt zwei neue Steine.",
+    "target_word": "Steine",
+    "options": [
+      "Steine",
+      "Tassen",
+      "Bücher",
+      "Messer"
+    ],
+    "hint": "Achte auf das Objekt 'Steine' am Satzende."
+  },
+  {
+    "id": "sent_0457",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin malt fünf warme Äpfel.",
+    "target_word": "Äpfel",
+    "options": [
+      "Äpfel",
+      "Kisten",
+      "Bücher",
+      "Bilder"
+    ],
+    "hint": "Achte auf das Objekt 'Äpfel' am Satzende."
+  },
+  {
+    "id": "sent_0458",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta malt fünf starke Kisten.",
+    "target_word": "Kisten",
+    "options": [
+      "Blumen",
+      "Steine",
+      "Bücher",
+      "Kisten"
+    ],
+    "hint": "Achte auf das Objekt 'Kisten' am Satzende."
+  },
+  {
+    "id": "sent_0459",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina nimmt sieben kleine Stühle.",
+    "target_word": "kleine",
+    "options": [
+      "kleine",
+      "kühle",
+      "neue"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'kleine'."
+  },
+  {
+    "id": "sent_0460",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin malt neun rote Bilder.",
+    "target_word": "Kerstin",
+    "options": [
+      "Peter",
+      "Kerstin",
+      "Nina"
+    ],
+    "hint": "Achte auf den Namen 'Kerstin' am Satzanfang."
+  },
+  {
+    "id": "sent_0461",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris sieht acht rote Steine.",
+    "target_word": "rote",
+    "options": [
+      "starke",
+      "rote",
+      "schöne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'rote'."
+  },
+  {
+    "id": "sent_0462",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris gewinnt sechs kleine Kisten.",
+    "target_word": "kleine",
+    "options": [
+      "kleine",
+      "rote",
+      "grüne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'kleine'."
+  },
+  {
+    "id": "sent_0463",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich gewinnt zwölf alte Bücher.",
+    "target_word": "zwölf",
+    "options": [
+      "neun",
+      "fünf",
+      "zwölf"
+    ],
+    "hint": "Achte auf die Anzahl 'zwölf' im Satz."
+  },
+  {
+    "id": "sent_0464",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris gewinnt fünf rote Steine.",
+    "target_word": "rote",
+    "options": [
+      "grüne",
+      "kleine",
+      "rote"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'rote'."
+  },
+  {
+    "id": "sent_0465",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael malt zwei warme Äpfel.",
+    "target_word": "Michael",
+    "options": [
+      "Michael",
+      "Thomas",
+      "Ulrich"
+    ],
+    "hint": "Achte auf den Namen 'Michael' am Satzanfang."
+  },
+  {
+    "id": "sent_0466",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael bekommt zehn alte Kisten.",
+    "target_word": "zehn",
+    "options": [
+      "zehn",
+      "vier",
+      "zwei"
+    ],
+    "hint": "Achte auf die Anzahl 'zehn' im Satz."
+  },
+  {
+    "id": "sent_0467",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael zählt zwei warme Bilder.",
+    "target_word": "Michael",
+    "options": [
+      "Nina",
+      "Stefan",
+      "Michael"
+    ],
+    "hint": "Achte auf den Namen 'Michael' am Satzanfang."
+  },
+  {
+    "id": "sent_0468",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich kauft zwei rote Kisten.",
+    "target_word": "Kisten",
+    "options": [
+      "Blumen",
+      "Bilder",
+      "Kisten",
+      "Messer"
+    ],
+    "hint": "Achte auf das Objekt 'Kisten' am Satzende."
+  },
+  {
+    "id": "sent_0469",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta nimmt neun kühle Bilder.",
+    "target_word": "kühle",
+    "options": [
+      "starke",
+      "kühle",
+      "grüne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'kühle'."
+  },
+  {
+    "id": "sent_0470",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin schenkt sieben schöne Blumen.",
+    "target_word": "Kerstin",
+    "options": [
+      "Stefan",
+      "Kerstin",
+      "Thomas"
+    ],
+    "hint": "Achte auf den Namen 'Kerstin' am Satzanfang."
+  },
+  {
+    "id": "sent_0471",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja nimmt fünf warme Kisten.",
+    "target_word": "Tanja",
+    "options": [
+      "Doris",
+      "Tanja",
+      "Britta"
+    ],
+    "hint": "Achte auf den Namen 'Tanja' am Satzanfang."
+  },
+  {
+    "id": "sent_0472",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael kauft vier schöne Uhren.",
+    "target_word": "vier",
+    "options": [
+      "vier",
+      "acht",
+      "zwölf"
+    ],
+    "hint": "Achte auf die Anzahl 'vier' im Satz."
+  },
+  {
+    "id": "sent_0473",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris zählt zwölf große Kisten.",
+    "target_word": "Kisten",
+    "options": [
+      "Tassen",
+      "Kisten",
+      "Bücher",
+      "Äpfel"
+    ],
+    "hint": "Achte auf das Objekt 'Kisten' am Satzende."
+  },
+  {
+    "id": "sent_0474",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael schenkt sechs neue Bilder.",
+    "target_word": "neue",
+    "options": [
+      "große",
+      "neue",
+      "schöne"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'neue'."
+  },
+  {
+    "id": "sent_0475",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich malt fünf kühle Messer.",
+    "target_word": "fünf",
+    "options": [
+      "fünf",
+      "acht",
+      "sieben"
+    ],
+    "hint": "Achte auf die Anzahl 'fünf' im Satz."
+  },
+  {
+    "id": "sent_0476",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael sieht acht kühle Blumen.",
+    "target_word": "Michael",
+    "options": [
+      "Michael",
+      "Stefan",
+      "Thomas"
+    ],
+    "hint": "Achte auf den Namen 'Michael' am Satzanfang."
+  },
+  {
+    "id": "sent_0477",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin malt zwölf schöne Tassen.",
+    "target_word": "Tassen",
+    "options": [
+      "Tassen",
+      "Bücher",
+      "Steine",
+      "Kisten"
+    ],
+    "hint": "Achte auf das Objekt 'Tassen' am Satzende."
+  },
+  {
+    "id": "sent_0478",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris malt acht alte Uhren.",
+    "target_word": "alte",
+    "options": [
+      "warme",
+      "alte",
+      "kühle"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'alte'."
+  },
+  {
+    "id": "sent_0479",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan kauft vier rote Blumen.",
+    "target_word": "Blumen",
+    "options": [
+      "Steine",
+      "Bücher",
+      "Messer",
+      "Blumen"
+    ],
+    "hint": "Achte auf das Objekt 'Blumen' am Satzende."
+  },
+  {
+    "id": "sent_0480",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael zählt zwei große Kisten.",
+    "target_word": "Kisten",
+    "options": [
+      "Blumen",
+      "Stühle",
+      "Kisten",
+      "Tassen"
+    ],
+    "hint": "Achte auf das Objekt 'Kisten' am Satzende."
+  },
+  {
+    "id": "sent_0481",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris gewinnt fünf alte Uhren.",
+    "target_word": "fünf",
+    "options": [
+      "vier",
+      "zwölf",
+      "fünf"
+    ],
+    "hint": "Achte auf die Anzahl 'fünf' im Satz."
+  },
+  {
+    "id": "sent_0482",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Ulrich schenkt neun starke Stühle.",
+    "target_word": "starke",
+    "options": [
+      "kühle",
+      "warme",
+      "starke"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'starke'."
+  },
+  {
+    "id": "sent_0483",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas malt neun kühle Kisten.",
+    "target_word": "kühle",
+    "options": [
+      "neue",
+      "kühle",
+      "starke"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'kühle'."
+  },
+  {
+    "id": "sent_0484",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Tanja findet sechs neue Kisten.",
+    "target_word": "neue",
+    "options": [
+      "grüne",
+      "alte",
+      "neue"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'neue'."
+  },
+  {
+    "id": "sent_0485",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina bekommt sieben alte Uhren.",
+    "target_word": "Uhren",
+    "options": [
+      "Bücher",
+      "Messer",
+      "Stühle",
+      "Uhren"
+    ],
+    "hint": "Achte auf das Objekt 'Uhren' am Satzende."
+  },
+  {
+    "id": "sent_0486",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas gewinnt zwei warme Bilder.",
+    "target_word": "zwei",
+    "options": [
+      "zwölf",
+      "zwei",
+      "neun"
+    ],
+    "hint": "Achte auf die Anzahl 'zwei' im Satz."
+  },
+  {
+    "id": "sent_0487",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan sucht acht rote Blumen.",
+    "target_word": "Blumen",
+    "options": [
+      "Blumen",
+      "Bilder",
+      "Uhren",
+      "Steine"
+    ],
+    "hint": "Achte auf das Objekt 'Blumen' am Satzende."
+  },
+  {
+    "id": "sent_0488",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Kerstin gewinnt drei grüne Bücher.",
+    "target_word": "grüne",
+    "options": [
+      "grüne",
+      "kleine",
+      "warme"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'grüne'."
+  },
+  {
+    "id": "sent_0489",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris malt neun rote Bilder.",
+    "target_word": "Bilder",
+    "options": [
+      "Bücher",
+      "Äpfel",
+      "Blumen",
+      "Bilder"
+    ],
+    "hint": "Achte auf das Objekt 'Bilder' am Satzende."
+  },
+  {
+    "id": "sent_0490",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris nimmt vier starke Äpfel.",
+    "target_word": "vier",
+    "options": [
+      "fünf",
+      "drei",
+      "vier"
+    ],
+    "hint": "Achte auf die Anzahl 'vier' im Satz."
+  },
+  {
+    "id": "sent_0491",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Britta schenkt acht alte Uhren.",
+    "target_word": "alte",
+    "options": [
+      "große",
+      "alte",
+      "warme"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'alte'."
+  },
+  {
+    "id": "sent_0492",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan kauft sechs schöne Tassen.",
+    "target_word": "Stefan",
+    "options": [
+      "Stefan",
+      "Doris",
+      "Britta"
+    ],
+    "hint": "Achte auf den Namen 'Stefan' am Satzanfang."
+  },
+  {
+    "id": "sent_0493",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter sieht fünf schöne Uhren.",
+    "target_word": "fünf",
+    "options": [
+      "sechs",
+      "fünf",
+      "zwei"
+    ],
+    "hint": "Achte auf die Anzahl 'fünf' im Satz."
+  },
+  {
+    "id": "sent_0494",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina gewinnt neun schöne Blumen.",
+    "target_word": "schöne",
+    "options": [
+      "grüne",
+      "schöne",
+      "große"
+    ],
+    "hint": "Achte auf das Eigenschaftswort 'schöne'."
+  },
+  {
+    "id": "sent_0495",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Doris findet sechs rote Bilder.",
+    "target_word": "Bilder",
+    "options": [
+      "Tassen",
+      "Bilder",
+      "Steine",
+      "Stühle"
+    ],
+    "hint": "Achte auf das Objekt 'Bilder' am Satzende."
+  },
+  {
+    "id": "sent_0496",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Stefan nimmt zwölf kleine Kisten.",
+    "target_word": "zwölf",
+    "options": [
+      "zwölf",
+      "zwei",
+      "zehn"
+    ],
+    "hint": "Achte auf die Anzahl 'zwölf' im Satz."
+  },
+  {
+    "id": "sent_0497",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Thomas bekommt sieben kleine Steine.",
+    "target_word": "sieben",
+    "options": [
+      "sieben",
+      "zehn",
+      "drei"
+    ],
+    "hint": "Achte auf die Anzahl 'sieben' im Satz."
+  },
+  {
+    "id": "sent_0498",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Peter kauft sieben grüne Stühle.",
+    "target_word": "Stühle",
+    "options": [
+      "Stühle",
+      "Bücher",
+      "Tassen",
+      "Uhren"
+    ],
+    "hint": "Achte auf das Objekt 'Stühle' am Satzende."
+  },
+  {
+    "id": "sent_0499",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Michael gewinnt zwei schöne Bilder.",
+    "target_word": "zwei",
+    "options": [
+      "zwei",
+      "drei",
+      "sieben"
+    ],
+    "hint": "Achte auf die Anzahl 'zwei' im Satz."
+  },
+  {
+    "id": "sent_0500",
+    "category": "OLSA Satz-Matrix",
+    "source": "Oldenburger Satztest (OLSA)",
+    "sentence": "Nina nimmt zehn starke Steine.",
+    "target_word": "zehn",
+    "options": [
+      "zehn",
+      "sieben",
+      "zwölf"
+    ],
+    "hint": "Achte auf die Anzahl 'zehn' im Satz."
+  }
+]

@@ -1,0 +1,194 @@
+[
+  {
+    "id": "num_en_1",
+    "text": "7",
+    "spoken": "seven",
+    "category": "Einzelzahlen",
+    "difficulty": "Einfach",
+    "translation_de": "Sieben"
+  },
+  {
+    "id": "num_en_2",
+    "text": "14",
+    "spoken": "fourteen",
+    "category": "Mehrstellige Zahlen",
+    "difficulty": "Einfach",
+    "translation_de": "Vierzehn"
+  },
+  {
+    "id": "num_en_3",
+    "text": "40",
+    "spoken": "forty",
+    "category": "Mehrstellige Zahlen",
+    "difficulty": "Mittel",
+    "translation_de": "Vierzig"
+  },
+  {
+    "id": "num_en_4",
+    "text": "105",
+    "spoken": "one hundred and five",
+    "category": "Mehrstellige Zahlen",
+    "difficulty": "Mittel",
+    "translation_de": "Hundertundfünf"
+  },
+  {
+    "id": "num_en_5",
+    "text": "2:30 PM",
+    "spoken": "half past two in the afternoon",
+    "category": "Uhrzeiten",
+    "difficulty": "Mittel",
+    "translation_de": "Halb drei nachmittags"
+  },
+  {
+    "id": "num_en_6",
+    "text": "$12.50",
+    "spoken": "twelve dollars and fifty cents",
+    "category": "Geldbeträge",
+    "difficulty": "Mittel",
+    "translation_de": "Zwölf Dollar und fünfzig Cent"
+  },
+  {
+    "id": "num_en_7",
+    "text": "£4.99",
+    "spoken": "four pounds and ninety-nine pence",
+    "category": "Geldbeträge",
+    "difficulty": "Mittel",
+    "translation_de": "Vier Pfund und neunundneunzig Pence"
+  },
+  {
+    "id": "num_en_8",
+    "text": "8:15 AM",
+    "spoken": "quarter past eight in the morning",
+    "category": "Uhrzeiten",
+    "difficulty": "Mittel",
+    "translation_de": "Viertel nach acht morgens"
+  },
+  {
+    "id": "num_en_9",
+    "text": "3",
+    "spoken": "three",
+    "category": "Einzelzahlen",
+    "difficulty": "Einfach",
+    "translation_de": "Drei"
+  },
+  {
+    "id": "num_en_10",
+    "text": "8",
+    "spoken": "eight",
+    "category": "Einzelzahlen",
+    "difficulty": "Einfach",
+    "translation_de": "Acht"
+  },
+  {
+    "id": "num_en_11",
+    "text": "13",
+    "spoken": "thirteen",
+    "category": "Mehrstellige Zahlen",
+    "difficulty": "Mittel",
+    "translation_de": "Dreizehn"
+  },
+  {
+    "id": "num_en_12",
+    "text": "30",
+    "spoken": "thirty",
+    "category": "Mehrstellige Zahlen",
+    "difficulty": "Mittel",
+    "translation_de": "Dreißig"
+  },
+  {
+    "id": "num_en_13",
+    "text": "15",
+    "spoken": "fifteen",
+    "category": "Mehrstellige Zahlen",
+    "difficulty": "Mittel",
+    "translation_de": "Fünfzehn"
+  },
+  {
+    "id": "num_en_14",
+    "text": "50",
+    "spoken": "fifty",
+    "category": "Mehrstellige Zahlen",
+    "difficulty": "Mittel",
+    "translation_de": "Fünfzig"
+  },
+  {
+    "id": "num_en_15",
+    "text": "73",
+    "spoken": "seventy-three",
+    "category": "Mehrstellige Zahlen",
+    "difficulty": "Mittel",
+    "translation_de": "Dreiundsiebzig"
+  },
+  {
+    "id": "num_en_16",
+    "text": "250",
+    "spoken": "two hundred and fifty",
+    "category": "Mehrstellige Zahlen",
+    "difficulty": "Schwer",
+    "translation_de": "Zweihundertfünfzig"
+  },
+  {
+    "id": "num_en_17",
+    "text": "1,000",
+    "spoken": "one thousand",
+    "category": "Mehrstellige Zahlen",
+    "difficulty": "Mittel",
+    "translation_de": "Eintausend"
+  },
+  {
+    "id": "num_en_18",
+    "text": "9:45 AM",
+    "spoken": "quarter to ten in the morning",
+    "category": "Uhrzeiten",
+    "difficulty": "Mittel",
+    "translation_de": "Viertel vor zehn morgens"
+  },
+  {
+    "id": "num_en_19",
+    "text": "12:00 PM",
+    "spoken": "twelve o'clock noon",
+    "category": "Uhrzeiten",
+    "difficulty": "Einfach",
+    "translation_de": "Zwölf Uhr mittags"
+  },
+  {
+    "id": "num_en_20",
+    "text": "6:20 PM",
+    "spoken": "twenty minutes past six in the evening",
+    "category": "Uhrzeiten",
+    "difficulty": "Mittel",
+    "translation_de": "Zwanzig nach sechs abends"
+  },
+  {
+    "id": "num_en_21",
+    "text": "$5.00",
+    "spoken": "five dollars",
+    "category": "Geldbeträge",
+    "difficulty": "Einfach",
+    "translation_de": "Fünf Dollar"
+  },
+  {
+    "id": "num_en_22",
+    "text": "$85.75",
+    "spoken": "eighty-five dollars and seventy-five cents",
+    "category": "Geldbeträge",
+    "difficulty": "Schwer",
+    "translation_de": "Fünfundachtzig Dollar und fünfundsiebzig Cent"
+  },
+  {
+    "id": "num_en_23",
+    "text": "€45.00",
+    "spoken": "forty-five euros",
+    "category": "Geldbeträge",
+    "difficulty": "Einfach",
+    "translation_de": "Fünfundvierzig Euro"
+  },
+  {
+    "id": "num_en_24",
+    "text": "£150.00",
+    "spoken": "one hundred and fifty pounds",
+    "category": "Geldbeträge",
+    "difficulty": "Mittel",
+    "translation_de": "Einhundertfünfzig Pfund"
+  }
+]

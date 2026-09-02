@@ -1,0 +1,182 @@
+[
+  {
+    "id": "sent_en_1",
+    "text": "The sun is shining brightly today.",
+    "category": "Alltagssätze",
+    "difficulty": "Einfach",
+    "word_focus": "shining",
+    "options_json": "[\"shining\", \"smiling\", \"shadow\", \"showing\"]",
+    "translation_de": "Die Sonne scheint heute hell."
+  },
+  {
+    "id": "sent_en_2",
+    "text": "Could you please pass the salt?",
+    "category": "Alltagssätze",
+    "difficulty": "Einfach",
+    "word_focus": "salt",
+    "options_json": "[\"salt\", \"soup\", \"sand\", \"silk\"]",
+    "translation_de": "Könnten Sie bitte das Salz reichen?"
+  },
+  {
+    "id": "sent_en_3",
+    "text": "The train leaves from platform three at ten o'clock.",
+    "category": "Reise & Orientierung",
+    "difficulty": "Mittel",
+    "word_focus": "platform",
+    "options_json": "[\"platform\", \"passport\", \"airport\", \"pathway\"]",
+    "translation_de": "Der Zug fährt um zehn Uhr von Gleis drei ab."
+  },
+  {
+    "id": "sent_en_4",
+    "text": "She bought a fresh cup of coffee at the bakery.",
+    "category": "Alltagssätze",
+    "difficulty": "Einfach",
+    "word_focus": "coffee",
+    "options_json": "[\"coffee\", \"cookie\", \"toffee\", \"cocoa\"]",
+    "translation_de": "Sie kaufte einen frischen Kaffee in der Bäckerei."
+  },
+  {
+    "id": "sent_en_5",
+    "text": "Please remember to lock the front door when you leave.",
+    "category": "Alltagssätze",
+    "difficulty": "Mittel",
+    "word_focus": "lock",
+    "options_json": "[\"lock\", \"look\", \"knock\", \"block\"]",
+    "translation_de": "Bitte denke daran, die Haustür zu verschließen, wenn du gehst."
+  },
+  {
+    "id": "sent_en_6",
+    "text": "Peter bought four red cars.",
+    "category": "Matrix Test Sätze (5-Wort-Matrix)",
+    "difficulty": "Mittel",
+    "word_focus": "four",
+    "options_json": "[\"four\", \"three\", \"five\", \"two\"]",
+    "translation_de": "Peter kaufte vier rote Autos."
+  },
+  {
+    "id": "sent_en_7",
+    "text": "What time does the supermarket close tonight?",
+    "category": "Alltagssätze",
+    "difficulty": "Einfach",
+    "word_focus": "supermarket",
+    "options_json": "[\"supermarket\", \"pharmacy\", \"restaurant\", \"post office\"]",
+    "translation_de": "Wann schließt der Supermarkt heute Abend?"
+  },
+  {
+    "id": "sent_en_8",
+    "text": "I would like to order a glass of water, please.",
+    "category": "Gastronomie & Bestellung",
+    "difficulty": "Einfach",
+    "word_focus": "water",
+    "options_json": "[\"water\", \"wine\", \"juice\", \"milk\"]",
+    "translation_de": "Ich möchte bitte ein Glas Wasser bestellen."
+  },
+  {
+    "id": "sent_en_9",
+    "text": "Where is the nearest bus stop?",
+    "category": "Reise & Orientierung",
+    "difficulty": "Einfach",
+    "word_focus": "nearest",
+    "options_json": "[\"nearest\", \"next\", \"furthest\", \"oldest\"]",
+    "translation_de": "Wo ist die nächste Bushaltestelle?"
+  },
+  {
+    "id": "sent_en_10",
+    "text": "The doctor will see you in ten minutes.",
+    "category": "Gesundheit & Medizin",
+    "difficulty": "Mittel",
+    "word_focus": "doctor",
+    "options_json": "[\"doctor\", \"nurse\", \"dentist\", \"pharmacist\"]",
+    "translation_de": "Der Arzt wird Sie in zehn Minuten empfangen."
+  },
+  {
+    "id": "sent_en_11",
+    "text": "Could you please speak a little slower?",
+    "category": "Kommunikation & Hören",
+    "difficulty": "Einfach",
+    "word_focus": "slower",
+    "options_json": "[\"slower\", \"louder\", \"clearer\", \"faster\"]",
+    "translation_de": "Könnten Sie bitte etwas langsamer sprechen?"
+  },
+  {
+    "id": "sent_en_12",
+    "text": "Thomas gives three green books.",
+    "category": "Matrix Test Sätze (5-Wort-Matrix)",
+    "difficulty": "Mittel",
+    "word_focus": "green",
+    "options_json": "[\"green\", \"blue\", \"red\", \"black\"]",
+    "translation_de": "Thomas gibt drei grüne Bücher."
+  },
+  {
+    "id": "sent_en_13",
+    "text": "Sarah sees eight big rings.",
+    "category": "Matrix Test Sätze (5-Wort-Matrix)",
+    "difficulty": "Mittel",
+    "word_focus": "rings",
+    "options_json": "[\"rings\", \"chairs\", \"tables\", \"boxes\"]",
+    "translation_de": "Sarah sieht acht große Ringe."
+  },
+  {
+    "id": "sent_en_14",
+    "text": "We need to buy some milk and eggs.",
+    "category": "Einkaufen & Alltag",
+    "difficulty": "Einfach",
+    "word_focus": "eggs",
+    "options_json": "[\"eggs\", \"apples\", \"bread\", \"cheese\"]",
+    "translation_de": "Wir müssen Milch und Eier kaufen."
+  },
+  {
+    "id": "sent_en_15",
+    "text": "Have a wonderful weekend with your family!",
+    "category": "Alltagssätze",
+    "difficulty": "Einfach",
+    "word_focus": "weekend",
+    "options_json": "[\"weekend\", \"vacation\", \"evening\", \"holiday\"]",
+    "translation_de": "Ein schönes Wochenende mit deiner Familie!"
+  },
+  {
+    "id": "sent_en_16",
+    "text": "The weather forecast predicts heavy rain tomorrow.",
+    "category": "Wetter & Natur",
+    "difficulty": "Mittel",
+    "word_focus": "forecast",
+    "options_json": "[\"forecast\", \"reporter\", \"satellite\", \"temperature\"]",
+    "translation_de": "Die Wettervorhersage sagt für morgen starken Regen voraus."
+  },
+  {
+    "id": "sent_en_17",
+    "text": "Can I pay by credit card?",
+    "category": "Einkaufen & Finanzen",
+    "difficulty": "Einfach",
+    "word_focus": "credit card",
+    "options_json": "[\"credit card\", \"cash\", \"cheque\", \"voucher\"]",
+    "translation_de": "Kann ich mit Kreditkarte bezahlen?"
+  },
+  {
+    "id": "sent_en_18",
+    "text": "The concert starts at seven thirty PM.",
+    "category": "Freizeit & Kultur",
+    "difficulty": "Mittel",
+    "word_focus": "concert",
+    "options_json": "[\"concert\", \"movie\", \"show\", \"meeting\"]",
+    "translation_de": "Das Konzert beginnt um 19:30 Uhr."
+  },
+  {
+    "id": "sent_en_19",
+    "text": "Michael prefers tea instead of coffee.",
+    "category": "Gastronomie & Geschmack",
+    "difficulty": "Einfach",
+    "word_focus": "prefers",
+    "options_json": "[\"prefers\", \"drinks\", \"prepares\", \"orders\"]",
+    "translation_de": "Michael bevorzugt Tee statt Kaffee."
+  },
+  {
+    "id": "sent_en_20",
+    "text": "Thank you very much for your help!",
+    "category": "Alltagssätze",
+    "difficulty": "Einfach",
+    "word_focus": "help",
+    "options_json": "[\"help\", \"time\", \"gift\", \"work\"]",
+    "translation_de": "Vielen Dank für Ihre Hilfe!"
+  }
+]

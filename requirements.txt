@@ -1,0 +1,4 @@
+# CI-Hörtrainer Python Dependencies
+edge-tts>=6.1.0
+SpeechRecognition>=3.10.0
+pytest>=7.0.0

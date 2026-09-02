@@ -1,0 +1,362 @@
+[
+  {
+    "id": "mp_en_1",
+    "category": "Flüssiglaute (Liquid Contrast /r/ vs /l/)",
+    "word_a": "rake",
+    "word_b": "lake",
+    "difficulty": "Einfach",
+    "hint": "Achte auf die Zungenkontaktstelle am Zahndamm (L) vs. Lippenrundung/Retroflexion (R).",
+    "translation_a": "Harke",
+    "translation_b": "See"
+  },
+  {
+    "id": "mp_en_2",
+    "category": "Flüssiglaute (Liquid Contrast /r/ vs /l/)",
+    "word_a": "red",
+    "word_b": "led",
+    "difficulty": "Einfach",
+    "hint": "R hat eine zurückgezogene Zungenform, L hat Kontakt mit den oberen Zähnen.",
+    "translation_a": "rot",
+    "translation_b": "geführt"
+  },
+  {
+    "id": "mp_en_3",
+    "category": "Flüssiglaute (Liquid Contrast /r/ vs /l/)",
+    "word_a": "crown",
+    "word_b": "clown",
+    "difficulty": "Mittel",
+    "hint": "Geführter Lautwechsel in der Konsonantenverbindung CR vs. CL.",
+    "translation_a": "Krone",
+    "translation_b": "Clown"
+  },
+  {
+    "id": "mp_en_4",
+    "category": "Flüssiglaute (Liquid Contrast /r/ vs /l/)",
+    "word_a": "right",
+    "word_b": "light",
+    "difficulty": "Einfach",
+    "hint": "L erzeugt einen hellem Anlautkontakt; R ist dunkler ohne Zahnkontakt.",
+    "translation_a": "rechts, richtig",
+    "translation_b": "Licht, hell"
+  },
+  {
+    "id": "mp_en_5",
+    "category": "Flüssiglaute (Liquid Contrast /r/ vs /l/)",
+    "word_a": "pray",
+    "word_b": "play",
+    "difficulty": "Mittel",
+    "hint": "Unterscheidung in der Verbindung PR vs. PL.",
+    "translation_a": "beten",
+    "translation_b": "spielen"
+  },
+  {
+    "id": "mp_en_6",
+    "category": "Flüssiglaute (Liquid Contrast /r/ vs /l/)",
+    "word_a": "read",
+    "word_b": "lead",
+    "difficulty": "Mittel",
+    "hint": "Achte auf den Zungenkontakt bei L am Zahndamm.",
+    "translation_a": "lesen",
+    "translation_b": "führen, Blei"
+  },
+  {
+    "id": "mp_en_7",
+    "category": "Dentale Frikative (th /θ/ vs /f/)",
+    "word_a": "thin",
+    "word_b": "fin",
+    "difficulty": "Mittel",
+    "hint": "TH erfordert Zungenkontakt an den Schneidezähnen; F verwendet die Unterlippe.",
+    "translation_a": "dünn",
+    "translation_b": "Flosse"
+  },
+  {
+    "id": "mp_en_8",
+    "category": "Dentale Frikative (th /θ/ vs /f/)",
+    "word_a": "thought",
+    "word_b": "fought",
+    "difficulty": "Mittel",
+    "hint": "TH ist ein interdentaler Reibelaut; F ist labiodental.",
+    "translation_a": "Gedanke, dachte",
+    "translation_b": "kämpfte"
+  },
+  {
+    "id": "mp_en_9",
+    "category": "Dentale Frikative (th /θ/ vs /t/)",
+    "word_a": "three",
+    "word_b": "tree",
+    "difficulty": "Einfach",
+    "hint": "TH ist ein fortlaufender Reibelaut; T ist ein kurzer Verschlusslaut (Plosiv).",
+    "translation_a": "drei",
+    "translation_b": "Baum"
+  },
+  {
+    "id": "mp_en_10",
+    "category": "Dentale Frikative (th /θ/ vs /t/)",
+    "word_a": "thanks",
+    "word_b": "tanks",
+    "difficulty": "Einfach",
+    "hint": "Plosiver T-Anlaut vs. verriebener TH-Anlaut.",
+    "translation_a": "Danke",
+    "translation_b": "Tanks, Panzer"
+  },
+  {
+    "id": "mp_en_11",
+    "category": "Dentale Frikative (th /θ/ vs /s/)",
+    "word_a": "think",
+    "word_b": "sink",
+    "difficulty": "Mittel",
+    "hint": "S ist ein scharfer Zischlaut; TH hat einen weicheren Luftstrom an den Zähnen.",
+    "translation_a": "denken",
+    "translation_b": "Spülbecken"
+  },
+  {
+    "id": "mp_en_12",
+    "category": "Dentale Frikative (th /θ/ vs /s/)",
+    "word_a": "path",
+    "word_b": "pass",
+    "difficulty": "Mittel",
+    "hint": "Auslautkontrast: weicher TH-Auslaut vs. scharfer S-Zischlaut.",
+    "translation_a": "Pfad, Weg",
+    "translation_b": "Pass, bestehen"
+  },
+  {
+    "id": "mp_en_13",
+    "category": "Stimmhafte Dentale (th /ð/ vs /d/)",
+    "word_a": "then",
+    "word_b": "den",
+    "difficulty": "Mittel",
+    "hint": "Stimmhaftes TH (interdental) vs. stimmhaftes D (alveolar).",
+    "translation_a": "dann, damals",
+    "translation_b": "Höhle, Bau"
+  },
+  {
+    "id": "mp_en_14",
+    "category": "Labiodental vs. Halbvokal (V vs. W)",
+    "word_a": "vine",
+    "word_b": "wine",
+    "difficulty": "Mittel",
+    "hint": "V hat Zähne auf der Unterlippe mit Reibung; W wird nur mit gerundeten Lippen ohne Zähne gebildet.",
+    "translation_a": "Weinrebe",
+    "translation_b": "Wein"
+  },
+  {
+    "id": "mp_en_15",
+    "category": "Labiodental vs. Halbvokal (V vs. W)",
+    "word_a": "vet",
+    "word_b": "wet",
+    "difficulty": "Einfach",
+    "hint": "Vreibung an den Zähnen vs. weicher Lippenhalbvokal W.",
+    "translation_a": "Tierarzt",
+    "translation_b": "nass"
+  },
+  {
+    "id": "mp_en_16",
+    "category": "Labiodental vs. Halbvokal (V vs. W)",
+    "word_a": "vest",
+    "word_b": "west",
+    "difficulty": "Einfach",
+    "hint": "Frikativer V-Anlaut vs. gerundeter W-Anlaut.",
+    "translation_a": "Weste",
+    "translation_b": "Westen"
+  },
+  {
+    "id": "mp_en_17",
+    "category": "Labiodental vs. Halbvokal (V vs. W)",
+    "word_a": "verse",
+    "word_b": "worse",
+    "difficulty": "Schwer",
+    "hint": "Achte auf die Lippenform zu Beginn des Wortes.",
+    "translation_a": "Vers, Gedicht",
+    "translation_b": "schlechter"
+  },
+  {
+    "id": "mp_en_18",
+    "category": "Vokallänge & Qualität (/ɪ/ vs /iː/)",
+    "word_a": "ship",
+    "word_b": "sheep",
+    "difficulty": "Einfach",
+    "hint": "Kurzes, offenes I (/ɪ/) vs. langes, geschlossenes I (/iː/).",
+    "translation_a": "Schiff",
+    "translation_b": "Schaf"
+  },
+  {
+    "id": "mp_en_19",
+    "category": "Vokallänge & Qualität (/ɪ/ vs /iː/)",
+    "word_a": "sit",
+    "word_b": "seat",
+    "difficulty": "Einfach",
+    "hint": "Langes gespanntes I (/iː/) im Vergleich zum kurzen ungespannten I (/ɪ/).",
+    "translation_a": "sitzen",
+    "translation_b": "Sitzplatz"
+  },
+  {
+    "id": "mp_en_20",
+    "category": "Vokallänge & Qualität (/ɪ/ vs /iː/)",
+    "word_a": "fit",
+    "word_b": "feet",
+    "difficulty": "Einfach",
+    "hint": "Kurzes I in fit vs. gedehntes I in feet.",
+    "translation_a": "passend, fit",
+    "translation_b": "Füße"
+  },
+  {
+    "id": "mp_en_21",
+    "category": "Vokalqualität (/æ/ vs /ʌ/)",
+    "word_a": "cat",
+    "word_b": "cut",
+    "difficulty": "Mittel",
+    "hint": "Helles, breites Ä (/æ/) vs. zentrales, kurzes A (/ʌ/).",
+    "translation_a": "Katze",
+    "translation_b": "schneiden"
+  },
+  {
+    "id": "mp_en_22",
+    "category": "Vokalqualität (/æ/ vs /ʌ/)",
+    "word_a": "hat",
+    "word_b": "hut",
+    "difficulty": "Einfach",
+    "hint": "Vorderzungenvokal Ä vs. zentraler Vokal U.",
+    "translation_a": "Hut",
+    "translation_b": "Hütte"
+  },
+  {
+    "id": "mp_en_23",
+    "category": "Vokalqualität (/e/ vs /æ/)",
+    "word_a": "bed",
+    "word_b": "bad",
+    "difficulty": "Mittel",
+    "hint": "Kurzes E (/e/) vs. tiefes, breites Ä (/æ/).",
+    "translation_a": "Bett",
+    "translation_b": "schlecht"
+  },
+  {
+    "id": "mp_en_24",
+    "category": "Vokalqualität (/e/ vs /æ/)",
+    "word_a": "pen",
+    "word_b": "pan",
+    "difficulty": "Mittel",
+    "hint": "Engeres E vs. offeneres Ä.",
+    "translation_a": "Stift",
+    "translation_b": "Pfanne"
+  },
+  {
+    "id": "mp_en_25",
+    "category": "Vokalqualität (/ʊ/ vs /uː/)",
+    "word_a": "look",
+    "word_b": "Luke",
+    "difficulty": "Mittel",
+    "hint": "Kurzes ungespanntes U vs. langes gespanntes U.",
+    "translation_a": "schauen",
+    "translation_b": "Lukas (Name)"
+  },
+  {
+    "id": "mp_en_26",
+    "category": "Vokalqualität (/ʊ/ vs /uː/)",
+    "word_a": "full",
+    "word_b": "fool",
+    "difficulty": "Mittel",
+    "hint": "Kurzes U in full vs. langes U in fool.",
+    "translation_a": "voll",
+    "translation_b": "Narr, Dummkopf"
+  },
+  {
+    "id": "mp_en_27",
+    "category": "Stimmhaftigkeitskontrast (P vs. B)",
+    "word_a": "pat",
+    "word_b": "bat",
+    "difficulty": "Einfach",
+    "hint": "Beachte die Stimmhaftigkeit der Lippenkonsonanten P (stimmlos) vs. B (stimmhaft).",
+    "translation_a": "tätscheln",
+    "translation_b": "Fledermaus, Schläger"
+  },
+  {
+    "id": "mp_en_28",
+    "category": "Stimmhaftigkeitskontrast (P vs. B)",
+    "word_a": "pea",
+    "word_b": "bee",
+    "difficulty": "Einfach",
+    "hint": "Hauchlaut-Aspiration bei P vs. Stimmbaendergurt bei B.",
+    "translation_a": "Erbse",
+    "translation_b": "Biene"
+  },
+  {
+    "id": "mp_en_29",
+    "category": "Stimmhaftigkeitskontrast (P vs. B)",
+    "word_a": "pig",
+    "word_b": "big",
+    "difficulty": "Einfach",
+    "hint": "Stimmhafter Anlaut B vs. behauchter Anlaut P.",
+    "translation_a": "Schwein",
+    "translation_b": "groß"
+  },
+  {
+    "id": "mp_en_30",
+    "category": "Stimmhaftigkeitskontrast (T vs. D)",
+    "word_a": "town",
+    "word_b": "down",
+    "difficulty": "Einfach",
+    "hint": "Stimmloses T mit Hauch vs. stimmhaftes D am Zahndamm.",
+    "translation_a": "Stadt",
+    "translation_b": "unten"
+  },
+  {
+    "id": "mp_en_31",
+    "category": "Stimmhaftigkeitskontrast (T vs. D)",
+    "word_a": "tie",
+    "word_b": "die",
+    "difficulty": "Einfach",
+    "hint": "Stimmtonvergleich T vs. D.",
+    "translation_a": "Krawatte, binden",
+    "translation_b": "sterben, Würfel"
+  },
+  {
+    "id": "mp_en_32",
+    "category": "Stimmhaftigkeitskontrast (K vs. G)",
+    "word_a": "coat",
+    "word_b": "goat",
+    "difficulty": "Einfach",
+    "hint": "Velarer Verschlusslaut: stimmlos K vs. stimmhaft G.",
+    "translation_a": "Mantel",
+    "translation_b": "Ziege"
+  },
+  {
+    "id": "mp_en_33",
+    "category": "Stimmhaftigkeitskontrast (K vs. G)",
+    "word_a": "cap",
+    "word_b": "gap",
+    "difficulty": "Einfach",
+    "hint": "K-Aspiration vs. stimmhafter G-Anlaut.",
+    "translation_a": "Mütze",
+    "translation_b": "Lücke"
+  },
+  {
+    "id": "mp_en_34",
+    "category": "Zisch- & Reibelaute (CH vs. SH)",
+    "word_a": "chair",
+    "word_b": "share",
+    "difficulty": "Mittel",
+    "hint": "CH ist ein harter Affrikat (T+SH); SH ist ein kontinuierlicher Reibelaut.",
+    "translation_a": "Stuhl",
+    "translation_b": "teilen"
+  },
+  {
+    "id": "mp_en_35",
+    "category": "Zisch- & Reibelaute (CH vs. SH)",
+    "word_a": "cheap",
+    "word_b": "sheep",
+    "difficulty": "Mittel",
+    "hint": "Affrikat CH vs. Frikativ SH.",
+    "translation_a": "günstig",
+    "translation_b": "Schaf"
+  },
+  {
+    "id": "mp_en_36",
+    "category": "Stimmhaftigkeit Zischlaute (S vs. Z)",
+    "word_a": "Sue",
+    "word_b": "zoo",
+    "difficulty": "Einfach",
+    "hint": "Stimmlose S-Zischlaut vs. summender stimmhafter Z-Laut.",
+    "translation_a": "Susanne (Name)",
+    "translation_b": "Zoo"
+  }
+]

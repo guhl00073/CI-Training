@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Cache and build artifacts
+.cache/
+build/
+dist/
+*.app/
+*.aiff
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# Exclude tests
+tests/
+
